@@ -1,11 +1,5 @@
-DIVAS — site do salão de beleza
+DIVAS — atualização do site
 
-1. Extraia este ZIP.
-2. No GitHub, abra o repositório Divas.
-3. Envie o arquivo index.html para a raiz do repositório, substituindo o antigo.
-4. Mantenha os arquivos de imagem já existentes no repositório:
-   logo-divas.jpg, cabelo-01.jpg, cabelo-02.jpg e unhas-01.jpg.
-5. Faça o commit das alterações.
-
-As fotos e o logo são carregados dos arquivos já existentes no repositório público do GitHub.
-O formulário abre uma mensagem pronta no WhatsApp do salão; não consulta automaticamente a agenda.
+Extraia o ZIP e substitua o arquivo index.html do repositório pelo index.html incluído.
+Mantenha na raiz do repositório as fotos cabelo-01.jpg, cabelo-02.jpg, unhas-01.jpg e o logo logo-divas.jpg.
+O novo destaque apresenta as três fotos reais em slides automáticos, sem texto sobre as imagens.
