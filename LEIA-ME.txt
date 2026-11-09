@@ -1,20 +1,26 @@
-DIVAS — ATUALIZAÇÃO DO CARROSSEL
+DIVAS - DESTAQUE ANIMADO BLACK FRIDAY
+
+Esta atualização adiciona um banner animado e responsivo com:
+- BLACK FRIDAY em destaque com brilho suave;
+- preço R$ 69,00 com pulsação discreta;
+- presente: hidratação labial grátis;
+- brilhos decorativos, faixa de luz animada e pequenas luzes lilás piscando ao redor da borda;
+- botão que abre o WhatsApp do DIVAS com a oferta preenchida;
+- respeito à configuração de acessibilidade para reduzir animações.
 
 COMO INSTALAR
-1. Extraia este ZIP.
-2. No repositório GitHub leledesouzas96-creator/Divas, substitua somente o arquivo index.html pelo index.html desta pasta.
-3. Salve/ faça o commit da alteração no GitHub.
-4. Mantenha na raiz do repositório estes arquivos de imagem, sem mudar os nomes: logo-divas.jpg, cabelo-01.jpg, cabelo-02.jpg e unhas-01.jpg.
+1. Extraia o ZIP.
+2. Abra o arquivo black-friday.js e copie todo o conteúdo.
+3. No GitHub, abra o repositório Divas e edite o arquivo index.html.
+4. Vá até o final do arquivo e encontre </body>.
+5. Cole esta linha imediatamente ANTES de </body>:
+   <script src="black-friday.js"></script>
+6. Salve (Commit changes).
+7. No GitHub, use Add file > Upload files e envie black-friday.js para a raiz do repositório (mesma pasta do index.html).
+8. Aguarde a publicação e atualize o site.
 
-O QUE FOI AJUSTADO
-- Carrossel horizontal: as fotos deslizam para os lados.
-- Troca automática a cada 5 segundos.
-- Setas, bolinhas e gesto de arrastar no celular.
-- Sem texto sobre as fotos.
-- Sem montagem de duas fotos logo abaixo do carrossel.
-- A galeria inferior continua com as fotos reais.
-
-IMPORTANTE SOBRE AGENDAMENTO
-O formulário atual envia um pedido para o WhatsApp do salão. Ele ainda NÃO consulta uma agenda em tempo real, não bloqueia automaticamente horários e não envia lembrete automático um dia antes. Para isso será necessário integrar um sistema de agenda com banco de dados/serviço de agendamento e automação de WhatsApp.
-
-Este ZIP contém o index.html e este LEIA-ME.txt. Não apague as imagens já existentes no repositório.
+IMPORTANTE
+- Não substitua o index.html inteiro por este pacote; ele é um complemento para preservar o site, as fotos, a logo e o carrossel existentes.
+- Não apague cabelo-01.jpg, cabelo-02.jpg, unhas-01.jpg ou logo-divas.jpg.
+- A oferta exibida é Escova de Botox por R$ 69,00 com hidratação labial grátis.
+- A promoção não informa prazo final, pois ele não foi definido.
