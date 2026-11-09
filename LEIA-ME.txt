@@ -1,8 +1,20 @@
-ATUALIZAÇÃO DO SITE DIVAS
+DIVAS — ATUALIZAÇÃO DO CARROSSEL
 
-1. Abra o repositório Divas no GitHub.
-2. Substitua o arquivo index.html pelo index.html desta pasta.
-3. Mantenha as imagens já existentes: cabelo-01.jpg, cabelo-02.jpg, unhas-01.jpg e logo-divas.jpg.
-4. Faça o commit e aguarde o GitHub Pages atualizar.
+COMO INSTALAR
+1. Extraia este ZIP.
+2. No repositório GitHub leledesouzas96-creator/Divas, substitua somente o arquivo index.html pelo index.html desta pasta.
+3. Salve/ faça o commit da alteração no GitHub.
+4. Mantenha na raiz do repositório estes arquivos de imagem, sem mudar os nomes: logo-divas.jpg, cabelo-01.jpg, cabelo-02.jpg e unhas-01.jpg.
 
-O carrossel troca as fotos automaticamente, tem setas, bolinhas e permite deslizar no celular. As duas fotos duplicadas logo abaixo do carrossel foram retiradas.
+O QUE FOI AJUSTADO
+- Carrossel horizontal: as fotos deslizam para os lados.
+- Troca automática a cada 5 segundos.
+- Setas, bolinhas e gesto de arrastar no celular.
+- Sem texto sobre as fotos.
+- Sem montagem de duas fotos logo abaixo do carrossel.
+- A galeria inferior continua com as fotos reais.
+
+IMPORTANTE SOBRE AGENDAMENTO
+O formulário atual envia um pedido para o WhatsApp do salão. Ele ainda NÃO consulta uma agenda em tempo real, não bloqueia automaticamente horários e não envia lembrete automático um dia antes. Para isso será necessário integrar um sistema de agenda com banco de dados/serviço de agendamento e automação de WhatsApp.
+
+Este ZIP contém o index.html e este LEIA-ME.txt. Não apague as imagens já existentes no repositório.
