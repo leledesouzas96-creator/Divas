@@ -1,0 +1,17 @@
+ATUALIZAÇÃO DO SITE DIVAS
+
+Este ZIP contém o index.html atualizado.
+
+Como publicar:
+1. Extraia/descompacte este ZIP no celular.
+2. Abra o repositório GitHub leledesouzas96-creator/Divas.
+3. Entre na pasta principal (raiz) do repositório.
+4. Escolha Add file > Upload files.
+5. Envie o index.html extraído e confirme a substituição do arquivo existente.
+6. Faça Commit changes.
+
+IMPORTANTE:
+- Não apague as fotos que já estão na raiz do repositório:
+  cabelo-01.jpg, cabelo-02.jpg, unhas-01.jpg e logo-divas.jpg.
+- O index.html usa esses nomes de arquivo e as imagens já existentes.
+- O slide mostra as três fotos sem texto e troca automaticamente a cada 4,5 segundos.
