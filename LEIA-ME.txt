@@ -1,5 +1,8 @@
-DIVAS — atualização do site
+ATUALIZAÇÃO DO SITE DIVAS
 
-Extraia o ZIP e substitua o arquivo index.html do repositório pelo index.html incluído.
-Mantenha na raiz do repositório as fotos cabelo-01.jpg, cabelo-02.jpg, unhas-01.jpg e o logo logo-divas.jpg.
-O novo destaque apresenta as três fotos reais em slides automáticos, sem texto sobre as imagens.
+1. Abra o repositório Divas no GitHub.
+2. Substitua o arquivo index.html pelo index.html desta pasta.
+3. Mantenha as imagens já existentes: cabelo-01.jpg, cabelo-02.jpg, unhas-01.jpg e logo-divas.jpg.
+4. Faça o commit e aguarde o GitHub Pages atualizar.
+
+O carrossel troca as fotos automaticamente, tem setas, bolinhas e permite deslizar no celular. As duas fotos duplicadas logo abaixo do carrossel foram retiradas.
