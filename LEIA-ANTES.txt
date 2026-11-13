@@ -1,17 +1,25 @@
-ATUALIZAÇÃO DO SITE DIVAS
+DIVAS — SITE E PAINEL ADMINISTRATIVO
 
-Este ZIP contém o index.html atualizado.
+CONTEÚDO
+- index.html: site público, com carrossel de fotos reais e sem galeria inferior.
+- admin.html: painel administrativo de agendamentos.
+- fotos/: imagens reais e logo utilizados no site.
 
-Como publicar:
-1. Extraia/descompacte este ZIP no celular.
-2. Abra o repositório GitHub leledesouzas96-creator/Divas.
-3. Entre na pasta principal (raiz) do repositório.
-4. Escolha Add file > Upload files.
-5. Envie o index.html extraído e confirme a substituição do arquivo existente.
-6. Faça Commit changes.
+PUBLICAÇÃO
+1. Abra o repositório Divas no GitHub.
+2. Envie/substitua index.html e admin.html na raiz do repositório.
+3. Envie também a pasta fotos/ mantendo os nomes dos arquivos.
+4. Faça Commit changes e aguarde a publicação.
 
-IMPORTANTE:
-- Não apague as fotos que já estão na raiz do repositório:
-  cabelo-01.jpg, cabelo-02.jpg, unhas-01.jpg e logo-divas.jpg.
-- O index.html usa esses nomes de arquivo e as imagens já existentes.
-- O slide mostra as três fotos sem texto e troca automaticamente a cada 4,5 segundos.
+ENDEREÇOS
+Site: https://divasbeleza.vezqoraai.workers.dev/
+Painel: https://divasbeleza.vezqoraai.workers.dev/admin.html
+API: https://divas-api.vezqoraai.workers.dev/
+
+IMPORTANTE
+- Não apague a pasta fotos/.
+- O painel usa o ADMIN_TOKEN configurado como secret no Cloudflare.
+- Nunca coloque o ADMIN_TOKEN dentro do HTML ou no GitHub.
+- A API e o banco D1 são serviços separados e precisam continuar publicados/configurados no Cloudflare.
+- Depois de publicar, teste a consulta de horários e um agendamento de teste.
+- Um pedido de agendamento fica pendente até o salão confirmar no painel.

@@ -86,21 +86,61 @@ footer{background:#292333;color:#f6effc;padding:42px 0}.footer-row{display:flex;
   .gallery-grid img,.btn,.nav-cta{transition:none!important}
 }
 
+
+/* Aviso da agenda: destaque dourado DIVAS */
+.availability-help{
+  display:grid;
+  gap:7px;
+  margin:2px 0 18px;
+  padding:16px 17px;
+  border:1px solid #D4AF37;
+  border-left:5px solid #D4AF37;
+  border-radius:15px;
+  background:linear-gradient(135deg,#FBF7FF,#F7EBC5 145%);
+  color:#64258F;
+  font-size:14px;
+  line-height:1.55;
+  box-shadow:0 8px 22px rgba(100,37,143,.10);
+  animation:agendaDestaque 3.8s ease-in-out infinite;
+}
+.availability-help strong{
+  color:#64258F;
+  font-size:15px;
+  letter-spacing:2px;
+}
+.availability-hours{
+  color:#805A12;
+  font-weight:800;
+  letter-spacing:.5px;
+}
+.availability-closed{
+  color:#746D7D;
+  font-size:12px;
+  font-weight:700;
+}
+@keyframes agendaDestaque{
+  0%,100%{box-shadow:0 8px 22px rgba(100,37,143,.10);transform:translateY(0)}
+  50%{box-shadow:0 10px 28px rgba(212,175,55,.24);transform:translateY(-2px)}
+}
+@media(prefers-reduced-motion:reduce){
+  .availability-help{animation:none}
+}
+
 </style>
 </head>
 <body>
 <header><div class="container nav">
 <a class="brand" href="#inicio"><img src="fotos/logo-divas.jpg" alt="Mascote e identidade visual do DIVAS"><span>DIVAS<small>SALÃO DE BELEZA</small></span></a>
 <button class="menu" id="menuBtn" aria-label="Abrir menu">☰</button>
-<nav class="navlinks" id="navlinks"><a href="#inicio">Início</a><a href="#sobre">O salão</a><a href="#servicos">Serviços</a><a href="#galeria">Galeria</a><a href="#agendar">Agendamento</a><a href="#local">Localização</a></nav>
+<nav class="navlinks" id="navlinks"><a href="#inicio">Início</a><a href="#sobre">O salão</a><a href="#servicos">Serviços</a><a href="#agendar">Agendamento</a><a href="#local">Localização</a></nav>
 <a class="nav-cta" href="#agendar">Agendar horário ↗</a>
 </div></header>
 <main>
 <div class="hero" id="inicio"><div class="container">
 <div class="slider" role="region" aria-roledescription="carrossel" aria-label="Apresentação do salão DIVAS" tabindex="0">
-<div class="slide active" style="background-image:url('https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1800&q=85')"><div class="slide-content"><span class="eyebrow">Beleza • cuidado • autoestima</span><h1>Seu momento.<br>Sua beleza.</h1><p>Um espaço para cuidar de você, renovar a autoestima e realçar aquilo que faz você ser única.</p><a class="btn" href="#agendar">Agende seu momento <span>↗</span></a></div></div>
-<div class="slide" style="background-image:url('https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1800&q=85')"><div class="slide-content"><span class="eyebrow">Cabelos com personalidade</span><h2>Transforme o visual.<br>Realce sua essência.</h2><p>Alisamentos, coloração, mechas, cortes e tratamentos para diferentes tipos de cabelo.</p><a class="btn" href="#servicos">Conheça os serviços ↗</a></div></div>
-<div class="slide" style="background-image:url('https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=1800&q=85')"><div class="slide-content"><span class="eyebrow">Detalhes que fazem diferença</span><h2>Um cuidado<br>só seu.</h2><p>Beleza e bem-estar em cada detalhe, com atendimento pensado para você.</p><a class="btn" href="#agendar">Quero agendar ↗</a></div></div>
+<div class="slide active" style="background-image:url('fotos/cabelo-01.jpg')"><div class="slide-content"><span class="eyebrow">Beleza • cuidado • autoestima</span><h1>Seu momento.<br>Sua beleza.</h1><p>Um espaço para cuidar de você, renovar a autoestima e realçar aquilo que faz você ser única.</p><a class="btn" href="#agendar">Agende seu momento <span>↗</span></a></div></div>
+<div class="slide" style="background-image:url('fotos/cabelo-02.jpg')"><div class="slide-content"><span class="eyebrow">Cabelos com personalidade</span><h2>Transforme o visual.<br>Realce sua essência.</h2><p>Alisamentos, coloração, mechas, cortes e tratamentos para diferentes tipos de cabelo.</p><a class="btn" href="#servicos">Conheça os serviços ↗</a></div></div>
+<div class="slide" style="background-image:url('fotos/unhas-01.jpg')"><div class="slide-content"><span class="eyebrow">Detalhes que fazem diferença</span><h2>Um cuidado<br>só seu.</h2><p>Beleza e bem-estar em cada detalhe, com atendimento pensado para você.</p><a class="btn" href="#agendar">Quero agendar ↗</a></div></div>
 <button class="arrow prev" aria-label="Slide anterior">‹</button><button class="arrow next" aria-label="Próximo slide">›</button><div class="dots"><button class="dot active" aria-label="Ir para slide 1"></button><button class="dot" aria-label="Ir para slide 2"></button><button class="dot" aria-label="Ir para slide 3"></button></div>
 </div></div></div>
 <div class="container intro" id="sobre"><div class="photo-stack"><img class="photo-main" src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=900&q=85" alt="Ambiente de salão de beleza"><img class="photo-small" src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=700&q=85" alt="Cuidado com os cabelos"></div>
@@ -114,9 +154,6 @@ footer{background:#292333;color:#f6effc;padding:42px 0}.footer-row{display:flex;
 <article class="service-card"><div class="service-icon">☼</div><h3>Espaço Kids</h3><ul><li>Corte infantil</li><li>Tratamentos infantis</li></ul></article>
 <article class="service-card"><div class="service-icon">✧</div><h3>Atendimento especial</h3><ul><li>Orientação para escolher o serviço</li><li>Consulta de disponibilidade</li><li>Agendamento pelo WhatsApp</li></ul></article>
 </div></div></section>
-<section id="galeria"><div class="container"><div class="section-head"><span class="kicker">Inspirações</span><h2 class="section-title">Um toque de beleza em cada detalhe</h2><p class="section-lead">Este espaço será atualizado com fotos reais dos trabalhos do DIVAS.</p></div>
-<div class="gallery-grid real-gallery"><img src="fotos/cabelo-01.jpg" alt="Resultado de cabelo realizado no DIVAS"><img src="fotos/cabelo-02.jpg" alt="Cabelo longo com brilho, trabalho do DIVAS"><img src="fotos/cabelo-03.jpg" alt="Coloração e finalização de cabelo no DIVAS"><img src="fotos/unhas-01.jpg" alt="Unhas cuidadas, trabalho do DIVAS"></div>
-<p class="gallery-note">Fotos reais enviadas pelo salão DIVAS.</p></div></section>
 <section class="booking" id="agendar"><div class="container booking-wrap"><div><span class="kicker">Seu horário começa aqui</span><h2 class="section-title">Vamos reservar um momento para você?</h2><p>Escolha o serviço e informe o melhor dia e horário. Seu pedido será preparado e enviado para o WhatsApp do DIVAS para confirmar a disponibilidade.</p><p>📍 Moradas do Bosque • Cachoeirinha/RS</p></div>
 <form class="booking-form" id="bookingForm">
 <div class="field"><label for="name">Seu nome</label><input id="name" required minlength="2" autocomplete="name" placeholder="Como podemos chamar você?"></div>
@@ -124,7 +161,12 @@ footer{background:#292333;color:#f6effc;padding:42px 0}.footer-row{display:flex;
 <div class="field"><label for="service">Serviço desejado</label><select id="service" required><option value="">Selecione um serviço</option><option value="progressiva">Progressiva</option><option value="corte">Corte</option><option value="coloracao-mechas">Coloração / Mechas</option><option value="hidratacao-tratamento">Hidratação / Tratamento capilar</option><option value="sobrancelhas">Design de sobrancelhas</option><option value="hidratacao-labial">Hidratação labial</option><option value="buco">Buço</option><option value="pe-e-mao">Pé e mão</option></select></div>
 <div class="field"><label for="date">Escolha o dia</label><input id="date" type="date" required></div>
 <div class="field"><label for="time">Horários realmente disponíveis</label><select id="time" required disabled><option value="">Primeiro escolha o serviço e o dia</option></select></div>
-<p class="availability-help">A agenda consulta os horários já reservados. Atendimento de segunda a sábado, das 9h às 19h30. Domingo fechado.</p>
+<div class="availability-help" role="note">
+  <strong>✦ AGENDA DIVAS ✦</strong>
+  <span>Consulte os horários realmente disponíveis antes de solicitar seu agendamento.</span>
+  <span class="availability-hours">SEGUNDA A SÁBADO • 9H ÀS 19H30</span>
+  <span class="availability-closed">DOMINGO: FECHADO</span>
+</div>
 <div class="field"><label for="notes">Observações (opcional)</label><textarea id="notes" rows="3" maxlength="500" placeholder="Conte algum detalhe importante..."></textarea></div>
 <button class="btn" id="bookingSubmit" type="submit">Solicitar agendamento ↗</button>
 <div class="booking-status" id="bookingStatus" role="status" aria-live="polite"></div>
@@ -188,8 +230,10 @@ const bookingStatus=document.getElementById('bookingStatus');
 const bookingSubmit=document.getElementById('bookingSubmit');
 const todayLocal=()=>{const d=new Date();return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;};
 dateInput.min=todayLocal();
+let availabilityRequest=0;
 function showBookingStatus(message,isError=false){bookingStatus.textContent=message;bookingStatus.style.background=isError?'#fde8e8':'#f4e8c9';bookingStatus.style.color=isError?'#8b2424':'#59451d';bookingStatus.classList.add('show');}
 async function loadAvailableTimes(){
+  const requestId=++availabilityRequest;
   timeInput.disabled=true;timeInput.innerHTML='<option value="">Consultando disponibilidade...</option>';
   bookingStatus.classList.remove('show');
   if(!serviceInput.value||!dateInput.value){timeInput.innerHTML='<option value="">Escolha o serviço e o dia</option>';return;}
@@ -198,12 +242,13 @@ async function loadAvailableTimes(){
   try{
     const response=await fetch(`${API_URL}/api/availability?date=${encodeURIComponent(dateInput.value)}&service=${encodeURIComponent(serviceInput.value)}`);
     const data=await response.json();
+    if(requestId!==availabilityRequest)return;
     if(!response.ok)throw new Error(data.error||'Não foi possível consultar a agenda.');
     timeInput.innerHTML='<option value="">Selecione um horário disponível</option>';
     (data.slots||[]).forEach(slot=>{const option=document.createElement('option');option.value=slot.start;option.textContent=`${slot.start} às ${slot.end}`;timeInput.appendChild(option);});
     if(!(data.slots||[]).length){timeInput.innerHTML='<option value="">Nenhum horário disponível neste dia</option>';showBookingStatus('Não há horários livres para esse serviço nessa data. Experimente outro dia.',true);}
     else timeInput.disabled=false;
-  }catch(error){timeInput.innerHTML='<option value="">Erro ao consultar horários</option>';showBookingStatus(error.message+' Tente novamente em instantes.',true);}
+  }catch(error){if(requestId!==availabilityRequest)return;timeInput.innerHTML='<option value="">Erro ao consultar horários</option>';showBookingStatus(error.message+' Confira sua conexão e tente novamente.',true);}
 }
 serviceInput.addEventListener('change',loadAvailableTimes);dateInput.addEventListener('change',loadAvailableTimes);
 bookingForm.addEventListener('submit',async e=>{
