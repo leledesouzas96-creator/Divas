@@ -1,0 +1,20 @@
+ATUALIZAÇÃO DO SITE DIVAS — SITE + PAINEL ADMINISTRATIVO
+
+Envie/substitua estes dois arquivos na raiz do repositório GitHub:
+- index.html
+- admin.html
+
+Mantenha também a pasta fotos na raiz, sem apagar as imagens existentes.
+
+O painel fica disponível em:
+https://divasbeleza.vezqoraai.workers.dev/admin.html
+
+No painel, sua irmã informa o ADMIN_TOKEN configurado no Cloudflare,
+pode filtrar agendamentos por dia, consultar pedidos, confirmar e cancelar.
+
+O painel usa a API:
+https://divas-api.vezqoraai.workers.dev
+
+Importante: o painel não deve ser publicado sem o ADMIN_TOKEN estar
+configurado como segredo no Worker da API. Não coloque esse token no
+código HTML nem compartilhe a senha publicamente.
