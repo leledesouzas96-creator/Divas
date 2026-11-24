@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#64258F">
-<meta name="description" content="DIVAS — salão de beleza em Cachoeirinha/RS. Cabelos, tratamentos, unhas, sobrancelhas e cuidados especiais. Agende pelo WhatsApp ou com nossa Recepcionista IA.">
+<meta name="description" content="DIVAS — salão de beleza em Cachoeirinha/RS. Cabelos, tratamentos, unhas, sobrancelhas e cuidados especiais. Agende 24h com nossa Recepcionista IA.">
 <title>DIVAS | Salão de Beleza</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,7 +22,7 @@
   --gold-light:#F7EBC5;
   --shadow:0 18px 55px rgba(77,35,111,.15);
 }
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#fff;color:var(--ink);font-family:"DM Sans",sans-serif}a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}.container{width:min(1160px,92%);margin:auto}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#fff;color:var(--ink);font-family:"DM Sans",sans-serif}a{color:inherit;text-decoration:none}button,input{font:inherit}.container{width:min(1160px,92%);margin:auto}
 header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(232,221,242,.85)}
 .nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:24px}
 .brand{display:flex;align-items:center;gap:11px;font-family:"Playfair Display",serif;font-size:27px;letter-spacing:2px;color:var(--deep);font-weight:700}
@@ -81,42 +81,35 @@ section{padding:82px 0}
 .result-card figcaption{padding:15px 17px}
 .result-card figcaption strong{display:block;font-family:"Playfair Display",serif;font-size:17px;color:var(--deep);margin-bottom:3px}
 .result-card figcaption span{font-size:13px;color:var(--muted);line-height:1.45;display:block}
-.gallery-cta{text-align:center;margin-top:32px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.gallery-cta{text-align:center;margin-top:32px}
 
+/* SECAO DE AGENDAMENTO 100% IA */
 .booking{background:linear-gradient(135deg,#64258F 0%,#8554B1 58%,#B99AE8 100%);color:white}
-.booking-wrap{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}
+.booking-wrap{display:grid;grid-template-columns:1fr 1.15fr;gap:48px;align-items:center}
 .booking .kicker{color:#F7EBC5}
 .booking .section-title{color:white}
 .booking p{color:#f4eafa;line-height:1.8}
-.booking-form{background:white;color:var(--ink);border-radius:24px;padding:30px;box-shadow:0 22px 60px #3e205b45}
-.field{display:grid;gap:7px;margin-bottom:15px}
-.field label{font-size:12px;font-weight:700;color:#655b70}
-.field input,.field select,.field textarea{width:100%;border:1px solid var(--line);border-radius:12px;padding:13px;background:#fff;color:var(--ink);outline:none}
-.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--lilac);box-shadow:0 0 0 3px #B99AE833}
-.booking-form .btn{width:100%;margin-top:5px}
-.booking-form .btn:disabled{opacity:.6;cursor:wait}
-.booking-status{display:none;margin:14px 0 0;padding:13px 15px;border-radius:12px;background:var(--gold-light);color:#59451d;font-size:13px;line-height:1.5}
-.booking-status.show{display:block}
-.smallprint{font-size:11px;color:#8a8291;line-height:1.5;margin-top:12px}
+.hours-badge{display:grid;gap:6px;margin-top:20px;padding:16px 18px;border-radius:16px;background:rgba(255,255,255,.12);border:1px solid rgba(212,175,55,.65)}
+.hours-badge strong{color:#F7EBC5;font-size:13px;letter-spacing:1.5px}
+.hours-badge span{font-size:14px;color:#fff}
 
-.availability-help{
-  display:grid;
-  gap:7px;
-  margin:2px 0 18px;
-  padding:16px 17px;
-  border:1px solid #D4AF37;
-  border-left:5px solid #D4AF37;
-  border-radius:15px;
-  background:linear-gradient(135deg,#FBF7FF,#F7EBC5 145%);
-  color:#64258F;
-  font-size:14px;
-  line-height:1.55;
-  box-shadow:0 8px 22px rgba(100,37,143,.10);
-  animation:agendaDestaque 3.8s ease-in-out infinite;
-}
-.availability-help strong{color:#64258F;font-size:15px;letter-spacing:2px}
-.availability-hours{color:#805A12;font-weight:800;letter-spacing:.5px}
-.availability-closed{color:#746D7D;font-size:12px;font-weight:700}
+.inline-chat-card{background:#fff;color:var(--ink);border-radius:26px;border:2px solid var(--gold);box-shadow:0 24px 65px rgba(34,16,52,.35);overflow:hidden;display:flex;flex-direction:column}
+.ai-head{background:linear-gradient(135deg,#64258F,#8b52ba);color:#fff;padding:16px 18px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.ai-head-info{display:flex;align-items:center;gap:12px}
+.ai-head-info img{width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid var(--gold)}
+.ai-head-info strong{display:block;font-size:15px}
+.ai-head-info span{display:block;font-size:12px;color:#F7EBC5}
+.ai-body{padding:16px;height:340px;overflow-y:auto;display:flex;flex-direction:column;gap:10px;background:#fbf8fe}
+.ai-msg{padding:12px 15px;border-radius:16px;font-size:14px;line-height:1.5;max-width:86%;white-space:pre-wrap}
+.ai-msg.bot{background:#fff;border:1px solid var(--line);color:var(--ink);align-self:flex-start;border-bottom-left-radius:4px;box-shadow:0 4px 12px rgba(77,35,111,.05)}
+.ai-msg.user{background:linear-gradient(135deg,#64258F,#8554B1);color:#fff;align-self:flex-end;border-bottom-right-radius:4px}
+.ai-chips{padding:10px 14px 6px;display:flex;gap:7px;flex-wrap:wrap;background:#fbf8fe;border-top:1px solid var(--line)}
+.ai-chip{border:1px solid var(--line);background:#fff;color:var(--deep);border-radius:999px;padding:6px 12px;font-size:12px;font-weight:700;cursor:pointer;transition:.2s}
+.ai-chip:hover{border-color:var(--gold);background:var(--pale)}
+.ai-form{display:flex;gap:8px;padding:12px 14px;background:#fff;border-top:1px solid var(--line)}
+.ai-form input{flex:1;border:1px solid var(--line);border-radius:999px;padding:12px 16px;font-size:14px;outline:none}
+.ai-form input:focus{border-color:var(--deep)}
+.ai-form button{border:0;border-radius:999px;padding:0 20px;background:linear-gradient(135deg,#B99AE8,#64258F);color:#fff;font-weight:700;font-size:14px;cursor:pointer}
 
 .location{background:#fcfaff}
 .location-grid{display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:center}
@@ -130,58 +123,37 @@ footer{background:#292333;color:#f6effc;padding:42px 0 98px}
 .footer-brand img{width:58px;height:58px;object-fit:cover;border-radius:50%;border:2px solid var(--gold)}
 .footer-note{font-size:12px;color:#c9bbd4}
 
-/* BOTOES FLUTUANTES + RECEPCIONISTA VIRTUAL IA */
+/* BOTOES FLUTUANTES */
 .floating-stack{position:fixed;right:18px;bottom:18px;z-index:40;display:flex;align-items:center;gap:10px}
 .ai-launcher{border:2px solid var(--gold);border-radius:999px;padding:13px 18px;background:linear-gradient(135deg,#64258F,#8d52bd);color:#fff;font-weight:700;font-size:13px;cursor:pointer;box-shadow:0 12px 30px rgba(100,37,143,.35);display:inline-flex;align-items:center;gap:8px}
 .ai-launcher .pulse-dot{width:8px;height:8px;border-radius:50%;background:#4ade80;box-shadow:0 0 8px #4ade80}
 .whats{width:50px;height:50px;border-radius:50%;display:grid;place-items:center;background:#25d366;color:white;font-size:23px;box-shadow:0 10px 26px rgba(0,0,0,.22)}
 
-.ai-drawer{position:fixed;right:18px;bottom:82px;z-index:50;width:min(380px,calc(100vw - 28px));background:#fff;border:1.5px solid var(--gold);border-radius:24px;box-shadow:0 24px 65px rgba(41,35,51,.28);display:none;flex-direction:column;overflow:hidden}
-.ai-drawer.open{display:flex}
-.ai-head{background:linear-gradient(135deg,#64258F,#8b52ba);color:#fff;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:10px}
-.ai-head-info{display:flex;align-items:center;gap:10px}
-.ai-head-info img{width:38px;height:38px;border-radius:50%;object-fit:cover;border:1.5px solid var(--gold)}
-.ai-head-info strong{display:block;font-size:14px}
-.ai-head-info span{display:block;font-size:11px;color:#F7EBC5}
-.ai-close{border:0;background:rgba(255,255,255,.16);color:#fff;width:30px;height:30px;border-radius:50%;cursor:pointer;font-size:16px}
-.ai-body{padding:14px;max-height:320px;overflow-y:auto;display:flex;flex-direction:column;gap:10px;background:#fbf8fe}
-.ai-msg{padding:11px 14px;border-radius:16px;font-size:13.5px;line-height:1.45;max-width:86%;white-space:pre-wrap}
-.ai-msg.bot{background:#fff;border:1px solid var(--line);color:var(--ink);align-self:flex-start;border-bottom-left-radius:4px}
-.ai-msg.user{background:linear-gradient(135deg,#64258F,#8554B1);color:#fff;align-self:flex-end;border-bottom-right-radius:4px}
-.ai-chips{padding:8px 12px 4px;display:flex;gap:6px;flex-wrap:wrap;background:#fbf8fe;border-top:1px solid var(--line)}
-.ai-chip{border:1px solid var(--line);background:#fff;color:var(--deep);border-radius:999px;padding:5px 11px;font-size:11.5px;font-weight:600;cursor:pointer}
-.ai-chip:hover{border-color:var(--gold);background:var(--pale)}
-.ai-form{display:flex;gap:8px;padding:10px 12px;background:#fff;border-top:1px solid var(--line)}
-.ai-form input{flex:1;border:1px solid var(--line);border-radius:999px;padding:10px 14px;font-size:13px;outline:none}
-.ai-form input:focus{border-color:var(--deep)}
-.ai-form button{border:0;border-radius:999px;padding:0 16px;background:linear-gradient(135deg,#B99AE8,#64258F);color:#fff;font-weight:700;font-size:13px;cursor:pointer}
-
 @keyframes divasFadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
-@keyframes agendaDestaque{0%,100%{box-shadow:0 8px 22px rgba(100,37,143,.10);transform:translateY(0)}50%{box-shadow:0 10px 28px rgba(212,175,55,.24);transform:translateY(-2px)}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}}
 @media(max-width:800px){.nav{height:68px}.menu{display:block}.navlinks{display:none;position:absolute;top:68px;left:0;right:0;background:white;padding:22px 5%;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start;gap:19px}.navlinks.open{display:flex}.nav-cta{display:none}.slider{min-height:590px;border-radius:22px}.slide{background-position:60% center}.slide:before{background:linear-gradient(90deg,rgba(34,22,46,.78),rgba(42,27,55,.48))}.slide-content{padding:48px 30px}.slide p{font-size:15px}.intro,.booking-wrap,.location-grid{grid-template-columns:1fr;gap:35px}.intro{padding-top:10px}.photo-stack{min-height:360px}.photo-main{height:320px}.photo-small{height:190px}.service-grid{grid-template-columns:1fr 1fr}.real-results-grid{grid-template-columns:1fr 1fr;gap:12px}.result-card img{height:230px}.footer-row{flex-direction:column;text-align:center}}
-@media(max-width:480px){.service-grid{grid-template-columns:1fr}.hero{padding-top:16px}.slider{min-height:560px}.slide h1,.slide h2{font-size:48px}.arrow{width:36px;height:36px}.prev{left:10px}.next{right:10px}section{padding:65px 0}.booking-form{padding:22px}.real-results-grid{grid-template-columns:1fr}.result-card img{height:290px}}
+@media(max-width:480px){.service-grid{grid-template-columns:1fr}.hero{padding-top:16px}.slider{min-height:560px}.slide h1,.slide h2{font-size:48px}.arrow{width:36px;height:36px}.prev{left:10px}.next{right:10px}section{padding:65px 0}.real-results-grid{grid-template-columns:1fr}.result-card img{height:290px}}
 </style>
 </head>
 <body>
 <header><div class="container nav">
 <a class="brand" href="#inicio"><img src="fotos/logo-divas.jpg" alt="Mascote e identidade visual do DIVAS"><span>DIVAS<small>SALÃO DE BELEZA</small></span></a>
 <button class="menu" id="menuBtn" aria-label="Abrir menu">☰</button>
-<nav class="navlinks" id="navlinks"><a href="#inicio">Início</a><a href="#sobre">O salão</a><a href="#servicos">Serviços</a><a href="#resultados">Resultados</a><a href="#agendar">Agendamento</a><a href="#local">Localização</a></nav>
-<button type="button" class="nav-cta" onclick="abrirChatIA()">✦ Agendar com IA</button>
+<nav class="navlinks" id="navlinks"><a href="#inicio">Início</a><a href="#sobre">O salão</a><a href="#servicos">Serviços</a><a href="#resultados">Resultados</a><a href="#agendar">Agendamento IA</a><a href="#local">Localização</a></nav>
+<a class="nav-cta" href="#agendar">✦ Agendar com IA</a>
 </div></header>
 
 <main>
 <div class="hero" id="inicio"><div class="container">
 <div class="slider" role="region" aria-roledescription="carrossel" aria-label="Apresentação do salão DIVAS" tabindex="0">
-<div class="slide active" style="background-image:url('fotos/cabelo-01.jpg')"><div class="slide-content"><span class="eyebrow">Beleza • cuidado • autoestima</span><h1>Seu momento.<br>Sua beleza.</h1><p>Um espaço para cuidar de você, renovar a autoestima e realçar aquilo que faz você ser única.</p><button type="button" class="btn" onclick="abrirChatIA()">Agendar agora com IA <span>✦</span></button></div></div>
+<div class="slide active" style="background-image:url('fotos/cabelo-01.jpg')"><div class="slide-content"><span class="eyebrow">Beleza • cuidado • autoestima</span><h1>Seu momento.<br>Sua beleza.</h1><p>Um espaço para cuidar de você, renovar a autoestima e realçar aquilo que faz você ser única.</p><a class="btn" href="#agendar">Agendar agora com IA <span>✦</span></a></div></div>
 <div class="slide" style="background-image:url('fotos/cabelo-02.jpg')"><div class="slide-content"><span class="eyebrow">Cabelos com personalidade</span><h2>Transforme o visual.<br>Realce sua essência.</h2><p>Alisamentos, coloração, mechas, cortes e tratamentos para diferentes tipos de cabelo.</p><a class="btn" href="#servicos">Conheça os serviços ↗</a></div></div>
 <div class="slide" style="background-image:url('fotos/unhas-01.jpg')"><div class="slide-content"><span class="eyebrow">Detalhes que fazem diferença</span><h2>Um cuidado<br>só seu.</h2><p>Beleza e bem-estar em cada detalhe, com atendimento pensado para você.</p><a class="btn" href="#agendar">Quero agendar ↗</a></div></div>
 <button class="arrow prev" aria-label="Slide anterior">‹</button><button class="arrow next" aria-label="Próximo slide">›</button><div class="dots"><button class="dot active" aria-label="Ir para slide 1"></button><button class="dot" aria-label="Ir para slide 2"></button><button class="dot" aria-label="Ir para slide 3"></button></div>
 </div></div></div>
 
 <div class="container intro" id="sobre"><div class="photo-stack"><img class="photo-main" src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=900&q=85" alt="Ambiente de salão de beleza"><img class="photo-small" src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=700&q=85" alt="Cuidado com os cabelos"></div>
-<div class="intro-copy"><span class="kicker">Bem-vinda ao DIVAS</span><h2 class="section-title">Beleza é se sentir bem na própria pele.</h2><p>Um espaço dedicado aos cuidados com seus cabelos e à sua beleza. Aqui você encontra diferentes serviços para renovar o visual e reservar um tempo especial para si.</p><p>Estamos em Moradas do Bosque, Cachoeirinha — RS. Será um prazer receber você!</p><button type="button" class="btn" onclick="abrirChatIA()">Agendar com nossa Recepcionista IA ✦</button></div></div>
+<div class="intro-copy"><span class="kicker">Bem-vinda ao DIVAS</span><h2 class="section-title">Beleza é se sentir bem na própria pele.</h2><p>Um espaço dedicado aos cuidados com seus cabelos e à sua beleza. Aqui você encontra diferentes serviços para renovar o visual e reservar um tempo especial para si.</p><p>Estamos em Moradas do Bosque, Cachoeirinha — RS. Será um prazer receber você!</p><a class="btn" href="#agendar">Agendar com nossa Recepcionista IA ✦</a></div></div>
 
 <section class="services" id="servicos"><div class="container"><div class="section-head"><span class="kicker">Nosso cuidado com você</span><h2 class="section-title">Serviços para realçar sua beleza</h2><p class="section-lead">Escolha o cuidado que combina com seu momento. Consulte disponibilidade em segundos com nossa assistente.</p></div>
 <div class="service-grid">
@@ -190,10 +162,10 @@ footer{background:#292333;color:#f6effc;padding:42px 0 98px}
 <article class="service-card"><div class="service-icon">♡</div><h3>Tratamentos capilares</h3><ul><li>Tratamentos capilares</li><li>Hidratação</li><li>Cuidados para cachos e cabelos afros</li></ul></article>
 <article class="service-card"><div class="service-icon">✿</div><h3>Beleza & cuidados</h3><ul><li>Design de sobrancelhas</li><li>Hidratação labial</li><li>Buço</li><li>Pé e mão</li></ul></article>
 <article class="service-card"><div class="service-icon">☼</div><h3>Espaço Kids</h3><ul><li>Corte infantil</li><li>Tratamentos infantis</li></ul></article>
-<article class="service-card"><div class="service-icon">✧</div><h3>Atendimento 24h</h3><ul><li>Recepcionista Virtual IA</li><li>Consulta de horários em tempo real</li><li>Confirmação pelo WhatsApp</li></ul></article>
+<article class="service-card"><div class="service-icon">✧</div><h3>Atendimento 24h</h3><ul><li>Recepcionista Virtual IA</li><li>Consulta de horários em tempo real</li><li>Confirmação automática</li></ul></article>
 </div></div></section>
 
-<!-- GALERIA DE RESULTADOS REAIS (LEGENDAS CORRIGIDAS) -->
+<!-- GALERIA DE RESULTADOS REAIS -->
 <section class="gallery-section" id="resultados">
   <div class="container">
     <div class="section-head">
@@ -202,7 +174,6 @@ footer{background:#292333;color:#f6effc;padding:42px 0 98px}
       <p class="section-lead">Confira atendimentos reais realizados no DIVAS Salão de Beleza em cabelos, manicure e pedicure.</p>
     </div>
     <div class="real-results-grid">
-      <!-- WA0047: Cabelo liso 1 -->
       <figure class="result-card">
         <img src="IMG-20261123-WA0047.jpg" alt="Alisamento e Brilho Espelhado - DIVAS Salão de Beleza" loading="lazy">
         <figcaption>
@@ -210,7 +181,6 @@ footer{background:#292333;color:#f6effc;padding:42px 0 98px}
           <span>Fios alinhados, sedosos e sem frizz</span>
         </figcaption>
       </figure>
-      <!-- WA0050: Cabelo liso 2 -->
       <figure class="result-card">
         <img src="IMG-20261123-WA0050.jpg" alt="Selagem e Nutrição Capilar - DIVAS Salão de Beleza" loading="lazy">
         <figcaption>
@@ -218,7 +188,6 @@ footer{background:#292333;color:#f6effc;padding:42px 0 98px}
           <span>Movimento natural e maciez duradoura</span>
         </figcaption>
       </figure>
-      <!-- WA0049: Unhas vermelhas -->
       <figure class="result-card">
         <img src="IMG-20261123-WA0049.jpg" alt="Manicure e Nail Art - DIVAS Salão de Beleza" loading="lazy">
         <figcaption>
@@ -226,7 +195,6 @@ footer{background:#292333;color:#f6effc;padding:42px 0 98px}
           <span>Esmaltação vermelha com arte e pedrarias</span>
         </figcaption>
       </figure>
-      <!-- WA0048: Unhas nude -->
       <figure class="result-card">
         <img src="IMG-20261123-WA0048.jpg" alt="Unhas Decoradas Nude - DIVAS Salão de Beleza" loading="lazy">
         <figcaption>
@@ -234,7 +202,6 @@ footer{background:#292333;color:#f6effc;padding:42px 0 98px}
           <span>Acabamento elegante com aplicação de joias</span>
         </figcaption>
       </figure>
-      <!-- WA0046: Pedicure -->
       <figure class="result-card">
         <img src="IMG-20261123-WA0046.jpg" alt="Pedicure Francesinha - DIVAS Salão de Beleza" loading="lazy">
         <figcaption>
@@ -244,65 +211,60 @@ footer{background:#292333;color:#f6effc;padding:42px 0 98px}
       </figure>
     </div>
     <div class="gallery-cta">
-      <button type="button" class="btn" onclick="abrirChatIA()">Agendar pelo Chat IA ✦</button>
-      <a class="btn" style="background:#fff;color:var(--deep);border:1px solid var(--line)" href="#agendar">Usar formulário ↗</a>
+      <a class="btn" href="#agendar">Agendar meu horário agora ✦</a>
     </div>
   </div>
 </section>
 
-<section class="booking" id="agendar"><div class="container booking-wrap"><div><span class="kicker">Seu horário começa aqui</span><h2 class="section-title">Vamos reservar um momento para você?</h2><p>Prefere conversar? Clique no botão <strong>Agendar com IA</strong> no canto da tela e nossa recepcionista marca tudo para você em segundos. Ou preencha o formulário ao lado.</p><p>📍 Moradas do Bosque • Cachoeirinha/RS</p></div>
-<form class="booking-form" id="bookingForm">
-<div class="field"><label for="name">Seu nome</label><input id="name" required minlength="2" autocomplete="name" placeholder="Como podemos chamar você?"></div>
-<div class="field"><label for="phone">Seu telefone / WhatsApp</label><input id="phone" required minlength="8" inputmode="tel" autocomplete="tel" placeholder="(51) 99999-9999"></div>
-<div class="field"><label for="service">Serviço desejado</label><select id="service" required><option value="">Selecione um serviço</option><option value="progressiva">Progressiva</option><option value="corte">Corte</option><option value="coloracao-mechas">Coloração / Mechas</option><option value="hidratacao-tratamento">Hidratação / Tratamento capilar</option><option value="sobrancelhas">Design de sobrancelhas</option><option value="hidratacao-labial">Hidratação labial</option><option value="buco">Buço</option><option value="pe-e-mao">Pé e mão</option></select></div>
-<div class="field"><label for="date">Escolha o dia</label><input id="date" type="date" required></div>
-<div class="field"><label for="time">Horários realmente disponíveis</label><select id="time" required disabled><option value="">Primeiro escolha o serviço e o dia</option></select></div>
-<div class="availability-help" role="note">
-  <strong>✦ AGENDA DIVAS ✦</strong>
-  <span>Consulte os horários realmente disponíveis antes de solicitar seu agendamento.</span>
-  <span class="availability-hours">SEGUNDA A SÁBADO • 9H ÀS 19H30</span>
-  <span class="availability-closed">DOMINGO: FECHADO</span>
-</div>
-<div class="field"><label for="notes">Observações (opcional)</label><textarea id="notes" rows="3" maxlength="500" placeholder="Conte algum detalhe importante..."></textarea></div>
-<button class="btn" id="bookingSubmit" type="submit">Solicitar agendamento ↗</button>
-<div class="booking-status" id="bookingStatus" role="status" aria-live="polite"></div>
-<p class="smallprint">Seu pedido fica pendente até o salão confirmar. O horário só será considerado confirmado depois da confirmação do DIVAS.</p></form></div></section>
+<!-- AGENDAMENTO 100% AUTOMATIZADO COM IA -->
+<section class="booking" id="agendar">
+  <div class="container booking-wrap">
+    <div>
+      <span class="kicker">Atendimento inteligente 24h</span>
+      <h2 class="section-title">Agende seu horário direto com nossa IA.</h2>
+      <p>Sem formulários complicados! Diga qual serviço você quer fazer e o melhor dia — nossa recepcionista virtual verifica os horários livres na hora e já deixa tudo reservado para você.</p>
+      <div class="hours-badge">
+        <strong>✦ HORÁRIO DE FUNCIONAMENTO ✦</strong>
+        <span>Segunda a Sábado • 9h às 19h30</span>
+        <span>Domingo: Fechado • Moradas do Bosque, Cachoeirinha/RS</span>
+      </div>
+    </div>
+
+    <div class="inline-chat-card" aria-label="Recepcionista Virtual DIVAS IA">
+      <div class="ai-head">
+        <div class="ai-head-info">
+          <img src="fotos/logo-divas.jpg" alt="Recepcionista DIVAS">
+          <div>
+            <strong>Recepcionista DIVAS IA</strong>
+            <span>● Online • Consulta e reserva automática</span>
+          </div>
+        </div>
+      </div>
+      <div class="ai-body" id="aiMessages">
+        <div class="ai-msg bot">Olá, diva! ✨ Sou a assistente virtual do DIVAS Salão de Beleza. Qual serviço você gostaria de agendar e para qual dia?</div>
+      </div>
+      <div class="ai-chips">
+        <button type="button" class="ai-chip" onclick="enviarAtalhoIA('Quero agendar Progressiva')">✨ Progressiva</button>
+        <button type="button" class="ai-chip" onclick="enviarAtalhoIA('Quero agendar Pé e mão')">💅 Pé e mão</button>
+        <button type="button" class="ai-chip" onclick="enviarAtalhoIA('Quero agendar Corte')">✂️ Corte</button>
+        <button type="button" class="ai-chip" onclick="enviarAtalhoIA('Quais horários vocês atendem?')">🕒 Horários</button>
+      </div>
+      <form class="ai-form" onsubmit="enviarChatIA(event)">
+        <input type="text" id="aiInput" placeholder="Ex: Quero marcar pé e mão para sexta..." autocomplete="off">
+        <button type="submit" id="aiSendBtn">Enviar</button>
+      </form>
+    </div>
+  </div>
+</section>
 
 <section class="location" id="local"><div class="container"><div class="section-head"><span class="kicker">Venha nos conhecer</span><h2 class="section-title">Estamos pertinho de você</h2><p class="section-lead">Esperamos sua visita no DIVAS.</p></div><div class="location-grid"><div class="address"><h3 class="section-title" style="font-size:29px">DIVAS — Salão de Beleza</h3><p>Rua Otto Espíndola, 470<br>Moradas do Bosque<br>Cachoeirinha — RS<br>CEP 94960-842</p><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Otto+Espindola+470+Moradas+do+Bosque+Cachoeirinha+RS+94960-842">Abrir rota no Google Maps ↗</a></div><iframe class="map" loading="lazy" title="Mapa de localização do DIVAS" src="https://www.google.com/maps?q=Otto%20Espindola%20470%20Moradas%20do%20Bosque%20Cachoeirinha%20RS%2094960-842&output=embed"></iframe></div></div></section>
 </main>
 
 <footer><div class="container footer-row"><div><div class="footer-brand"><img src="fotos/logo-divas.jpg" alt="Mascote do DIVAS">DIVAS</div><div class="footer-note">SALÃO DE BELEZA • CACHOEIRINHA/RS</div></div><div class="footer-note">Sua beleza, seu momento. ♡<br>Agendamentos pelo WhatsApp: (51) 99174-9541</div></div></footer>
 
-<!-- JANELA DA RECEPCIONISTA VIRTUAL IA -->
-<div class="ai-drawer" id="aiDrawer" aria-label="Chat de agendamento automático DIVAS">
-  <div class="ai-head">
-    <div class="ai-head-info">
-      <img src="fotos/logo-divas.jpg" alt="Recepcionista DIVAS">
-      <div>
-        <strong>Recepcionista DIVAS IA</strong>
-        <span>● Online • Agenda automática 24h</span>
-      </div>
-    </div>
-    <button type="button" class="ai-close" onclick="fecharChatIA()" aria-label="Fechar chat">✕</button>
-  </div>
-  <div class="ai-body" id="aiMessages">
-    <div class="ai-msg bot">Olá, diva! ✨ Sou a assistente virtual do DIVAS Salão de Beleza. Qual serviço você gostaria de agendar e para qual dia?</div>
-  </div>
-  <div class="ai-chips">
-    <button type="button" class="ai-chip" onclick="enviarAtalhoIA('Quero agendar Progressiva')">✨ Progressiva</button>
-    <button type="button" class="ai-chip" onclick="enviarAtalhoIA('Quero agendar Pé e mão')">💅 Pé e mão</button>
-    <button type="button" class="ai-chip" onclick="enviarAtalhoIA('Quero agendar Corte')">✂️ Corte</button>
-    <button type="button" class="ai-chip" onclick="enviarAtalhoIA('Quais horários vocês atendem?')">🕒 Horários</button>
-  </div>
-  <form class="ai-form" onsubmit="enviarChatIA(event)">
-    <input type="text" id="aiInput" placeholder="Digite aqui para agendar..." autocomplete="off">
-    <button type="submit" id="aiSendBtn">Enviar</button>
-  </form>
-</div>
-
 <!-- BOTOES FLUTUANTES -->
 <div class="floating-stack">
-  <button type="button" class="ai-launcher" onclick="alternarChatIA()"><span class="pulse-dot"></span> Agendar com IA ✦</button>
+  <a class="ai-launcher" href="#agendar" onclick="setTimeout(()=>document.getElementById('aiInput').focus(),250)"><span class="pulse-dot"></span> Agendar com IA ✦</a>
   <a class="whats" href="https://wa.me/5551991749541?text=Ol%C3%A1%2C%20DIVAS!%20Gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20agendamento." target="_blank" rel="noopener" aria-label="Falar com o DIVAS pelo WhatsApp">✆</a>
 </div>
 
@@ -355,69 +317,13 @@ const menuBtn=document.getElementById('menuBtn'),nav=document.getElementById('na
 menuBtn.addEventListener('click',()=>nav.classList.toggle('open'));
 nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
 
-// Agendamento manual conectado à API DIVAS
-const API_URL='https://divas-api.vezqoraai.workers.dev';
-const bookingForm=document.getElementById('bookingForm');
-const serviceInput=document.getElementById('service');
-const dateInput=document.getElementById('date');
-const timeInput=document.getElementById('time');
-const bookingStatus=document.getElementById('bookingStatus');
-const bookingSubmit=document.getElementById('bookingSubmit');
-const todayLocal=()=>{const d=new Date();return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;};
-dateInput.min=todayLocal();
-let availabilityRequest=0;
-function showBookingStatus(message,isError=false){bookingStatus.textContent=message;bookingStatus.style.background=isError?'#fde8e8':'#f4e8c9';bookingStatus.style.color=isError?'#8b2424':'#59451d';bookingStatus.classList.add('show');}
-async function loadAvailableTimes(){
-  const requestId=++availabilityRequest;
-  timeInput.disabled=true;timeInput.innerHTML='<option value="">Consultando disponibilidade...</option>';
-  bookingStatus.classList.remove('show');
-  if(!serviceInput.value||!dateInput.value){timeInput.innerHTML='<option value="">Escolha o serviço e o dia</option>';return;}
-  const chosen=new Date(dateInput.value+'T12:00:00');
-  if(chosen.getDay()===0){timeInput.innerHTML='<option value="">Fechado aos domingos</option>';showBookingStatus('O DIVAS não atende aos domingos. Escolha outro dia.',true);return;}
-  try{
-    const response=await fetch(`${API_URL}/api/availability?date=${encodeURIComponent(dateInput.value)}&service=${encodeURIComponent(serviceInput.value)}`);
-    const data=await response.json();
-    if(requestId!==availabilityRequest)return;
-    if(!response.ok)throw new Error(data.error||'Não foi possível consultar a agenda.');
-    timeInput.innerHTML='<option value="">Selecione um horário disponível</option>';
-    (data.slots||[]).forEach(slot=>{const option=document.createElement('option');option.value=slot.start;option.textContent=`${slot.start} às ${slot.end}`;timeInput.appendChild(option);});
-    if(!(data.slots||[]).length){timeInput.innerHTML='<option value="">Nenhum horário disponível neste dia</option>';showBookingStatus('Não há horários livres para esse serviço nessa data. Experimente outro dia.',true);}
-    else timeInput.disabled=false;
-  }catch(error){if(requestId!==availabilityRequest)return;timeInput.innerHTML='<option value="">Erro ao consultar horários</option>';showBookingStatus(error.message+' Confira sua conexão e tente novamente.',true);}
-}
-serviceInput.addEventListener('change',loadAvailableTimes);dateInput.addEventListener('change',loadAvailableTimes);
-bookingForm.addEventListener('submit',async e=>{
-  e.preventDefault();bookingSubmit.disabled=true;bookingSubmit.textContent='Registrando pedido...';bookingStatus.classList.remove('show');
-  const payload={name:document.getElementById('name').value.trim(),phone:document.getElementById('phone').value.trim(),serviceId:serviceInput.value,date:dateInput.value,startTime:timeInput.value,notes:document.getElementById('notes').value.trim()};
-  try{
-    const response=await fetch(`${API_URL}/api/bookings`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
-    const data=await response.json();
-    if(!response.ok)throw new Error(data.error||'Não foi possível registrar o pedido.');
-    showBookingStatus(`Pedido nº ${data.bookingId} registrado com sucesso! Seu horário está PENDENTE de confirmação pelo DIVAS. Aguarde o contato do salão pelo WhatsApp.`,false);
-    bookingForm.reset();dateInput.min=todayLocal();timeInput.disabled=true;timeInput.innerHTML='<option value="">Primeiro escolha o serviço e o dia</option>';
-  }catch(error){showBookingStatus(error.message,true);if(String(error.message).toLowerCase().includes('reservado'))loadAvailableTimes();}
-  finally{bookingSubmit.disabled=false;bookingSubmit.textContent='Solicitar agendamento ↗';}
-});
-
 // RECEPCIONISTA VIRTUAL IA (DIVAS-IA WORKER)
 const IA_WORKER_URL='https://divas-ia.vezqoraai.workers.dev';
-const aiDrawer=document.getElementById('aiDrawer');
 const aiMessages=document.getElementById('aiMessages');
 const aiInput=document.getElementById('aiInput');
 let aiHistory=[];
 let aiBusy=false;
 
-function abrirChatIA(){
-  aiDrawer.classList.add('open');
-  setTimeout(()=>aiInput.focus(),150);
-}
-function fecharChatIA(){
-  aiDrawer.classList.remove('open');
-}
-function alternarChatIA(){
-  aiDrawer.classList.toggle('open');
-  if(aiDrawer.classList.contains('open'))setTimeout(()=>aiInput.focus(),150);
-}
 function addAIMsg(text,role){
   const div=document.createElement('div');
   div.className=`ai-msg ${role}`;
@@ -426,7 +332,6 @@ function addAIMsg(text,role){
   aiMessages.scrollTop=aiMessages.scrollHeight;
 }
 function enviarAtalhoIA(text){
-  abrirChatIA();
   aiInput.value=text;
   enviarChatIA();
 }
