@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#64258F">
-<meta name="description" content="DIVAS — salão de beleza em Cachoeirinha/RS. Cabelos, tratamentos, unhas, sobrancelhas e cuidados especiais. Agende 24h com nossa Recepcionista IA.">
+<meta name="description" content="DIVAS — salão de beleza em Cachoeirinha/RS. Cabelos, tratamentos, unhas, sobrancelhas, espaço kids e cuidados especiais. Agende 24h com nossa Recepcionista IA.">
 <title>DIVAS | Salão de Beleza</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -99,10 +99,13 @@ section{padding:82px 0}
 .ai-head-info img{width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid var(--gold)}
 .ai-head-info strong{display:block;font-size:15px}
 .ai-head-info span{display:block;font-size:12px;color:#F7EBC5}
-.ai-body{padding:16px;height:340px;overflow-y:auto;display:flex;flex-direction:column;gap:10px;background:#fbf8fe}
-.ai-msg{padding:12px 15px;border-radius:16px;font-size:14px;line-height:1.5;max-width:86%;white-space:pre-wrap}
+.ai-body{padding:16px;height:350px;overflow-y:auto;display:flex;flex-direction:column;gap:10px;background:#fbf8fe}
+.ai-msg{padding:12px 15px;border-radius:16px;font-size:14px;line-height:1.5;max-width:88%;white-space:pre-wrap;word-break:break-word}
 .ai-msg.bot{background:#fff;border:1px solid var(--line);color:var(--ink);align-self:flex-start;border-bottom-left-radius:4px;box-shadow:0 4px 12px rgba(77,35,111,.05)}
+.ai-msg.bot strong{color:var(--deep)}
+.ai-msg.bot a{color:var(--deep);font-weight:700;text-decoration:underline}
 .ai-msg.user{background:linear-gradient(135deg,#64258F,#8554B1);color:#fff;align-self:flex-end;border-bottom-right-radius:4px}
+.ai-wa-voucher{margin-top:10px;display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;background:#25d366;color:#fff !important;text-decoration:none !important;font-weight:700;font-size:13px;box-shadow:0 6px 18px rgba(37,211,102,.3)}
 .ai-chips{padding:10px 14px 6px;display:flex;gap:7px;flex-wrap:wrap;background:#fbf8fe;border-top:1px solid var(--line)}
 .ai-chip{border:1px solid var(--line);background:#fff;color:var(--deep);border-radius:999px;padding:6px 12px;font-size:12px;font-weight:700;cursor:pointer;transition:.2s}
 .ai-chip:hover{border-color:var(--gold);background:var(--pale)}
@@ -162,7 +165,7 @@ footer{background:#292333;color:#f6effc;padding:42px 0 98px}
 <article class="service-card"><div class="service-icon">♡</div><h3>Tratamentos capilares</h3><ul><li>Tratamentos capilares</li><li>Hidratação</li><li>Cuidados para cachos e cabelos afros</li></ul></article>
 <article class="service-card"><div class="service-icon">✿</div><h3>Beleza & cuidados</h3><ul><li>Design de sobrancelhas</li><li>Hidratação labial</li><li>Buço</li><li>Pé e mão</li></ul></article>
 <article class="service-card"><div class="service-icon">☼</div><h3>Espaço Kids</h3><ul><li>Corte infantil</li><li>Tratamentos infantis</li></ul></article>
-<article class="service-card"><div class="service-icon">✧</div><h3>Atendimento 24h</h3><ul><li>Recepcionista Virtual IA</li><li>Consulta de horários em tempo real</li><li>Confirmação automática</li></ul></article>
+<article class="service-card"><div class="service-icon">✧</div><h3>Atendimento 24h</h3><ul><li>Recepcionista Virtual IA</li><li>Consulta de horários em tempo real</li><li>Confirmação com localização no WhatsApp</li></ul></article>
 </div></div></section>
 
 <!-- GALERIA DE RESULTADOS REAIS -->
@@ -222,11 +225,11 @@ footer{background:#292333;color:#f6effc;padding:42px 0 98px}
     <div>
       <span class="kicker">Atendimento inteligente 24h</span>
       <h2 class="section-title">Agende seu horário direto com nossa IA.</h2>
-      <p>Sem formulários complicados! Diga qual serviço você quer fazer e o melhor dia — nossa recepcionista virtual verifica os horários livres na hora e já deixa tudo reservado para você.</p>
+      <p>Sem formulários complicados! Diga qual serviço você quer fazer e o melhor dia — nossa recepcionista virtual mostra apenas os horários realmente livres, reserva na hora e entrega seu comprovante com a localização do salão direto no WhatsApp.</p>
       <div class="hours-badge">
         <strong>✦ HORÁRIO DE FUNCIONAMENTO ✦</strong>
         <span>Segunda a Sábado • 9h às 19h30</span>
-        <span>Domingo: Fechado • Moradas do Bosque, Cachoeirinha/RS</span>
+        <span>Domingo: Fechado • Rua Otto Espíndola, 470 - Moradas do Bosque, Cachoeirinha/RS</span>
       </div>
     </div>
 
@@ -247,10 +250,12 @@ footer{background:#292333;color:#f6effc;padding:42px 0 98px}
         <button type="button" class="ai-chip" onclick="enviarAtalhoIA('Quero agendar Progressiva')">✨ Progressiva</button>
         <button type="button" class="ai-chip" onclick="enviarAtalhoIA('Quero agendar Pé e mão')">💅 Pé e mão</button>
         <button type="button" class="ai-chip" onclick="enviarAtalhoIA('Quero agendar Corte')">✂️ Corte</button>
+        <button type="button" class="ai-chip" onclick="enviarAtalhoIA('Quero agendar Design de sobrancelhas')">✿ Sobrancelhas</button>
+        <button type="button" class="ai-chip" onclick="enviarAtalhoIA('Quero agendar Corte infantil')">☼ Cabelo infantil</button>
         <button type="button" class="ai-chip" onclick="enviarAtalhoIA('Quais horários vocês atendem?')">🕒 Horários</button>
       </div>
       <form class="ai-form" onsubmit="enviarChatIA(event)">
-        <input type="text" id="aiInput" placeholder="Ex: Quero marcar pé e mão para sexta..." autocomplete="off">
+        <input type="text" id="aiInput" placeholder="Ex: Quero marcar sobrancelhas para sexta..." autocomplete="off">
         <button type="submit" id="aiSendBtn">Enviar</button>
       </form>
     </div>
@@ -324,17 +329,58 @@ const aiInput=document.getElementById('aiInput');
 let aiHistory=[];
 let aiBusy=false;
 
-function addAIMsg(text,role){
+function formatarTextoIA(text){
+  return String(text)
+    .replace(/&/g,'&amp;')
+    .replace(/</g,'&lt;')
+    .replace(/>/g,'&gt;')
+    .replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>')
+    .replace(/(https?:\/\/[^\s<]+)/g,'<a href="$1" target="_blank" rel="noopener">Abrir no Google Maps ↗</a>');
+}
+
+function criarLinkWhatsAppCliente(booking){
+  const foneLimpo=String(booking.whatsappCliente||'').replace(/\D/g,'');
+  const foneComDDI=foneLimpo.startsWith('55')?foneLimpo:`55${foneLimpo}`;
+  const dataBR=String(booking.data||'').split('-').reverse().join('/');
+  const msg=
+    `✨ *COMPROVANTE DE AGENDAMENTO — DIVAS SALÃO DE BELEZA* ✨\n\n`+
+    `Olá, *${booking.cliente}*! Seu horário está reservado:\n`+
+    `• *Pedido:* #${booking.bookingId}\n`+
+    `• *Serviço:* ${booking.servico}\n`+
+    `• *Data:* ${dataBR}\n`+
+    `• *Horário:* ${booking.horario}\n\n`+
+    `📍 *Endereço:* Rua Otto Espíndola, 470 - Moradas do Bosque, Cachoeirinha/RS\n`+
+    `🗺️ *Localização no Google Maps:* ${booking.localizacao}`;
+  return `https://wa.me/${foneComDDI}?text=${encodeURIComponent(msg)}`;
+}
+
+function addAIMsg(text,role,booking=null){
   const div=document.createElement('div');
   div.className=`ai-msg ${role}`;
-  div.textContent=text;
+  if(role==='bot'){
+    div.innerHTML=formatarTextoIA(text);
+    if(booking && booking.sucesso){
+      const waBtn=document.createElement('a');
+      waBtn.className='ai-wa-voucher';
+      waBtn.href=criarLinkWhatsAppCliente(booking);
+      waBtn.target='_blank';
+      waBtn.rel='noopener';
+      waBtn.textContent='📲 Salvar comprovante + localização no meu WhatsApp';
+      div.appendChild(document.createElement('br'));
+      div.appendChild(waBtn);
+    }
+  } else {
+    div.textContent=text;
+  }
   aiMessages.appendChild(div);
   aiMessages.scrollTop=aiMessages.scrollHeight;
 }
+
 function enviarAtalhoIA(text){
   aiInput.value=text;
   enviarChatIA();
 }
+
 async function enviarChatIA(e){
   if(e)e.preventDefault();
   const text=aiInput.value.trim();
@@ -359,7 +405,7 @@ async function enviarChatIA(e){
     const data=await res.json();
     typing.remove();
     const reply=data.reply||data.error||'Desculpe, tive uma instabilidade. Pode repetir por favor?';
-    addAIMsg(reply,'bot');
+    addAIMsg(reply,'bot',data.booking||null);
     aiHistory.push({role:'assistant',content:reply});
   }catch(err){
     typing.remove();
