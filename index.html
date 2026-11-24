@@ -4,41 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#64258F">
-<meta name="description" content="DIVAS — salão de beleza em Cachoeirinha/RS. Cabelos, tratamentos, unhas, sobrancelhas e cuidados especiais. Agende pelo WhatsApp.">
+<meta name="description" content="DIVAS — salão de beleza em Cachoeirinha/RS. Cabelos, tratamentos, unhas, sobrancelhas e cuidados especiais. Agende pelo WhatsApp ou com nossa Recepcionista IA.">
 <title>DIVAS | Salão de Beleza</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--lilac:#a77bd1;--deep:#70449c;--ink:#292333;--muted:#746d7d;--pale:#f5effb;--white:#fff;--line:#eadff3;--gold:#c7a35b;--gold-light:#f4e8c9;--shadow:0 18px 55px rgba(75,43,102,.13)}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#fff;color:var(--ink);font-family:"DM Sans",sans-serif}a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}.container{width:min(1160px,92%);margin:auto}
-header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.9);backdrop-filter:blur(16px);border-bottom:1px solid rgba(234,223,243,.8)}
-.nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:11px;font-family:"Playfair Display",serif;font-size:27px;letter-spacing:2px;color:var(--deep);font-weight:700}.brand img{width:54px;height:54px;object-fit:cover;border-radius:50%;border:2px solid #eadff3;box-shadow:0 4px 14px #70449c22}.brand small{display:block;font:600 9px "DM Sans";letter-spacing:3px;text-align:left;color:#9b83ad;margin-top:1px}.navlinks{display:flex;align-items:center;gap:26px;font-size:13px;font-weight:700;color:#51495a}.navlinks a:hover{color:var(--deep)}.nav-cta,.btn{border:0;border-radius:999px;padding:13px 21px;background:linear-gradient(135deg,#b68cdb,#8055ae);color:white;font-weight:700;box-shadow:0 10px 24px rgba(128,85,174,.22);cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px}.menu{display:none;border:0;background:var(--pale);border-radius:12px;padding:10px;color:var(--deep);font-size:21px}
-.hero{padding:30px 0 70px;background:radial-gradient(circle at 85% 15%,#f1e5fb 0,transparent 34%),linear-gradient(180deg,#fff,#fbf8fe)}
-.slider{position:relative;min-height:570px;border-radius:30px;overflow:hidden;background:#60447a;box-shadow:var(--shadow)}
-.slide{position:absolute;inset:0;z-index:0;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .85s ease,visibility .85s ease;display:flex;align-items:center;background-size:cover;background-position:center;background-color:#60447a}.slide.active{z-index:1;opacity:1;visibility:visible;pointer-events:auto}
-.slide:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(34,22,46,.78),rgba(42,27,55,.4) 54%,rgba(42,27,55,.05))}
-.slide-content{position:relative;z-index:1;color:white;max-width:620px;padding:70px clamp(28px,7vw,90px)}.eyebrow{text-transform:uppercase;letter-spacing:3px;font-size:11px;font-weight:700;color:#ead7ff}.slide h1,.slide h2{font:600 clamp(42px,6vw,76px)/1.06 "Playfair Display",serif;margin:18px 0}.slide p{font-size:17px;line-height:1.7;max-width:470px;color:#f7efff}.slide .btn{background:white;color:var(--deep);margin-top:15px}.dots{position:absolute;z-index:5;bottom:25px;left:0;right:0;display:flex;justify-content:center;gap:9px}.dot{width:9px;height:9px;border:0;border-radius:50%;background:#ffffff80;padding:0;cursor:pointer}.dot.active{width:28px;border-radius:10px;background:var(--gold)}.arrow{position:absolute;z-index:5;top:50%;transform:translateY(-50%);border:1px solid #ffffff70;background:#ffffff22;color:white;width:44px;height:44px;border-radius:50%;font-size:22px;cursor:pointer;backdrop-filter:blur(8px)}.prev{left:20px}.next{right:20px}
-.intro{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;padding:45px 0 100px}.photo-stack{position:relative;min-height:440px}.photo-stack img{position:absolute;object-fit:cover;border-radius:24px;box-shadow:var(--shadow)}.photo-main{width:72%;height:390px;left:0;top:0}.photo-small{width:48%;height:235px;right:0;bottom:0;border:9px solid white}.kicker{color:var(--deep);font-size:11px;letter-spacing:3px;font-weight:700;text-transform:uppercase}.section-title{font:600 clamp(34px,4vw,48px)/1.15 "Playfair Display",serif;margin:13px 0 18px}.intro p,.section-lead{color:var(--muted);line-height:1.8}.intro .btn{margin-top:14px}
-section{padding:82px 0}.services{background:var(--pale)}.section-head{text-align:center;max-width:680px;margin:0 auto 42px}.section-head .section-title{margin-bottom:12px}.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.service-card{background:white;border:1px solid #eee5f5;border-radius:20px;padding:25px;transition:.3s;box-shadow:0 8px 25px rgba(75,43,102,.04)}.service-card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:var(--gold)}.service-icon{width:46px;height:46px;border-radius:15px;background:#f1e6fa;color:var(--deep);display:grid;place-items:center;font-size:22px}.service-card h3{font:600 22px "Playfair Display";margin:17px 0 12px}.service-card ul{padding-left:18px;margin:0;color:var(--muted);font-size:14px;line-height:1.9}
-.gallery-section{background:#fff}
-.real-results-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px}
-.result-card{margin:0;background:#fff;border-radius:22px;overflow:hidden;border:1px solid #E8DDF2;box-shadow:0 10px 28px rgba(77,35,111,.08);transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease}
-.result-card:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:var(--gold)}
-.result-card img{width:100%;height:285px;object-fit:cover;object-position:top center;display:block;transition:transform .45s ease}
-.result-card:hover img{transform:scale(1.03)}
-.result-card figcaption{padding:15px 17px}
-.result-card figcaption strong{display:block;font-family:"Playfair Display",serif;font-size:17px;color:var(--deep);margin-bottom:3px}
-.result-card figcaption span{font-size:13px;color:var(--muted);line-height:1.45;display:block}
-.gallery-cta{text-align:center;margin-top:32px}
-.booking{background:linear-gradient(135deg,#78509f,#a57bc8);color:white}.booking-wrap{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}.booking .kicker{color:#ead7ff}.booking .section-title{color:white}.booking p{color:#f4eafa;line-height:1.8}.booking-form{background:white;color:var(--ink);border-radius:24px;padding:30px;box-shadow:0 22px 60px #3e205b45}.field{display:grid;gap:7px;margin-bottom:15px}.field label{font-size:12px;font-weight:700;color:#655b70}.field input,.field select,.field textarea{width:100%;border:1px solid var(--line);border-radius:12px;padding:13px;background:#fff;color:var(--ink);outline:none}.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--lilac);box-shadow:0 0 0 3px #a77bd126}.booking-form .btn{width:100%;margin-top:5px}.booking-form .btn:disabled{opacity:.6;cursor:wait}.booking-status{display:none;margin:14px 0 0;padding:13px 15px;border-radius:12px;background:#f4e8c9;color:#59451d;font-size:13px;line-height:1.5}.booking-status.show{display:block}.availability-help{font-size:12px;color:#776d80;margin:-5px 0 14px;line-height:1.5}.smallprint{font-size:11px;color:#8a8291;line-height:1.5;margin-top:12px}
-.location{background:#fcfaff}.location-grid{display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:center}.address{background:white;border:1px solid var(--line);padding:28px;border-radius:22px;box-shadow:var(--shadow)}.address p{line-height:1.8;color:var(--muted)}.map{width:100%;height:330px;border:0;border-radius:22px;box-shadow:var(--shadow)}
-footer{background:#292333;color:#f6effc;padding:42px 0}.footer-row{display:flex;justify-content:space-between;gap:20px;align-items:center}.footer-brand{font:600 28px "Playfair Display";letter-spacing:3px;display:flex;align-items:center;gap:12px}.footer-brand img{width:58px;height:58px;object-fit:cover;border-radius:50%;border:2px solid #c9bbd4}.footer-note{font-size:12px;color:#c9bbd4}.whats{position:fixed;right:20px;bottom:20px;z-index:30;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:#25d366;color:white;font-size:27px;box-shadow:0 10px 30px #0003}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}}
-@media(max-width:800px){.nav{height:68px}.menu{display:block}.navlinks{display:none;position:absolute;top:68px;left:0;right:0;background:white;padding:22px 5%;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start;gap:19px}.navlinks.open{display:flex}.nav-cta{display:none}.slider{min-height:590px;border-radius:22px}.slide{background-position:60% center}.slide:before{background:linear-gradient(90deg,rgba(34,22,46,.78),rgba(42,27,55,.48))}.slide-content{padding:48px 30px}.slide p{font-size:15px}.intro,.booking-wrap,.location-grid{grid-template-columns:1fr;gap:35px}.intro{padding-top:10px}.photo-stack{min-height:360px}.photo-main{height:320px}.photo-small{height:190px}.service-grid{grid-template-columns:1fr 1fr}.real-results-grid{grid-template-columns:1fr 1fr;gap:12px}.result-card img{height:230px}.footer-row{flex-direction:column;text-align:center}}
-@media(max-width:480px){.service-grid{grid-template-columns:1fr}.hero{padding-top:16px}.slider{min-height:560px}.slide h1,.slide h2{font-size:48px}.arrow{width:36px;height:36px}.prev{left:10px}.next{right:10px}section{padding:65px 0}.booking-form{padding:22px}.real-results-grid{grid-template-columns:1fr}.result-card img{height:290px}}
-
-/* Identidade visual DIVAS: lilás, roxo e dourado */
 :root{
   --lilac:#B99AE8;
   --deep:#64258F;
@@ -51,48 +22,83 @@ footer{background:#292333;color:#f6effc;padding:42px 0}.footer-row{display:flex;
   --gold-light:#F7EBC5;
   --shadow:0 18px 55px rgba(77,35,111,.15);
 }
-.brand{color:var(--deep)}
-.brand img{border-color:var(--gold)}
-.brand small{color:#9270AD}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#fff;color:var(--ink);font-family:"DM Sans",sans-serif}a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}.container{width:min(1160px,92%);margin:auto}
+header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(232,221,242,.85)}
+.nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:flex;align-items:center;gap:11px;font-family:"Playfair Display",serif;font-size:27px;letter-spacing:2px;color:var(--deep);font-weight:700}
+.brand img{width:54px;height:54px;object-fit:cover;border-radius:50%;border:2px solid var(--gold);box-shadow:0 4px 14px #70449c22}
+.brand small{display:block;font:600 9px "DM Sans";letter-spacing:3px;text-align:left;color:#9270AD;margin-top:1px}
+.navlinks{display:flex;align-items:center;gap:24px;font-size:13px;font-weight:700;color:#51495a}
 .navlinks a:hover,.kicker{color:var(--deep)}
-.nav-cta,.btn{
-  background:linear-gradient(135deg,#B99AE8 0%,#64258F 78%);
-  box-shadow:0 10px 24px rgba(100,37,143,.24);
-}
-.hero{background:radial-gradient(circle at 85% 15%,#F0E5FB 0,transparent 34%),linear-gradient(180deg,#fff,#FBF7FE)}
-.slider{background:#64258F}
-.slide{background-color:#64258F}
-.dot.active{background:var(--gold)}
-.service-card{border-color:#E8DDF2}
-.service-card:hover{border-color:var(--gold)}
-.service-icon{background:#F0E5FB;color:var(--deep)}
-.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--lilac);box-shadow:0 0 0 3px #B99AE833}
-.booking{background:linear-gradient(135deg,#64258F 0%,#8554B1 58%,#B99AE8 100%)}
-.booking .kicker{color:#F7EBC5}
-.booking-status{background:var(--gold-light)}
-.address{border-color:var(--line)}
-.footer-brand img{border-color:var(--gold)}
-@keyframes divasFadeUp{
-  from{opacity:0;transform:translateY(22px)}
-  to{opacity:1;transform:translateY(0)}
-}
-.hero .slider{animation:divasFadeUp .8s ease both}
-.intro .photo-stack,.intro .intro-copy{animation:divasFadeUp .8s ease both}
-.intro .intro-copy{animation-delay:.12s}
-.service-card{animation:divasFadeUp .65s ease both}
-.service-card:nth-child(2){animation-delay:.06s}
-.service-card:nth-child(3){animation-delay:.12s}
-.service-card:nth-child(4){animation-delay:.18s}
-.service-card:nth-child(5){animation-delay:.24s}
-.service-card:nth-child(6){animation-delay:.30s}
-.btn,.nav-cta{transition:transform .25s ease,box-shadow .25s ease}
+.nav-cta,.btn{border:0;border-radius:999px;padding:13px 21px;background:linear-gradient(135deg,#B99AE8 0%,#64258F 78%);color:white;font-weight:700;box-shadow:0 10px 24px rgba(100,37,143,.24);cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:transform .25s ease,box-shadow .25s ease}
 .btn:hover,.nav-cta:hover{transform:translateY(-2px);box-shadow:0 14px 28px rgba(100,37,143,.28)}
-@media(prefers-reduced-motion:reduce){
-  .hero .slider,.intro .photo-stack,.intro .intro-copy,.service-card{animation:none!important}
-  .btn,.nav-cta{transition:none!important}
-}
+.menu{display:none;border:0;background:var(--pale);border-radius:12px;padding:10px;color:var(--deep);font-size:21px}
 
-/* Aviso da agenda: destaque dourado DIVAS */
+.hero{padding:30px 0 70px;background:radial-gradient(circle at 85% 15%,#F0E5FB 0,transparent 34%),linear-gradient(180deg,#fff,#FBF7FE)}
+.slider{position:relative;min-height:570px;border-radius:30px;overflow:hidden;background:#64258F;box-shadow:var(--shadow);animation:divasFadeUp .8s ease both}
+.slide{position:absolute;inset:0;z-index:0;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .85s ease,visibility .85s ease;display:flex;align-items:center;background-size:cover;background-position:center;background-color:#64258F}
+.slide.active{z-index:1;opacity:1;visibility:visible;pointer-events:auto}
+.slide:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(34,22,46,.78),rgba(42,27,55,.4) 54%,rgba(42,27,55,.05))}
+.slide-content{position:relative;z-index:1;color:white;max-width:620px;padding:70px clamp(28px,7vw,90px)}
+.eyebrow{text-transform:uppercase;letter-spacing:3px;font-size:11px;font-weight:700;color:#ead7ff}
+.slide h1,.slide h2{font:600 clamp(42px,6vw,76px)/1.06 "Playfair Display",serif;margin:18px 0}
+.slide p{font-size:17px;line-height:1.7;max-width:470px;color:#f7efff}
+.slide .btn{background:white;color:var(--deep);margin-top:15px}
+.dots{position:absolute;z-index:5;bottom:25px;left:0;right:0;display:flex;justify-content:center;gap:9px}
+.dot{width:9px;height:9px;border:0;border-radius:50%;background:#ffffff80;padding:0;cursor:pointer}
+.dot.active{width:28px;border-radius:10px;background:var(--gold)}
+.arrow{position:absolute;z-index:5;top:50%;transform:translateY(-50%);border:1px solid #ffffff70;background:#ffffff22;color:white;width:44px;height:44px;border-radius:50%;font-size:22px;cursor:pointer;backdrop-filter:blur(8px)}
+.prev{left:20px}.next{right:20px}
+
+.intro{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;padding:45px 0 100px}
+.photo-stack{position:relative;min-height:440px;animation:divasFadeUp .8s ease both}
+.photo-stack img{position:absolute;object-fit:cover;border-radius:24px;box-shadow:var(--shadow)}
+.photo-main{width:72%;height:390px;left:0;top:0}
+.photo-small{width:48%;height:235px;right:0;bottom:0;border:9px solid white}
+.intro-copy{animation:divasFadeUp .8s ease .12s both}
+.kicker{color:var(--deep);font-size:11px;letter-spacing:3px;font-weight:700;text-transform:uppercase}
+.section-title{font:600 clamp(34px,4vw,48px)/1.15 "Playfair Display",serif;margin:13px 0 18px}
+.intro p,.section-lead{color:var(--muted);line-height:1.8}
+.intro .btn{margin-top:14px}
+
+section{padding:82px 0}
+.services{background:var(--pale)}
+.section-head{text-align:center;max-width:680px;margin:0 auto 42px}
+.section-head .section-title{margin-bottom:12px}
+.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.service-card{background:white;border:1px solid #E8DDF2;border-radius:20px;padding:25px;transition:.3s;box-shadow:0 8px 25px rgba(75,43,102,.04);animation:divasFadeUp .65s ease both}
+.service-card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:var(--gold)}
+.service-icon{width:46px;height:46px;border-radius:15px;background:#F0E5FB;color:var(--deep);display:grid;place-items:center;font-size:22px}
+.service-card h3{font:600 22px "Playfair Display";margin:17px 0 12px}
+.service-card ul{padding-left:18px;margin:0;color:var(--muted);font-size:14px;line-height:1.9}
+
+.gallery-section{background:#fff}
+.real-results-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px}
+.result-card{margin:0;background:#fff;border-radius:22px;overflow:hidden;border:1px solid #E8DDF2;box-shadow:0 10px 28px rgba(77,35,111,.08);transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease}
+.result-card:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:var(--gold)}
+.result-card img{width:100%;height:285px;object-fit:cover;object-position:top center;display:block;transition:transform .45s ease}
+.result-card:hover img{transform:scale(1.03)}
+.result-card figcaption{padding:15px 17px}
+.result-card figcaption strong{display:block;font-family:"Playfair Display",serif;font-size:17px;color:var(--deep);margin-bottom:3px}
+.result-card figcaption span{font-size:13px;color:var(--muted);line-height:1.45;display:block}
+.gallery-cta{text-align:center;margin-top:32px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+.booking{background:linear-gradient(135deg,#64258F 0%,#8554B1 58%,#B99AE8 100%);color:white}
+.booking-wrap{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}
+.booking .kicker{color:#F7EBC5}
+.booking .section-title{color:white}
+.booking p{color:#f4eafa;line-height:1.8}
+.booking-form{background:white;color:var(--ink);border-radius:24px;padding:30px;box-shadow:0 22px 60px #3e205b45}
+.field{display:grid;gap:7px;margin-bottom:15px}
+.field label{font-size:12px;font-weight:700;color:#655b70}
+.field input,.field select,.field textarea{width:100%;border:1px solid var(--line);border-radius:12px;padding:13px;background:#fff;color:var(--ink);outline:none}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--lilac);box-shadow:0 0 0 3px #B99AE833}
+.booking-form .btn{width:100%;margin-top:5px}
+.booking-form .btn:disabled{opacity:.6;cursor:wait}
+.booking-status{display:none;margin:14px 0 0;padding:13px 15px;border-radius:12px;background:var(--gold-light);color:#59451d;font-size:13px;line-height:1.5}
+.booking-status.show{display:block}
+.smallprint{font-size:11px;color:#8a8291;line-height:1.5;margin-top:12px}
+
 .availability-help{
   display:grid;
   gap:7px;
@@ -108,28 +114,53 @@ footer{background:#292333;color:#f6effc;padding:42px 0}.footer-row{display:flex;
   box-shadow:0 8px 22px rgba(100,37,143,.10);
   animation:agendaDestaque 3.8s ease-in-out infinite;
 }
-.availability-help strong{
-  color:#64258F;
-  font-size:15px;
-  letter-spacing:2px;
-}
-.availability-hours{
-  color:#805A12;
-  font-weight:800;
-  letter-spacing:.5px;
-}
-.availability-closed{
-  color:#746D7D;
-  font-size:12px;
-  font-weight:700;
-}
-@keyframes agendaDestaque{
-  0%,100%{box-shadow:0 8px 22px rgba(100,37,143,.10);transform:translateY(0)}
-  50%{box-shadow:0 10px 28px rgba(212,175,55,.24);transform:translateY(-2px)}
-}
-@media(prefers-reduced-motion:reduce){
-  .availability-help{animation:none}
-}
+.availability-help strong{color:#64258F;font-size:15px;letter-spacing:2px}
+.availability-hours{color:#805A12;font-weight:800;letter-spacing:.5px}
+.availability-closed{color:#746D7D;font-size:12px;font-weight:700}
+
+.location{background:#fcfaff}
+.location-grid{display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:center}
+.address{background:white;border:1px solid var(--line);padding:28px;border-radius:22px;box-shadow:var(--shadow)}
+.address p{line-height:1.8;color:var(--muted)}
+.map{width:100%;height:330px;border:0;border-radius:22px;box-shadow:var(--shadow)}
+
+footer{background:#292333;color:#f6effc;padding:42px 0 98px}
+.footer-row{display:flex;justify-content:space-between;gap:20px;align-items:center}
+.footer-brand{font:600 28px "Playfair Display";letter-spacing:3px;display:flex;align-items:center;gap:12px}
+.footer-brand img{width:58px;height:58px;object-fit:cover;border-radius:50%;border:2px solid var(--gold)}
+.footer-note{font-size:12px;color:#c9bbd4}
+
+/* BOTOES FLUTUANTES + RECEPCIONISTA VIRTUAL IA */
+.floating-stack{position:fixed;right:18px;bottom:18px;z-index:40;display:flex;align-items:center;gap:10px}
+.ai-launcher{border:2px solid var(--gold);border-radius:999px;padding:13px 18px;background:linear-gradient(135deg,#64258F,#8d52bd);color:#fff;font-weight:700;font-size:13px;cursor:pointer;box-shadow:0 12px 30px rgba(100,37,143,.35);display:inline-flex;align-items:center;gap:8px}
+.ai-launcher .pulse-dot{width:8px;height:8px;border-radius:50%;background:#4ade80;box-shadow:0 0 8px #4ade80}
+.whats{width:50px;height:50px;border-radius:50%;display:grid;place-items:center;background:#25d366;color:white;font-size:23px;box-shadow:0 10px 26px rgba(0,0,0,.22)}
+
+.ai-drawer{position:fixed;right:18px;bottom:82px;z-index:50;width:min(380px,calc(100vw - 28px));background:#fff;border:1.5px solid var(--gold);border-radius:24px;box-shadow:0 24px 65px rgba(41,35,51,.28);display:none;flex-direction:column;overflow:hidden}
+.ai-drawer.open{display:flex}
+.ai-head{background:linear-gradient(135deg,#64258F,#8b52ba);color:#fff;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.ai-head-info{display:flex;align-items:center;gap:10px}
+.ai-head-info img{width:38px;height:38px;border-radius:50%;object-fit:cover;border:1.5px solid var(--gold)}
+.ai-head-info strong{display:block;font-size:14px}
+.ai-head-info span{display:block;font-size:11px;color:#F7EBC5}
+.ai-close{border:0;background:rgba(255,255,255,.16);color:#fff;width:30px;height:30px;border-radius:50%;cursor:pointer;font-size:16px}
+.ai-body{padding:14px;max-height:320px;overflow-y:auto;display:flex;flex-direction:column;gap:10px;background:#fbf8fe}
+.ai-msg{padding:11px 14px;border-radius:16px;font-size:13.5px;line-height:1.45;max-width:86%;white-space:pre-wrap}
+.ai-msg.bot{background:#fff;border:1px solid var(--line);color:var(--ink);align-self:flex-start;border-bottom-left-radius:4px}
+.ai-msg.user{background:linear-gradient(135deg,#64258F,#8554B1);color:#fff;align-self:flex-end;border-bottom-right-radius:4px}
+.ai-chips{padding:8px 12px 4px;display:flex;gap:6px;flex-wrap:wrap;background:#fbf8fe;border-top:1px solid var(--line)}
+.ai-chip{border:1px solid var(--line);background:#fff;color:var(--deep);border-radius:999px;padding:5px 11px;font-size:11.5px;font-weight:600;cursor:pointer}
+.ai-chip:hover{border-color:var(--gold);background:var(--pale)}
+.ai-form{display:flex;gap:8px;padding:10px 12px;background:#fff;border-top:1px solid var(--line)}
+.ai-form input{flex:1;border:1px solid var(--line);border-radius:999px;padding:10px 14px;font-size:13px;outline:none}
+.ai-form input:focus{border-color:var(--deep)}
+.ai-form button{border:0;border-radius:999px;padding:0 16px;background:linear-gradient(135deg,#B99AE8,#64258F);color:#fff;font-weight:700;font-size:13px;cursor:pointer}
+
+@keyframes divasFadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+@keyframes agendaDestaque{0%,100%{box-shadow:0 8px 22px rgba(100,37,143,.10);transform:translateY(0)}50%{box-shadow:0 10px 28px rgba(212,175,55,.24);transform:translateY(-2px)}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}}
+@media(max-width:800px){.nav{height:68px}.menu{display:block}.navlinks{display:none;position:absolute;top:68px;left:0;right:0;background:white;padding:22px 5%;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start;gap:19px}.navlinks.open{display:flex}.nav-cta{display:none}.slider{min-height:590px;border-radius:22px}.slide{background-position:60% center}.slide:before{background:linear-gradient(90deg,rgba(34,22,46,.78),rgba(42,27,55,.48))}.slide-content{padding:48px 30px}.slide p{font-size:15px}.intro,.booking-wrap,.location-grid{grid-template-columns:1fr;gap:35px}.intro{padding-top:10px}.photo-stack{min-height:360px}.photo-main{height:320px}.photo-small{height:190px}.service-grid{grid-template-columns:1fr 1fr}.real-results-grid{grid-template-columns:1fr 1fr;gap:12px}.result-card img{height:230px}.footer-row{flex-direction:column;text-align:center}}
+@media(max-width:480px){.service-grid{grid-template-columns:1fr}.hero{padding-top:16px}.slider{min-height:560px}.slide h1,.slide h2{font-size:48px}.arrow{width:36px;height:36px}.prev{left:10px}.next{right:10px}section{padding:65px 0}.booking-form{padding:22px}.real-results-grid{grid-template-columns:1fr}.result-card img{height:290px}}
 </style>
 </head>
 <body>
@@ -137,26 +168,29 @@ footer{background:#292333;color:#f6effc;padding:42px 0}.footer-row{display:flex;
 <a class="brand" href="#inicio"><img src="fotos/logo-divas.jpg" alt="Mascote e identidade visual do DIVAS"><span>DIVAS<small>SALÃO DE BELEZA</small></span></a>
 <button class="menu" id="menuBtn" aria-label="Abrir menu">☰</button>
 <nav class="navlinks" id="navlinks"><a href="#inicio">Início</a><a href="#sobre">O salão</a><a href="#servicos">Serviços</a><a href="#resultados">Resultados</a><a href="#agendar">Agendamento</a><a href="#local">Localização</a></nav>
-<a class="nav-cta" href="#agendar">Agendar horário ↗</a>
+<button type="button" class="nav-cta" onclick="abrirChatIA()">✦ Agendar com IA</button>
 </div></header>
+
 <main>
 <div class="hero" id="inicio"><div class="container">
 <div class="slider" role="region" aria-roledescription="carrossel" aria-label="Apresentação do salão DIVAS" tabindex="0">
-<div class="slide active" style="background-image:url('fotos/cabelo-01.jpg')"><div class="slide-content"><span class="eyebrow">Beleza • cuidado • autoestima</span><h1>Seu momento.<br>Sua beleza.</h1><p>Um espaço para cuidar de você, renovar a autoestima e realçar aquilo que faz você ser única.</p><a class="btn" href="#agendar">Agende seu momento <span>↗</span></a></div></div>
+<div class="slide active" style="background-image:url('fotos/cabelo-01.jpg')"><div class="slide-content"><span class="eyebrow">Beleza • cuidado • autoestima</span><h1>Seu momento.<br>Sua beleza.</h1><p>Um espaço para cuidar de você, renovar a autoestima e realçar aquilo que faz você ser única.</p><button type="button" class="btn" onclick="abrirChatIA()">Agendar agora com IA <span>✦</span></button></div></div>
 <div class="slide" style="background-image:url('fotos/cabelo-02.jpg')"><div class="slide-content"><span class="eyebrow">Cabelos com personalidade</span><h2>Transforme o visual.<br>Realce sua essência.</h2><p>Alisamentos, coloração, mechas, cortes e tratamentos para diferentes tipos de cabelo.</p><a class="btn" href="#servicos">Conheça os serviços ↗</a></div></div>
 <div class="slide" style="background-image:url('fotos/unhas-01.jpg')"><div class="slide-content"><span class="eyebrow">Detalhes que fazem diferença</span><h2>Um cuidado<br>só seu.</h2><p>Beleza e bem-estar em cada detalhe, com atendimento pensado para você.</p><a class="btn" href="#agendar">Quero agendar ↗</a></div></div>
 <button class="arrow prev" aria-label="Slide anterior">‹</button><button class="arrow next" aria-label="Próximo slide">›</button><div class="dots"><button class="dot active" aria-label="Ir para slide 1"></button><button class="dot" aria-label="Ir para slide 2"></button><button class="dot" aria-label="Ir para slide 3"></button></div>
 </div></div></div>
+
 <div class="container intro" id="sobre"><div class="photo-stack"><img class="photo-main" src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=900&q=85" alt="Ambiente de salão de beleza"><img class="photo-small" src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=700&q=85" alt="Cuidado com os cabelos"></div>
-<div class="intro-copy"><span class="kicker">Bem-vinda ao DIVAS</span><h2 class="section-title">Beleza é se sentir bem na própria pele.</h2><p>Um espaço dedicado aos cuidados com seus cabelos e à sua beleza. Aqui você encontra diferentes serviços para renovar o visual e reservar um tempo especial para si.</p><p>Estamos em Moradas do Bosque, Cachoeirinha — RS. Será um prazer receber você!</p><a class="btn" href="#agendar">Agende sua visita ↗</a></div></div>
-<section class="services" id="servicos"><div class="container"><div class="section-head"><span class="kicker">Nosso cuidado com você</span><h2 class="section-title">Serviços para realçar sua beleza</h2><p class="section-lead">Escolha o cuidado que combina com seu momento. Consulte disponibilidade e valores pelo WhatsApp.</p></div>
+<div class="intro-copy"><span class="kicker">Bem-vinda ao DIVAS</span><h2 class="section-title">Beleza é se sentir bem na própria pele.</h2><p>Um espaço dedicado aos cuidados com seus cabelos e à sua beleza. Aqui você encontra diferentes serviços para renovar o visual e reservar um tempo especial para si.</p><p>Estamos em Moradas do Bosque, Cachoeirinha — RS. Será um prazer receber você!</p><button type="button" class="btn" onclick="abrirChatIA()">Agendar com nossa Recepcionista IA ✦</button></div></div>
+
+<section class="services" id="servicos"><div class="container"><div class="section-head"><span class="kicker">Nosso cuidado com você</span><h2 class="section-title">Serviços para realçar sua beleza</h2><p class="section-lead">Escolha o cuidado que combina com seu momento. Consulte disponibilidade em segundos com nossa assistente.</p></div>
 <div class="service-grid">
 <article class="service-card"><div class="service-icon">✧</div><h3>Alisamentos & escovas</h3><ul><li>Progressiva</li><li>Semi definitiva</li><li>Escova de Botox</li><li>Escova cristalizada</li><li>Selagem</li><li>Escova</li><li>Escova blindada</li></ul></article>
 <article class="service-card"><div class="service-icon">✂</div><h3>Cortes & cor</h3><ul><li>Corte</li><li>Coloração</li><li>Pigmentação</li><li>Mechas</li><li>Mechas coloridas</li></ul></article>
 <article class="service-card"><div class="service-icon">♡</div><h3>Tratamentos capilares</h3><ul><li>Tratamentos capilares</li><li>Hidratação</li><li>Cuidados para cachos e cabelos afros</li></ul></article>
 <article class="service-card"><div class="service-icon">✿</div><h3>Beleza & cuidados</h3><ul><li>Design de sobrancelhas</li><li>Hidratação labial</li><li>Buço</li><li>Pé e mão</li></ul></article>
 <article class="service-card"><div class="service-icon">☼</div><h3>Espaço Kids</h3><ul><li>Corte infantil</li><li>Tratamentos infantis</li></ul></article>
-<article class="service-card"><div class="service-icon">✧</div><h3>Atendimento especial</h3><ul><li>Orientação para escolher o serviço</li><li>Consulta de disponibilidade</li><li>Agendamento pelo WhatsApp</li></ul></article>
+<article class="service-card"><div class="service-icon">✧</div><h3>Atendimento 24h</h3><ul><li>Recepcionista Virtual IA</li><li>Consulta de horários em tempo real</li><li>Confirmação pelo WhatsApp</li></ul></article>
 </div></div></section>
 
 <!-- GALERIA DE RESULTADOS REAIS -->
@@ -205,12 +239,13 @@ footer{background:#292333;color:#f6effc;padding:42px 0}.footer-row{display:flex;
       </figure>
     </div>
     <div class="gallery-cta">
-      <a class="btn" href="#agendar">Quero agendar meu horário ↗</a>
+      <button type="button" class="btn" onclick="abrirChatIA()">Agendar pelo Chat IA ✦</button>
+      <a class="btn" style="background:#fff;color:var(--deep);border:1px solid var(--line)" href="#agendar">Usar formulário ↗</a>
     </div>
   </div>
 </section>
 
-<section class="booking" id="agendar"><div class="container booking-wrap"><div><span class="kicker">Seu horário começa aqui</span><h2 class="section-title">Vamos reservar um momento para você?</h2><p>Escolha o serviço e informe o melhor dia e horário. Seu pedido será preparado e enviado para o WhatsApp do DIVAS para confirmar a disponibilidade.</p><p>📍 Moradas do Bosque • Cachoeirinha/RS</p></div>
+<section class="booking" id="agendar"><div class="container booking-wrap"><div><span class="kicker">Seu horário começa aqui</span><h2 class="section-title">Vamos reservar um momento para você?</h2><p>Prefere conversar? Clique no botão <strong>Agendar com IA</strong> no canto da tela e nossa recepcionista marca tudo para você em segundos. Ou preencha o formulário ao lado.</p><p>📍 Moradas do Bosque • Cachoeirinha/RS</p></div>
 <form class="booking-form" id="bookingForm">
 <div class="field"><label for="name">Seu nome</label><input id="name" required minlength="2" autocomplete="name" placeholder="Como podemos chamar você?"></div>
 <div class="field"><label for="phone">Seu telefone / WhatsApp</label><input id="phone" required minlength="8" inputmode="tel" autocomplete="tel" placeholder="(51) 99999-9999"></div>
@@ -227,10 +262,45 @@ footer{background:#292333;color:#f6effc;padding:42px 0}.footer-row{display:flex;
 <button class="btn" id="bookingSubmit" type="submit">Solicitar agendamento ↗</button>
 <div class="booking-status" id="bookingStatus" role="status" aria-live="polite"></div>
 <p class="smallprint">Seu pedido fica pendente até o salão confirmar. O horário só será considerado confirmado depois da confirmação do DIVAS.</p></form></div></section>
+
 <section class="location" id="local"><div class="container"><div class="section-head"><span class="kicker">Venha nos conhecer</span><h2 class="section-title">Estamos pertinho de você</h2><p class="section-lead">Esperamos sua visita no DIVAS.</p></div><div class="location-grid"><div class="address"><h3 class="section-title" style="font-size:29px">DIVAS — Salão de Beleza</h3><p>Rua Otto Espíndola, 470<br>Moradas do Bosque<br>Cachoeirinha — RS<br>CEP 94960-842</p><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Otto+Espindola+470+Moradas+do+Bosque+Cachoeirinha+RS+94960-842">Abrir rota no Google Maps ↗</a></div><iframe class="map" loading="lazy" title="Mapa de localização do DIVAS" src="https://www.google.com/maps?q=Otto%20Espindola%20470%20Moradas%20do%20Bosque%20Cachoeirinha%20RS%2094960-842&output=embed"></iframe></div></div></section>
 </main>
+
 <footer><div class="container footer-row"><div><div class="footer-brand"><img src="fotos/logo-divas.jpg" alt="Mascote do DIVAS">DIVAS</div><div class="footer-note">SALÃO DE BELEZA • CACHOEIRINHA/RS</div></div><div class="footer-note">Sua beleza, seu momento. ♡<br>Agendamentos pelo WhatsApp: (51) 99174-9541</div></div></footer>
-<a class="whats" href="https://wa.me/5551991749541?text=Ol%C3%A1%2C%20DIVAS!%20Gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20agendamento." target="_blank" rel="noopener" aria-label="Falar com o DIVAS pelo WhatsApp">✆</a>
+
+<!-- JANELA DA RECEPCIONISTA VIRTUAL IA -->
+<div class="ai-drawer" id="aiDrawer" aria-label="Chat de agendamento automático DIVAS">
+  <div class="ai-head">
+    <div class="ai-head-info">
+      <img src="fotos/logo-divas.jpg" alt="Recepcionista DIVAS">
+      <div>
+        <strong>Recepcionista DIVAS IA</strong>
+        <span>● Online • Agenda automática 24h</span>
+      </div>
+    </div>
+    <button type="button" class="ai-close" onclick="fecharChatIA()" aria-label="Fechar chat">✕</button>
+  </div>
+  <div class="ai-body" id="aiMessages">
+    <div class="ai-msg bot">Olá, diva! ✨ Sou a assistente virtual do DIVAS Salão de Beleza. Qual serviço você gostaria de agendar e para qual dia?</div>
+  </div>
+  <div class="ai-chips">
+    <button type="button" class="ai-chip" onclick="enviarAtalhoIA('Quero agendar Progressiva')">✨ Progressiva</button>
+    <button type="button" class="ai-chip" onclick="enviarAtalhoIA('Quero agendar Pé e mão')">💅 Pé e mão</button>
+    <button type="button" class="ai-chip" onclick="enviarAtalhoIA('Quero agendar Corte')">✂️ Corte</button>
+    <button type="button" class="ai-chip" onclick="enviarAtalhoIA('Quais horários vocês atendem?')">🕒 Horários</button>
+  </div>
+  <form class="ai-form" onsubmit="enviarChatIA(event)">
+    <input type="text" id="aiInput" placeholder="Digite aqui para agendar..." autocomplete="off">
+    <button type="submit" id="aiSendBtn">Enviar</button>
+  </form>
+</div>
+
+<!-- BOTOES FLUTUANTES -->
+<div class="floating-stack">
+  <button type="button" class="ai-launcher" onclick="alternarChatIA()"><span class="pulse-dot"></span> Agendar com IA ✦</button>
+  <a class="whats" href="https://wa.me/5551991749541?text=Ol%C3%A1%2C%20DIVAS!%20Gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20agendamento." target="_blank" rel="noopener" aria-label="Falar com o DIVAS pelo WhatsApp">✆</a>
+</div>
+
 <script>
 const slider=document.querySelector('.slider');
 const slides=[...slider.querySelectorAll('.slide')];
@@ -275,8 +345,12 @@ slider.addEventListener('keydown',e=>{
 });
 showSlide(0);
 startAutoplay();
-const menuBtn=document.getElementById('menuBtn'),nav=document.getElementById('navlinks');menuBtn.addEventListener('click',()=>nav.classList.toggle('open'));nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
-// Agendamento conectado à API DIVAS
+
+const menuBtn=document.getElementById('menuBtn'),nav=document.getElementById('navlinks');
+menuBtn.addEventListener('click',()=>nav.classList.toggle('open'));
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+
+// Agendamento manual conectado à API DIVAS
 const API_URL='https://divas-api.vezqoraai.workers.dev';
 const bookingForm=document.getElementById('bookingForm');
 const serviceInput=document.getElementById('service');
@@ -314,11 +388,75 @@ bookingForm.addEventListener('submit',async e=>{
     const response=await fetch(`${API_URL}/api/bookings`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
     const data=await response.json();
     if(!response.ok)throw new Error(data.error||'Não foi possível registrar o pedido.');
-    const serviceName=serviceInput.options[serviceInput.selectedIndex].text;
     showBookingStatus(`Pedido nº ${data.bookingId} registrado com sucesso! Seu horário está PENDENTE de confirmação pelo DIVAS. Aguarde o contato do salão pelo WhatsApp.`,false);
     bookingForm.reset();dateInput.min=todayLocal();timeInput.disabled=true;timeInput.innerHTML='<option value="">Primeiro escolha o serviço e o dia</option>';
   }catch(error){showBookingStatus(error.message,true);if(String(error.message).toLowerCase().includes('reservado'))loadAvailableTimes();}
   finally{bookingSubmit.disabled=false;bookingSubmit.textContent='Solicitar agendamento ↗';}
 });
+
+// RECEPCIONISTA VIRTUAL IA (DIVAS-IA WORKER)
+const IA_WORKER_URL='https://divas-ia.vezqoraai.workers.dev';
+const aiDrawer=document.getElementById('aiDrawer');
+const aiMessages=document.getElementById('aiMessages');
+const aiInput=document.getElementById('aiInput');
+let aiHistory=[];
+let aiBusy=false;
+
+function abrirChatIA(){
+  aiDrawer.classList.add('open');
+  setTimeout(()=>aiInput.focus(),150);
+}
+function fecharChatIA(){
+  aiDrawer.classList.remove('open');
+}
+function alternarChatIA(){
+  aiDrawer.classList.toggle('open');
+  if(aiDrawer.classList.contains('open'))setTimeout(()=>aiInput.focus(),150);
+}
+function addAIMsg(text,role){
+  const div=document.createElement('div');
+  div.className=`ai-msg ${role}`;
+  div.textContent=text;
+  aiMessages.appendChild(div);
+  aiMessages.scrollTop=aiMessages.scrollHeight;
+}
+function enviarAtalhoIA(text){
+  abrirChatIA();
+  aiInput.value=text;
+  enviarChatIA();
+}
+async function enviarChatIA(e){
+  if(e)e.preventDefault();
+  const text=aiInput.value.trim();
+  if(!text||aiBusy)return;
+  aiBusy=true;
+  aiInput.value='';
+  addAIMsg(text,'user');
+  aiHistory.push({role:'user',content:text});
+
+  const typing=document.createElement('div');
+  typing.className='ai-msg bot';
+  typing.textContent='Consultando agenda... ✨';
+  aiMessages.appendChild(typing);
+  aiMessages.scrollTop=aiMessages.scrollHeight;
+
+  try{
+    const res=await fetch(IA_WORKER_URL,{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({message:text,history:aiHistory})
+    });
+    const data=await res.json();
+    typing.remove();
+    const reply=data.reply||data.error||'Desculpe, tive uma instabilidade. Pode repetir por favor?';
+    addAIMsg(reply,'bot');
+    aiHistory.push({role:'assistant',content:reply});
+  }catch(err){
+    typing.remove();
+    addAIMsg('Tive uma falha rápida de conexão. Tente novamente em instantes ou chame no WhatsApp (51) 99174-9541.','bot');
+  }finally{
+    aiBusy=false;
+  }
+}
 </script>
 </body></html>
