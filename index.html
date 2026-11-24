@@ -21,13 +21,22 @@ header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.9);backdrop
 .slide-content{position:relative;z-index:1;color:white;max-width:620px;padding:70px clamp(28px,7vw,90px)}.eyebrow{text-transform:uppercase;letter-spacing:3px;font-size:11px;font-weight:700;color:#ead7ff}.slide h1,.slide h2{font:600 clamp(42px,6vw,76px)/1.06 "Playfair Display",serif;margin:18px 0}.slide p{font-size:17px;line-height:1.7;max-width:470px;color:#f7efff}.slide .btn{background:white;color:var(--deep);margin-top:15px}.dots{position:absolute;z-index:5;bottom:25px;left:0;right:0;display:flex;justify-content:center;gap:9px}.dot{width:9px;height:9px;border:0;border-radius:50%;background:#ffffff80;padding:0;cursor:pointer}.dot.active{width:28px;border-radius:10px;background:var(--gold)}.arrow{position:absolute;z-index:5;top:50%;transform:translateY(-50%);border:1px solid #ffffff70;background:#ffffff22;color:white;width:44px;height:44px;border-radius:50%;font-size:22px;cursor:pointer;backdrop-filter:blur(8px)}.prev{left:20px}.next{right:20px}
 .intro{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;padding:45px 0 100px}.photo-stack{position:relative;min-height:440px}.photo-stack img{position:absolute;object-fit:cover;border-radius:24px;box-shadow:var(--shadow)}.photo-main{width:72%;height:390px;left:0;top:0}.photo-small{width:48%;height:235px;right:0;bottom:0;border:9px solid white}.kicker{color:var(--deep);font-size:11px;letter-spacing:3px;font-weight:700;text-transform:uppercase}.section-title{font:600 clamp(34px,4vw,48px)/1.15 "Playfair Display",serif;margin:13px 0 18px}.intro p,.section-lead{color:var(--muted);line-height:1.8}.intro .btn{margin-top:14px}
 section{padding:82px 0}.services{background:var(--pale)}.section-head{text-align:center;max-width:680px;margin:0 auto 42px}.section-head .section-title{margin-bottom:12px}.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.service-card{background:white;border:1px solid #eee5f5;border-radius:20px;padding:25px;transition:.3s;box-shadow:0 8px 25px rgba(75,43,102,.04)}.service-card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:var(--gold)}.service-icon{width:46px;height:46px;border-radius:15px;background:#f1e6fa;color:var(--deep);display:grid;place-items:center;font-size:22px}.service-card h3{font:600 22px "Playfair Display";margin:17px 0 12px}.service-card ul{padding-left:18px;margin:0;color:var(--muted);font-size:14px;line-height:1.9}
-.gallery-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;grid-template-rows:210px 210px;gap:15px}.gallery-grid img{width:100%;height:100%;object-fit:cover;border-radius:18px}.real-gallery{grid-template-rows:260px 260px}.real-gallery img:first-child{grid-row:auto}.real-gallery img:last-child{display:block}@media(max-width:800px){.real-gallery{grid-template-rows:220px 220px}}@media(max-width:480px){.real-gallery{grid-template-rows:170px 170px}}.gallery-grid img:first-child{grid-row:span 2}.gallery-note{text-align:center;color:var(--muted);font-size:12px;margin-top:17px}
+.gallery-section{background:#fff}
+.real-results-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px}
+.result-card{margin:0;background:#fff;border-radius:22px;overflow:hidden;border:1px solid #E8DDF2;box-shadow:0 10px 28px rgba(77,35,111,.08);transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease}
+.result-card:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:var(--gold)}
+.result-card img{width:100%;height:285px;object-fit:cover;object-position:top center;display:block;transition:transform .45s ease}
+.result-card:hover img{transform:scale(1.03)}
+.result-card figcaption{padding:15px 17px}
+.result-card figcaption strong{display:block;font-family:"Playfair Display",serif;font-size:17px;color:var(--deep);margin-bottom:3px}
+.result-card figcaption span{font-size:13px;color:var(--muted);line-height:1.45;display:block}
+.gallery-cta{text-align:center;margin-top:32px}
 .booking{background:linear-gradient(135deg,#78509f,#a57bc8);color:white}.booking-wrap{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}.booking .kicker{color:#ead7ff}.booking .section-title{color:white}.booking p{color:#f4eafa;line-height:1.8}.booking-form{background:white;color:var(--ink);border-radius:24px;padding:30px;box-shadow:0 22px 60px #3e205b45}.field{display:grid;gap:7px;margin-bottom:15px}.field label{font-size:12px;font-weight:700;color:#655b70}.field input,.field select,.field textarea{width:100%;border:1px solid var(--line);border-radius:12px;padding:13px;background:#fff;color:var(--ink);outline:none}.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--lilac);box-shadow:0 0 0 3px #a77bd126}.booking-form .btn{width:100%;margin-top:5px}.booking-form .btn:disabled{opacity:.6;cursor:wait}.booking-status{display:none;margin:14px 0 0;padding:13px 15px;border-radius:12px;background:#f4e8c9;color:#59451d;font-size:13px;line-height:1.5}.booking-status.show{display:block}.availability-help{font-size:12px;color:#776d80;margin:-5px 0 14px;line-height:1.5}.smallprint{font-size:11px;color:#8a8291;line-height:1.5;margin-top:12px}
 .location{background:#fcfaff}.location-grid{display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:center}.address{background:white;border:1px solid var(--line);padding:28px;border-radius:22px;box-shadow:var(--shadow)}.address p{line-height:1.8;color:var(--muted)}.map{width:100%;height:330px;border:0;border-radius:22px;box-shadow:var(--shadow)}
 footer{background:#292333;color:#f6effc;padding:42px 0}.footer-row{display:flex;justify-content:space-between;gap:20px;align-items:center}.footer-brand{font:600 28px "Playfair Display";letter-spacing:3px;display:flex;align-items:center;gap:12px}.footer-brand img{width:58px;height:58px;object-fit:cover;border-radius:50%;border:2px solid #c9bbd4}.footer-note{font-size:12px;color:#c9bbd4}.whats{position:fixed;right:20px;bottom:20px;z-index:30;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:#25d366;color:white;font-size:27px;box-shadow:0 10px 30px #0003}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}}
-@media(max-width:800px){.nav{height:68px}.menu{display:block}.navlinks{display:none;position:absolute;top:68px;left:0;right:0;background:white;padding:22px 5%;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start;gap:19px}.navlinks.open{display:flex}.nav-cta{display:none}.slider{min-height:590px;border-radius:22px}.slide{background-position:60% center}.slide:before{background:linear-gradient(90deg,rgba(34,22,46,.78),rgba(42,27,55,.48))}.slide-content{padding:48px 30px}.slide p{font-size:15px}.intro,.booking-wrap,.location-grid{grid-template-columns:1fr;gap:35px}.intro{padding-top:10px}.photo-stack{min-height:360px}.photo-main{height:320px}.photo-small{height:190px}.service-grid{grid-template-columns:1fr 1fr}.gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:180px 180px}.gallery-grid img:first-child{grid-row:auto}.gallery-grid img:last-child{display:none}.footer-row{flex-direction:column;text-align:center}}
-@media(max-width:480px){.service-grid{grid-template-columns:1fr}.hero{padding-top:16px}.slider{min-height:560px}.slide h1,.slide h2{font-size:48px}.arrow{width:36px;height:36px}.prev{left:10px}.next{right:10px}section{padding:65px 0}.booking-form{padding:22px}.gallery-grid{grid-template-rows:145px 145px;gap:9px}}
+@media(max-width:800px){.nav{height:68px}.menu{display:block}.navlinks{display:none;position:absolute;top:68px;left:0;right:0;background:white;padding:22px 5%;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start;gap:19px}.navlinks.open{display:flex}.nav-cta{display:none}.slider{min-height:590px;border-radius:22px}.slide{background-position:60% center}.slide:before{background:linear-gradient(90deg,rgba(34,22,46,.78),rgba(42,27,55,.48))}.slide-content{padding:48px 30px}.slide p{font-size:15px}.intro,.booking-wrap,.location-grid{grid-template-columns:1fr;gap:35px}.intro{padding-top:10px}.photo-stack{min-height:360px}.photo-main{height:320px}.photo-small{height:190px}.service-grid{grid-template-columns:1fr 1fr}.real-results-grid{grid-template-columns:1fr 1fr;gap:12px}.result-card img{height:230px}.footer-row{flex-direction:column;text-align:center}}
+@media(max-width:480px){.service-grid{grid-template-columns:1fr}.hero{padding-top:16px}.slider{min-height:560px}.slide h1,.slide h2{font-size:48px}.arrow{width:36px;height:36px}.prev{left:10px}.next{right:10px}section{padding:65px 0}.booking-form{padding:22px}.real-results-grid{grid-template-columns:1fr}.result-card img{height:290px}}
 
 /* Identidade visual DIVAS: lilás, roxo e dourado */
 :root{
@@ -63,7 +72,6 @@ footer{background:#292333;color:#f6effc;padding:42px 0}.footer-row{display:flex;
 .booking-status{background:var(--gold-light)}
 .address{border-color:var(--line)}
 .footer-brand img{border-color:var(--gold)}
-/* Movimento suave ao entrar na tela */
 @keyframes divasFadeUp{
   from{opacity:0;transform:translateY(22px)}
   to{opacity:1;transform:translateY(0)}
@@ -77,15 +85,12 @@ footer{background:#292333;color:#f6effc;padding:42px 0}.footer-row{display:flex;
 .service-card:nth-child(4){animation-delay:.18s}
 .service-card:nth-child(5){animation-delay:.24s}
 .service-card:nth-child(6){animation-delay:.30s}
-.gallery-grid img{transition:transform .45s ease,box-shadow .45s ease}
-.gallery-grid img:hover{transform:scale(1.025);box-shadow:var(--shadow)}
 .btn,.nav-cta{transition:transform .25s ease,box-shadow .25s ease}
 .btn:hover,.nav-cta:hover{transform:translateY(-2px);box-shadow:0 14px 28px rgba(100,37,143,.28)}
 @media(prefers-reduced-motion:reduce){
   .hero .slider,.intro .photo-stack,.intro .intro-copy,.service-card{animation:none!important}
-  .gallery-grid img,.btn,.nav-cta{transition:none!important}
+  .btn,.nav-cta{transition:none!important}
 }
-
 
 /* Aviso da agenda: destaque dourado DIVAS */
 .availability-help{
@@ -125,14 +130,13 @@ footer{background:#292333;color:#f6effc;padding:42px 0}.footer-row{display:flex;
 @media(prefers-reduced-motion:reduce){
   .availability-help{animation:none}
 }
-
 </style>
 </head>
 <body>
 <header><div class="container nav">
 <a class="brand" href="#inicio"><img src="fotos/logo-divas.jpg" alt="Mascote e identidade visual do DIVAS"><span>DIVAS<small>SALÃO DE BELEZA</small></span></a>
 <button class="menu" id="menuBtn" aria-label="Abrir menu">☰</button>
-<nav class="navlinks" id="navlinks"><a href="#inicio">Início</a><a href="#sobre">O salão</a><a href="#servicos">Serviços</a><a href="#agendar">Agendamento</a><a href="#local">Localização</a></nav>
+<nav class="navlinks" id="navlinks"><a href="#inicio">Início</a><a href="#sobre">O salão</a><a href="#servicos">Serviços</a><a href="#resultados">Resultados</a><a href="#agendar">Agendamento</a><a href="#local">Localização</a></nav>
 <a class="nav-cta" href="#agendar">Agendar horário ↗</a>
 </div></header>
 <main>
@@ -144,7 +148,7 @@ footer{background:#292333;color:#f6effc;padding:42px 0}.footer-row{display:flex;
 <button class="arrow prev" aria-label="Slide anterior">‹</button><button class="arrow next" aria-label="Próximo slide">›</button><div class="dots"><button class="dot active" aria-label="Ir para slide 1"></button><button class="dot" aria-label="Ir para slide 2"></button><button class="dot" aria-label="Ir para slide 3"></button></div>
 </div></div></div>
 <div class="container intro" id="sobre"><div class="photo-stack"><img class="photo-main" src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=900&q=85" alt="Ambiente de salão de beleza"><img class="photo-small" src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=700&q=85" alt="Cuidado com os cabelos"></div>
-<div><span class="kicker">Bem-vinda ao DIVAS</span><h2 class="section-title">Beleza é se sentir bem na própria pele.</h2><p>Um espaço dedicado aos cuidados com seus cabelos e à sua beleza. Aqui você encontra diferentes serviços para renovar o visual e reservar um tempo especial para si.</p><p>Estamos em Moradas do Bosque, Cachoeirinha — RS. Será um prazer receber você!</p><a class="btn" href="#agendar">Agende sua visita ↗</a></div></div>
+<div class="intro-copy"><span class="kicker">Bem-vinda ao DIVAS</span><h2 class="section-title">Beleza é se sentir bem na própria pele.</h2><p>Um espaço dedicado aos cuidados com seus cabelos e à sua beleza. Aqui você encontra diferentes serviços para renovar o visual e reservar um tempo especial para si.</p><p>Estamos em Moradas do Bosque, Cachoeirinha — RS. Será um prazer receber você!</p><a class="btn" href="#agendar">Agende sua visita ↗</a></div></div>
 <section class="services" id="servicos"><div class="container"><div class="section-head"><span class="kicker">Nosso cuidado com você</span><h2 class="section-title">Serviços para realçar sua beleza</h2><p class="section-lead">Escolha o cuidado que combina com seu momento. Consulte disponibilidade e valores pelo WhatsApp.</p></div>
 <div class="service-grid">
 <article class="service-card"><div class="service-icon">✧</div><h3>Alisamentos & escovas</h3><ul><li>Progressiva</li><li>Semi definitiva</li><li>Escova de Botox</li><li>Escova cristalizada</li><li>Selagem</li><li>Escova</li><li>Escova blindada</li></ul></article>
@@ -154,6 +158,58 @@ footer{background:#292333;color:#f6effc;padding:42px 0}.footer-row{display:flex;
 <article class="service-card"><div class="service-icon">☼</div><h3>Espaço Kids</h3><ul><li>Corte infantil</li><li>Tratamentos infantis</li></ul></article>
 <article class="service-card"><div class="service-icon">✧</div><h3>Atendimento especial</h3><ul><li>Orientação para escolher o serviço</li><li>Consulta de disponibilidade</li><li>Agendamento pelo WhatsApp</li></ul></article>
 </div></div></section>
+
+<!-- GALERIA DE RESULTADOS REAIS -->
+<section class="gallery-section" id="resultados">
+  <div class="container">
+    <div class="section-head">
+      <span class="kicker">Portfólio real</span>
+      <h2 class="section-title">Resultados que transformam</h2>
+      <p class="section-lead">Confira atendimentos reais realizados no DIVAS Salão de Beleza em cabelos, manicure e pedicure.</p>
+    </div>
+    <div class="real-results-grid">
+      <figure class="result-card">
+        <img src="IMG-20261123-WA0046.jpg" alt="Manicure e Nail Art - DIVAS Salão de Beleza" loading="lazy">
+        <figcaption>
+          <strong>Manicure &amp; Nail Art</strong>
+          <span>Acabamento impecável com detalhes delicados</span>
+        </figcaption>
+      </figure>
+      <figure class="result-card">
+        <img src="IMG-20261123-WA0047.jpg" alt="Unhas Decoradas - DIVAS Salão de Beleza" loading="lazy">
+        <figcaption>
+          <strong>Unhas Decoradas</strong>
+          <span>Esmaltação elegante com aplicação de pedrarias</span>
+        </figcaption>
+      </figure>
+      <figure class="result-card">
+        <img src="IMG-20261123-WA0048.jpg" alt="Pedicure Completa - DIVAS Salão de Beleza" loading="lazy">
+        <figcaption>
+          <strong>Pedicure Completa</strong>
+          <span>Cuidado especial nos pés com acabamento fino</span>
+        </figcaption>
+      </figure>
+      <figure class="result-card">
+        <img src="IMG-20261123-WA0049.jpg" alt="Alisamento e Brilho Espelhado - DIVAS Salão de Beleza" loading="lazy">
+        <figcaption>
+          <strong>Alisamento &amp; Brilho</strong>
+          <span>Fios alinhados, sedosos e sem frizz</span>
+        </figcaption>
+      </figure>
+      <figure class="result-card">
+        <img src="IMG-20261123-WA0050.jpg" alt="Selagem e Nutrição Capilar - DIVAS Salão de Beleza" loading="lazy">
+        <figcaption>
+          <strong>Selagem &amp; Nutrição</strong>
+          <span>Movimento natural e maciez duradoura</span>
+        </figcaption>
+      </figure>
+    </div>
+    <div class="gallery-cta">
+      <a class="btn" href="#agendar">Quero agendar meu horário ↗</a>
+    </div>
+  </div>
+</section>
+
 <section class="booking" id="agendar"><div class="container booking-wrap"><div><span class="kicker">Seu horário começa aqui</span><h2 class="section-title">Vamos reservar um momento para você?</h2><p>Escolha o serviço e informe o melhor dia e horário. Seu pedido será preparado e enviado para o WhatsApp do DIVAS para confirmar a disponibilidade.</p><p>📍 Moradas do Bosque • Cachoeirinha/RS</p></div>
 <form class="booking-form" id="bookingForm">
 <div class="field"><label for="name">Seu nome</label><input id="name" required minlength="2" autocomplete="name" placeholder="Como podemos chamar você?"></div>
