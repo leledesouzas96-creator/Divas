@@ -30,8 +30,8 @@ header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.92);backdro
 .brand small{display:block;font:600 9px "DM Sans";letter-spacing:3px;text-align:left;color:#9270AD;margin-top:1px}
 .navlinks{display:flex;align-items:center;gap:24px;font-size:13px;font-weight:700;color:#51495a}
 .navlinks a:hover,.kicker{color:var(--deep)}
-.nav-cta,.btn{border:0;border-radius:999px;padding:13px 21px;background:linear-gradient(135deg,#B99AE8 0%,#64258F 78%);color:white;font-weight:700;box-shadow:0 10px 24px rgba(100,37,143,.24);cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:transform .25s ease,box-shadow .25s ease}
-.btn:hover,.nav-cta:hover{transform:translateY(-2px);box-shadow:0 14px 28px rgba(100,37,143,.28)}
+.btn{border:0;border-radius:999px;padding:13px 21px;background:linear-gradient(135deg,#B99AE8 0%,#64258F 78%);color:white;font-weight:700;box-shadow:0 10px 24px rgba(100,37,143,.24);cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:transform .25s ease,box-shadow .25s ease}
+.btn:hover{transform:translateY(-2px);box-shadow:0 14px 28px rgba(100,37,143,.28)}
 .menu{display:none;border:0;background:var(--pale);border-radius:12px;padding:10px;color:var(--deep);font-size:21px}
 
 .hero{padding:30px 0 70px;background:radial-gradient(circle at 85% 15%,#F0E5FB 0,transparent 34%),linear-gradient(180deg,#fff,#FBF7FE)}
@@ -126,15 +126,14 @@ footer{background:#292333;color:#f6effc;padding:42px 0 98px}
 .footer-brand img{width:58px;height:58px;object-fit:cover;border-radius:50%;border:2px solid var(--gold)}
 .footer-note{font-size:12px;color:#c9bbd4}
 
-/* BOTOES FLUTUANTES */
-.floating-stack{position:fixed;right:18px;bottom:18px;z-index:40;display:flex;align-items:center;gap:10px}
-.ai-launcher{border:2px solid var(--gold);border-radius:999px;padding:13px 18px;background:linear-gradient(135deg,#64258F,#8d52bd);color:#fff;font-weight:700;font-size:13px;cursor:pointer;box-shadow:0 12px 30px rgba(100,37,143,.35);display:inline-flex;align-items:center;gap:8px}
+/* BOTAO FLUTUANTE UNICO */
+.floating-stack{position:fixed;right:18px;bottom:18px;z-index:40}
+.ai-launcher{border:2px solid var(--gold);border-radius:999px;padding:13px 20px;background:linear-gradient(135deg,#64258F,#8d52bd);color:#fff;font-weight:700;font-size:13px;cursor:pointer;box-shadow:0 12px 30px rgba(100,37,143,.35);display:inline-flex;align-items:center;gap:8px}
 .ai-launcher .pulse-dot{width:8px;height:8px;border-radius:50%;background:#4ade80;box-shadow:0 0 8px #4ade80}
-.whats{width:50px;height:50px;border-radius:50%;display:grid;place-items:center;background:#25d366;color:white;font-size:23px;box-shadow:0 10px 26px rgba(0,0,0,.22)}
 
 @keyframes divasFadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}}
-@media(max-width:800px){.nav{height:68px}.menu{display:block}.navlinks{display:none;position:absolute;top:68px;left:0;right:0;background:white;padding:22px 5%;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start;gap:19px}.navlinks.open{display:flex}.nav-cta{display:none}.slider{min-height:590px;border-radius:22px}.slide{background-position:60% center}.slide:before{background:linear-gradient(90deg,rgba(34,22,46,.78),rgba(42,27,55,.48))}.slide-content{padding:48px 30px}.slide p{font-size:15px}.intro,.booking-wrap,.location-grid{grid-template-columns:1fr;gap:35px}.intro{padding-top:10px}.photo-stack{min-height:360px}.photo-main{height:320px}.photo-small{height:190px}.service-grid{grid-template-columns:1fr 1fr}.real-results-grid{grid-template-columns:1fr 1fr;gap:12px}.result-card img{height:230px}.footer-row{flex-direction:column;text-align:center}}
+@media(max-width:800px){.nav{height:68px}.menu{display:block}.navlinks{display:none;position:absolute;top:68px;left:0;right:0;background:white;padding:22px 5%;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start;gap:19px}.navlinks.open{display:flex}.slider{min-height:590px;border-radius:22px}.slide{background-position:60% center}.slide:before{background:linear-gradient(90deg,rgba(34,22,46,.78),rgba(42,27,55,.48))}.slide-content{padding:48px 30px}.slide p{font-size:15px}.intro,.booking-wrap,.location-grid{grid-template-columns:1fr;gap:35px}.intro{padding-top:10px}.photo-stack{min-height:360px}.photo-main{height:320px}.photo-small{height:190px}.service-grid{grid-template-columns:1fr 1fr}.real-results-grid{grid-template-columns:1fr 1fr;gap:12px}.result-card img{height:230px}.footer-row{flex-direction:column;text-align:center}}
 @media(max-width:480px){.service-grid{grid-template-columns:1fr}.hero{padding-top:16px}.slider{min-height:560px}.slide h1,.slide h2{font-size:48px}.arrow{width:36px;height:36px}.prev{left:10px}.next{right:10px}section{padding:65px 0}.real-results-grid{grid-template-columns:1fr}.result-card img{height:290px}}
 </style>
 </head>
@@ -143,7 +142,6 @@ footer{background:#292333;color:#f6effc;padding:42px 0 98px}
 <a class="brand" href="#inicio"><img src="fotos/logo-divas.jpg" alt="Mascote e identidade visual do DIVAS"><span>DIVAS<small>SALÃO DE BELEZA</small></span></a>
 <button class="menu" id="menuBtn" aria-label="Abrir menu">☰</button>
 <nav class="navlinks" id="navlinks"><a href="#inicio">Início</a><a href="#sobre">O salão</a><a href="#servicos">Serviços</a><a href="#resultados">Resultados</a><a href="#agendar">Agendamento IA</a><a href="#local">Localização</a></nav>
-<a class="nav-cta" href="#agendar">✦ Agendar com IA</a>
 </div></header>
 
 <main>
@@ -252,7 +250,7 @@ footer{background:#292333;color:#f6effc;padding:42px 0 98px}
         <button type="button" class="ai-chip" onclick="enviarAtalhoIA('Quero agendar Corte')">✂️ Corte</button>
         <button type="button" class="ai-chip" onclick="enviarAtalhoIA('Quero agendar Design de sobrancelhas')">✿ Sobrancelhas</button>
         <button type="button" class="ai-chip" onclick="enviarAtalhoIA('Quero agendar Corte infantil')">☼ Cabelo infantil</button>
-        <button type="button" class="ai-chip" onclick="enviarAtalhoIA('Quais horários vocês atendem?')">🕒 Horários</button>
+        <button type="button" class="ai-chip" onclick="enviarAtalhoIA('Quais horários disponíveis vocês têm hoje e amanhã?')">🕒 Horários disponíveis</button>
       </div>
       <form class="ai-form" onsubmit="enviarChatIA(event)">
         <input type="text" id="aiInput" placeholder="Ex: Quero marcar sobrancelhas para sexta..." autocomplete="off">
@@ -265,12 +263,11 @@ footer{background:#292333;color:#f6effc;padding:42px 0 98px}
 <section class="location" id="local"><div class="container"><div class="section-head"><span class="kicker">Venha nos conhecer</span><h2 class="section-title">Estamos pertinho de você</h2><p class="section-lead">Esperamos sua visita no DIVAS.</p></div><div class="location-grid"><div class="address"><h3 class="section-title" style="font-size:29px">DIVAS — Salão de Beleza</h3><p>Rua Otto Espíndola, 470<br>Moradas do Bosque<br>Cachoeirinha — RS<br>CEP 94960-842</p><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Otto+Espindola+470+Moradas+do+Bosque+Cachoeirinha+RS+94960-842">Abrir rota no Google Maps ↗</a></div><iframe class="map" loading="lazy" title="Mapa de localização do DIVAS" src="https://www.google.com/maps?q=Otto%20Espindola%20470%20Moradas%20do%20Bosque%20Cachoeirinha%20RS%2094960-842&output=embed"></iframe></div></div></section>
 </main>
 
-<footer><div class="container footer-row"><div><div class="footer-brand"><img src="fotos/logo-divas.jpg" alt="Mascote do DIVAS">DIVAS</div><div class="footer-note">SALÃO DE BELEZA • CACHOEIRINHA/RS</div></div><div class="footer-note">Sua beleza, seu momento. ♡<br>Agendamentos pelo WhatsApp: (51) 99174-9541</div></div></footer>
+<footer><div class="container footer-row"><div><div class="footer-brand"><img src="fotos/logo-divas.jpg" alt="Mascote do DIVAS">DIVAS</div><div class="footer-note">SALÃO DE BELEZA • CACHOEIRINHA/RS</div></div><div class="footer-note">Sua beleza, seu momento. ♡<br>WhatsApp: (51) 99174-9541</div></div></footer>
 
-<!-- BOTOES FLUTUANTES -->
+<!-- BOTAO FLUTUANTE UNICO -->
 <div class="floating-stack">
   <a class="ai-launcher" href="#agendar" onclick="setTimeout(()=>document.getElementById('aiInput').focus(),250)"><span class="pulse-dot"></span> Agendar com IA ✦</a>
-  <a class="whats" href="https://wa.me/5551991749541?text=Ol%C3%A1%2C%20DIVAS!%20Gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20agendamento." target="_blank" rel="noopener" aria-label="Falar com o DIVAS pelo WhatsApp">✆</a>
 </div>
 
 <script>
