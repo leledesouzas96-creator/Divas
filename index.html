@@ -319,11 +319,13 @@ const menuBtn=document.getElementById('menuBtn'),nav=document.getElementById('na
 menuBtn.addEventListener('click',()=>nav.classList.toggle('open'));
 nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
 
-// RECEPCIONISTA VIRTUAL IA (DIVAS-IA WORKER)
+// PONTE DIRETA ENTRE DIVAS-IA E DIVAS-API (EVITA ERRO 1042 DO CLOUDFLARE)
 const IA_WORKER_URL='https://divas-ia.vezqoraai.workers.dev';
+const DIVAS_API_URL='https://divas-api.vezqoraai.workers.dev';
+const MAPS_LINK='https://www.google.com/maps/search/?api=1&query=Rua+Otto+Espindola+470+Moradas+do+Bosque+Cachoeirinha+RS+94960-842';
 const aiMessages=document.getElementById('aiMessages');
 const aiInput=document.getElementById('aiInput');
-let aiHistory=[];
+let geminiContents=[];
 let aiBusy=false;
 
 function formatarTextoIA(text){
@@ -373,6 +375,53 @@ function addAIMsg(text,role,booking=null){
   aiMessages.scrollTop=aiMessages.scrollHeight;
 }
 
+async function executarAcaoAgenda(nome,args){
+  if(nome==='verificar_horarios'){
+    const res=await fetch(`${DIVAS_API_URL}/api/availability?date=${encodeURIComponent(args.date)}&service=${encodeURIComponent(args.serviceId)}`);
+    const data=await res.json();
+    if(!res.ok)return{erro:data.error||'Não foi possível consultar a agenda.'};
+    const livres=(data.slots||[]).map(s=>`${s.start} às ${s.end}`);
+    return{
+      data:args.date,
+      servico:args.serviceId,
+      total_livres:livres.length,
+      horarios_livres:livres,
+      aviso:livres.length
+        ?'Apenas estes horários estão livres; os demais já estão reservados por outras clientes.'
+        :'Todos os horários deste dia já estão ocupados.'
+    };
+  }
+  if(nome==='criar_agendamento'){
+    const res=await fetch(`${DIVAS_API_URL}/api/bookings`,{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({
+        name:args.name,
+        phone:args.phone,
+        serviceId:args.serviceId,
+        date:args.date,
+        startTime:args.startTime,
+        notes:args.notes||'Agendado via Recepcionista IA'
+      })
+    });
+    const data=await res.json();
+    if(!res.ok){
+      return{sucesso:false,erro:data.error||'Este horário acabou de ser reservado por outra cliente.'};
+    }
+    return{
+      sucesso:true,
+      bookingId:data.bookingId,
+      cliente:args.name,
+      whatsappCliente:args.phone,
+      servico:args.serviceId,
+      data:args.date,
+      horario:args.startTime,
+      localizacao:MAPS_LINK
+    };
+  }
+  return{erro:'Função desconhecida'};
+}
+
 function enviarAtalhoIA(text){
   aiInput.value=text;
   enviarChatIA();
@@ -385,7 +434,7 @@ async function enviarChatIA(e){
   aiBusy=true;
   aiInput.value='';
   addAIMsg(text,'user');
-  aiHistory.push({role:'user',content:text});
+  geminiContents.push({role:'user',parts:[{text}]});
 
   const typing=document.createElement('div');
   typing.className='ai-msg bot';
@@ -393,17 +442,36 @@ async function enviarChatIA(e){
   aiMessages.appendChild(typing);
   aiMessages.scrollTop=aiMessages.scrollHeight;
 
+  let agendamentoCriado=null;
+
   try{
-    const res=await fetch(IA_WORKER_URL,{
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({message:text,history:aiHistory})
-    });
-    const data=await res.json();
-    typing.remove();
-    const reply=data.reply||data.error||'Desculpe, tive uma instabilidade. Pode repetir por favor?';
-    addAIMsg(reply,'bot',data.booking||null);
-    aiHistory.push({role:'assistant',content:reply});
+    for(let step=0;step<4;step++){
+      const res=await fetch(IA_WORKER_URL,{
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({contents:geminiContents.slice(-12)})
+      });
+      const data=await res.json();
+
+      if(data.action && data.candidate){
+        geminiContents.push(data.candidate);
+        const resultado=await executarAcaoAgenda(data.action.name,data.action.args||{});
+        if(data.action.name==='criar_agendamento' && resultado.sucesso){
+          agendamentoCriado=resultado;
+        }
+        geminiContents.push({
+          role:'user',
+          parts:[{functionResponse:{name:data.action.name,response:resultado}}]
+        });
+        continue;
+      }
+
+      typing.remove();
+      const reply=data.reply||'Desculpe, tive uma instabilidade. Pode repetir por favor?';
+      addAIMsg(reply,'bot',agendamentoCriado);
+      geminiContents.push({role:'model',parts:[{text:reply}]});
+      break;
+    }
   }catch(err){
     typing.remove();
     addAIMsg('Tive uma falha rápida de conexão. Tente novamente em instantes ou chame no WhatsApp (51) 99174-9541.','bot');
