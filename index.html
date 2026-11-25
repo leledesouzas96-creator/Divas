@@ -66,11 +66,13 @@ section{padding:82px 0}
 .section-head{text-align:center;max-width:680px;margin:0 auto 42px}
 .section-head .section-title{margin-bottom:12px}
 .service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.service-card{background:white;border:1px solid #E8DDF2;border-radius:20px;padding:25px;transition:.3s;box-shadow:0 8px 25px rgba(75,43,102,.04);animation:divasFadeUp .65s ease both}
+.service-card{background:white;border:1px solid #E8DDF2;border-radius:20px;padding:25px;transition:.3s;box-shadow:0 8px 25px rgba(75,43,102,.04);animation:divasFadeUp .65s ease both;display:flex;flex-direction:column;justify-content:space-between}
 .service-card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:var(--gold)}
 .service-icon{width:46px;height:46px;border-radius:15px;background:#F0E5FB;color:var(--deep);display:grid;place-items:center;font-size:22px}
 .service-card h3{font:600 22px "Playfair Display";margin:17px 0 12px}
-.service-card ul{padding-left:18px;margin:0;color:var(--muted);font-size:14px;line-height:1.9}
+.service-card ul{padding-left:18px;margin:0 0 18px;color:var(--muted);font-size:14px;line-height:1.9}
+.service-link{align-self:flex-start;border:1px solid var(--line);background:var(--pale);color:var(--deep);border-radius:999px;padding:8px 14px;font-size:12px;font-weight:700;cursor:pointer;transition:.2s}
+.service-link:hover{background:var(--deep);color:#fff;border-color:var(--deep)}
 
 .gallery-section{background:#fff}
 .real-results-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px}
@@ -99,12 +101,23 @@ section{padding:82px 0}
 .ai-head-info img{width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid var(--gold)}
 .ai-head-info strong{display:block;font-size:15px}
 .ai-head-info span{display:block;font-size:12px;color:#F7EBC5}
-.ai-body{padding:16px;height:350px;overflow-y:auto;display:flex;flex-direction:column;gap:10px;background:#fbf8fe}
-.ai-msg{padding:12px 15px;border-radius:16px;font-size:14px;line-height:1.5;max-width:88%;white-space:pre-wrap;word-break:break-word}
+.ai-body{padding:16px;height:375px;overflow-y:auto;display:flex;flex-direction:column;gap:10px;background:#fbf8fe}
+.ai-msg{padding:12px 15px;border-radius:16px;font-size:14px;line-height:1.5;max-width:90%;white-space:pre-wrap;word-break:break-word}
 .ai-msg.bot{background:#fff;border:1px solid var(--line);color:var(--ink);align-self:flex-start;border-bottom-left-radius:4px;box-shadow:0 4px 12px rgba(77,35,111,.05)}
 .ai-msg.bot strong{color:var(--deep)}
 .ai-msg.bot a{color:var(--deep);font-weight:700;text-decoration:underline}
 .ai-msg.user{background:linear-gradient(135deg,#64258F,#8554B1);color:#fff;align-self:flex-end;border-bottom-right-radius:4px}
+
+/* GRADE INTERATIVA DE HORARIOS CLICAVEIS DENTRO DO CHAT */
+.slot-picker-card{background:#fff;border:1.5px solid var(--gold);border-radius:18px;padding:14px;align-self:stretch;box-shadow:0 8px 22px rgba(100,37,143,.08)}
+.slot-picker-title{font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--deep);margin-bottom:10px;display:flex;align-items:center;justify-content:space-between}
+.slot-day-group{margin-bottom:12px}
+.slot-day-group:last-child{margin-bottom:0}
+.slot-day-label{font-size:13px;font-weight:700;color:var(--ink);margin-bottom:6px;display:block}
+.slot-pills{display:flex;flex-wrap:wrap;gap:6px}
+.slot-pill{border:1px solid var(--line);background:var(--pale);color:var(--deep);border-radius:999px;padding:6px 12px;font-size:12.5px;font-weight:700;cursor:pointer;transition:.2s}
+.slot-pill:hover,.slot-pill.selected{background:linear-gradient(135deg,#64258F,#8554B1);color:#fff;border-color:var(--deep);transform:translateY(-1px)}
+
 .ai-wa-voucher{margin-top:10px;display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;background:#25d366;color:#fff !important;text-decoration:none !important;font-weight:700;font-size:13px;box-shadow:0 6px 18px rgba(37,211,102,.3)}
 .ai-chips{padding:10px 14px 6px;display:flex;gap:7px;flex-wrap:wrap;background:#fbf8fe;border-top:1px solid var(--line)}
 .ai-chip{border:1px solid var(--line);background:#fff;color:var(--deep);border-radius:999px;padding:6px 12px;font-size:12px;font-weight:700;cursor:pointer;transition:.2s}
@@ -147,23 +160,23 @@ footer{background:#292333;color:#f6effc;padding:42px 0 98px}
 <main>
 <div class="hero" id="inicio"><div class="container">
 <div class="slider" role="region" aria-roledescription="carrossel" aria-label="Apresentação do salão DIVAS" tabindex="0">
-<div class="slide active" style="background-image:url('fotos/cabelo-01.jpg')"><div class="slide-content"><span class="eyebrow">Beleza • cuidado • autoestima</span><h1>Seu momento.<br>Sua beleza.</h1><p>Um espaço para cuidar de você, renovar a autoestima e realçar aquilo que faz você ser única.</p><a class="btn" href="#agendar">Agendar agora com IA <span>✦</span></a></div></div>
+<div class="slide active" style="background-image:url('fotos/cabelo-01.jpg')"><div class="slide-content"><span class="eyebrow">Beleza • cuidado • autoestima</span><h1>Seu momento.<br>Sua beleza.</h1><p>Um espaço para cuidar de você, renovar a autoestima e realçar aquilo que faz você ser única.</p><a class="btn" href="#agendar" onclick="iniciarAgendamentoRapido('Quero ver os horários disponíveis para agendar')">Agendar agora com IA <span>✦</span></a></div></div>
 <div class="slide" style="background-image:url('fotos/cabelo-02.jpg')"><div class="slide-content"><span class="eyebrow">Cabelos com personalidade</span><h2>Transforme o visual.<br>Realce sua essência.</h2><p>Alisamentos, coloração, mechas, cortes e tratamentos para diferentes tipos de cabelo.</p><a class="btn" href="#servicos">Conheça os serviços ↗</a></div></div>
-<div class="slide" style="background-image:url('fotos/unhas-01.jpg')"><div class="slide-content"><span class="eyebrow">Detalhes que fazem diferença</span><h2>Um cuidado<br>só seu.</h2><p>Beleza e bem-estar em cada detalhe, com atendimento pensado para você.</p><a class="btn" href="#agendar">Quero agendar ↗</a></div></div>
+<div class="slide" style="background-image:url('fotos/unhas-01.jpg')"><div class="slide-content"><span class="eyebrow">Detalhes que fazem diferença</span><h2>Um cuidado<br>só seu.</h2><p>Beleza e bem-estar em cada detalhe, com atendimento pensado para você.</p><a class="btn" href="#agendar" onclick="iniciarAgendamentoRapido('Quero agendar Pé e mão')">Quero agendar ↗</a></div></div>
 <button class="arrow prev" aria-label="Slide anterior">‹</button><button class="arrow next" aria-label="Próximo slide">›</button><div class="dots"><button class="dot active" aria-label="Ir para slide 1"></button><button class="dot" aria-label="Ir para slide 2"></button><button class="dot" aria-label="Ir para slide 3"></button></div>
 </div></div></div>
 
 <div class="container intro" id="sobre"><div class="photo-stack"><img class="photo-main" src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=900&q=85" alt="Ambiente de salão de beleza"><img class="photo-small" src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=700&q=85" alt="Cuidado com os cabelos"></div>
-<div class="intro-copy"><span class="kicker">Bem-vinda ao DIVAS</span><h2 class="section-title">Beleza é se sentir bem na própria pele.</h2><p>Um espaço dedicado aos cuidados com seus cabelos e à sua beleza. Aqui você encontra diferentes serviços para renovar o visual e reservar um tempo especial para si.</p><p>Estamos em Moradas do Bosque, Cachoeirinha — RS. Será um prazer receber você!</p><a class="btn" href="#agendar">Agendar com nossa Recepcionista IA ✦</a></div></div>
+<div class="intro-copy"><span class="kicker">Bem-vinda ao DIVAS</span><h2 class="section-title">Beleza é se sentir bem na própria pele.</h2><p>Um espaço dedicado aos cuidados com seus cabelos e à sua beleza. Aqui você encontra diferentes serviços para renovar o visual e reservar um tempo especial para si.</p><p>Estamos em Moradas do Bosque, Cachoeirinha — RS. Será um prazer receber você!</p><a class="btn" href="#agendar" onclick="iniciarAgendamentoRapido('Quero ver os horários disponíveis para agendar')">Agendar com nossa Recepcionista IA ✦</a></div></div>
 
-<section class="services" id="servicos"><div class="container"><div class="section-head"><span class="kicker">Nosso cuidado com você</span><h2 class="section-title">Serviços para realçar sua beleza</h2><p class="section-lead">Escolha o cuidado que combina com seu momento. Consulte disponibilidade em segundos com nossa assistente.</p></div>
+<section class="services" id="servicos"><div class="container"><div class="section-head"><span class="kicker">Nosso cuidado com você</span><h2 class="section-title">Serviços para realçar sua beleza</h2><p class="section-lead">Toque em qualquer serviço abaixo para ver os horários livres em segundos com nossa assistente.</p></div>
 <div class="service-grid">
-<article class="service-card"><div class="service-icon">✧</div><h3>Alisamentos & escovas</h3><ul><li>Progressiva</li><li>Semi definitiva</li><li>Escova de Botox</li><li>Escova cristalizada</li><li>Selagem</li><li>Escova</li><li>Escova blindada</li></ul></article>
-<article class="service-card"><div class="service-icon">✂</div><h3>Cortes & cor</h3><ul><li>Corte</li><li>Coloração</li><li>Pigmentação</li><li>Mechas</li><li>Mechas coloridas</li></ul></article>
-<article class="service-card"><div class="service-icon">♡</div><h3>Tratamentos capilares</h3><ul><li>Tratamentos capilares</li><li>Hidratação</li><li>Cuidados para cachos e cabelos afros</li></ul></article>
-<article class="service-card"><div class="service-icon">✿</div><h3>Beleza & cuidados</h3><ul><li>Design de sobrancelhas</li><li>Hidratação labial</li><li>Buço</li><li>Pé e mão</li></ul></article>
-<article class="service-card"><div class="service-icon">☼</div><h3>Espaço Kids</h3><ul><li>Corte infantil</li><li>Tratamentos infantis</li></ul></article>
-<article class="service-card"><div class="service-icon">✧</div><h3>Atendimento 24h</h3><ul><li>Recepcionista Virtual IA</li><li>Consulta de horários em tempo real</li><li>Confirmação com localização no WhatsApp</li></ul></article>
+<article class="service-card"><div><div class="service-icon">✧</div><h3>Alisamentos & escovas</h3><ul><li>Progressiva</li><li>Semi definitiva</li><li>Escova de Botox</li><li>Escova cristalizada</li><li>Selagem</li><li>Escova</li><li>Escova blindada</li></ul></div><button type="button" class="service-link" onclick="iniciarAgendamentoRapido('Quero agendar Progressiva')">Agendar este serviço ↗</button></article>
+<article class="service-card"><div><div class="service-icon">✂</div><h3>Cortes & cor</h3><ul><li>Corte</li><li>Coloração</li><li>Pigmentação</li><li>Mechas</li><li>Mechas coloridas</li></ul></div><button type="button" class="service-link" onclick="iniciarAgendamentoRapido('Quero agendar Corte')">Agendar este serviço ↗</button></article>
+<article class="service-card"><div><div class="service-icon">♡</div><h3>Tratamentos capilares</h3><ul><li>Tratamentos capilares</li><li>Hidratação</li><li>Cuidados para cachos e cabelos afros</li></ul></div><button type="button" class="service-link" onclick="iniciarAgendamentoRapido('Quero agendar Hidratação capilar')">Agendar este serviço ↗</button></article>
+<article class="service-card"><div><div class="service-icon">✿</div><h3>Beleza & cuidados</h3><ul><li>Design de sobrancelhas</li><li>Hidratação labial</li><li>Buço</li><li>Pé e mão</li></ul></div><button type="button" class="service-link" onclick="iniciarAgendamentoRapido('Quero agendar Design de sobrancelhas')">Agendar este serviço ↗</button></article>
+<article class="service-card"><div><div class="service-icon">☼</div><h3>Espaço Kids</h3><ul><li>Corte infantil</li><li>Tratamentos infantis</li></ul></div><button type="button" class="service-link" onclick="iniciarAgendamentoRapido('Quero agendar Corte infantil')">Agendar este serviço ↗</button></article>
+<article class="service-card"><div><div class="service-icon">✧</div><h3>Atendimento 24h</h3><ul><li>Recepcionista Virtual IA</li><li>Consulta de horários em tempo real</li><li>Confirmação com localização no WhatsApp</li></ul></div><button type="button" class="service-link" onclick="iniciarAgendamentoRapido('Quais horários disponíveis vocês têm?')">Ver horários livres ↗</button></article>
 </div></div></section>
 
 <!-- GALERIA DE RESULTADOS REAIS -->
@@ -212,7 +225,7 @@ footer{background:#292333;color:#f6effc;padding:42px 0 98px}
       </figure>
     </div>
     <div class="gallery-cta">
-      <a class="btn" href="#agendar">Agendar meu horário agora ✦</a>
+      <a class="btn" href="#agendar" onclick="iniciarAgendamentoRapido('Quero ver os horários disponíveis para agendar')">Agendar meu horário agora ✦</a>
     </div>
   </div>
 </section>
@@ -223,7 +236,7 @@ footer{background:#292333;color:#f6effc;padding:42px 0 98px}
     <div>
       <span class="kicker">Atendimento inteligente 24h</span>
       <h2 class="section-title">Agende seu horário direto com nossa IA.</h2>
-      <p>Sem formulários complicados! Diga qual serviço você quer fazer e o melhor dia — nossa recepcionista virtual mostra apenas os horários realmente livres, reserva na hora e entrega seu comprovante com a localização do salão direto no WhatsApp.</p>
+      <p>Sem formulários complicados! Escolha o serviço, toque no horário livre desejado e nossa recepcionista virtual reserva na hora e entrega seu comprovante com a localização do salão direto no WhatsApp.</p>
       <div class="hours-badge">
         <strong>✦ HORÁRIO DE FUNCIONAMENTO ✦</strong>
         <span>Segunda a Sábado • 9h às 19h30</span>
@@ -237,12 +250,12 @@ footer{background:#292333;color:#f6effc;padding:42px 0 98px}
           <img src="fotos/logo-divas.jpg" alt="Recepcionista DIVAS">
           <div>
             <strong>Recepcionista DIVAS IA</strong>
-            <span>● Online • Consulta e reserva automática</span>
+            <span id="aiStatusText">● Online • Consulta e reserva automática</span>
           </div>
         </div>
       </div>
       <div class="ai-body" id="aiMessages">
-        <div class="ai-msg bot">Olá, diva! ✨ Sou a assistente virtual do DIVAS Salão de Beleza. Qual serviço você gostaria de agendar e para qual dia?</div>
+        <div class="ai-msg bot">Olá, diva! ✨ Toque em um serviço abaixo ou diga o que você deseja fazer para eu mostrar os horários livres na hora:</div>
       </div>
       <div class="ai-chips">
         <button type="button" class="ai-chip" onclick="enviarAtalhoIA('Quero agendar Progressiva')">✨ Progressiva</button>
@@ -250,7 +263,7 @@ footer{background:#292333;color:#f6effc;padding:42px 0 98px}
         <button type="button" class="ai-chip" onclick="enviarAtalhoIA('Quero agendar Corte')">✂️ Corte</button>
         <button type="button" class="ai-chip" onclick="enviarAtalhoIA('Quero agendar Design de sobrancelhas')">✿ Sobrancelhas</button>
         <button type="button" class="ai-chip" onclick="enviarAtalhoIA('Quero agendar Corte infantil')">☼ Cabelo infantil</button>
-        <button type="button" class="ai-chip" onclick="enviarAtalhoIA('Quais horários disponíveis vocês têm hoje e amanhã?')">🕒 Horários disponíveis</button>
+        <button type="button" class="ai-chip" onclick="enviarAtalhoIA('Quais horários disponíveis vocês têm?')">🕒 Horários livres</button>
       </div>
       <form class="ai-form" onsubmit="enviarChatIA(event)">
         <input type="text" id="aiInput" placeholder="Ex: Quero marcar sobrancelhas para sexta..." autocomplete="off">
@@ -267,7 +280,7 @@ footer{background:#292333;color:#f6effc;padding:42px 0 98px}
 
 <!-- BOTAO FLUTUANTE UNICO -->
 <div class="floating-stack">
-  <a class="ai-launcher" href="#agendar" onclick="setTimeout(()=>document.getElementById('aiInput').focus(),250)"><span class="pulse-dot"></span> Agendar com IA ✦</a>
+  <a class="ai-launcher" href="#agendar" onclick="iniciarAgendamentoRapido('Quais horários disponíveis vocês têm?')"><span class="pulse-dot"></span> Agendar com IA ✦</a>
 </div>
 
 <script>
@@ -319,14 +332,16 @@ const menuBtn=document.getElementById('menuBtn'),nav=document.getElementById('na
 menuBtn.addEventListener('click',()=>nav.classList.toggle('open'));
 nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
 
-// RECEPCIONISTA VIRTUAL IA + CONSULTA DIRETA NA AGENDA REAL
+// RECEPCIONISTA VIRTUAL IA + GRADE INTERATIVA DE HORARIOS CLICAVEIS
 const IA_WORKER_URL='https://divas-ia.vezqoraai.workers.dev';
 const DIVAS_API_URL='https://divas-api.vezqoraai.workers.dev';
 const MAPS_LINK='https://www.google.com/maps/search/?api=1&query=Rua+Otto+Espindola+470+Moradas+do+Bosque+Cachoeirinha+RS+94960-842';
 const aiMessages=document.getElementById('aiMessages');
 const aiInput=document.getElementById('aiInput');
+const aiStatusText=document.getElementById('aiStatusText');
 let geminiContents=[];
 let aiBusy=false;
+let ultimoServicoSelecionado='Corte';
 
 function formatarTextoIA(text){
   return String(text)
@@ -353,6 +368,48 @@ function criarLinkWhatsAppCliente(booking){
   return `https://wa.me/${foneComDDI}?text=${encodeURIComponent(msg)}`;
 }
 
+function renderizarGradeHorarios(diasDisponiveis, nomeServico){
+  if(!diasDisponiveis || !diasDisponiveis.length) return;
+  const card=document.createElement('div');
+  card.className='slot-picker-card';
+
+  const header=document.createElement('div');
+  header.className='slot-picker-title';
+  header.innerHTML=`<span>🗓️ Toque em um horário livre (${nomeServico})</span>`;
+  card.appendChild(header);
+
+  diasDisponiveis.forEach(dia=>{
+    if(!dia.horarios.length) return;
+    const group=document.createElement('div');
+    group.className='slot-day-group';
+
+    const label=document.createElement('span');
+    label.className='slot-day-label';
+    label.textContent=`${dia.diaSemana}, ${dia.dataBR}:`;
+    group.appendChild(label);
+
+    const pills=document.createElement('div');
+    pills.className='slot-pills';
+    dia.horarios.slice(0,10).forEach(hora=>{
+      const btn=document.createElement('button');
+      btn.type='button';
+      btn.className='slot-pill';
+      btn.textContent=hora;
+      btn.onclick=()=>{
+        card.querySelectorAll('.slot-pill').forEach(p=>p.classList.remove('selected'));
+        btn.classList.add('selected');
+        enviarAtalhoIA(`Quero reservar ${nomeServico} no dia ${dia.dataBR} (${dia.iso}) às ${hora}`);
+      };
+      pills.appendChild(btn);
+    });
+    group.appendChild(pills);
+    card.appendChild(group);
+  });
+
+  aiMessages.appendChild(card);
+  aiMessages.scrollTop=aiMessages.scrollHeight;
+}
+
 function addAIMsg(text,role,booking=null){
   const div=document.createElement('div');
   div.className=`ai-msg ${role}`;
@@ -375,35 +432,49 @@ function addAIMsg(text,role,booking=null){
   aiMessages.scrollTop=aiMessages.scrollHeight;
 }
 
-function detectarServicoTexto(texto){
+function detectarServicoInfo(texto){
   const t=texto.toLowerCase();
-  if(t.includes('progressiva')||t.includes('botox')||t.includes('selagem')||t.includes('escova'))return'progressiva';
-  if(t.includes('sobrancelha'))return'sobrancelhas';
-  if(t.includes('pé')||t.includes('pe e mao')||t.includes('mão')||t.includes('unha'))return'pe-e-mao';
-  if(t.includes('mecha')||t.includes('colora')||t.includes('tintura'))return'coloracao-mechas';
-  if(t.includes('hidrata'))return'hidratacao-tratamento';
-  if(t.includes('buço')||t.includes('buco'))return'buco';
-  if(t.includes('labial'))return'hidratacao-labial';
-  return'corte';
+  if(t.includes('progressiva')||t.includes('botox')||t.includes('selagem')||t.includes('escova'))return{id:'progressiva',nome:'Progressiva / Alisamento'};
+  if(t.includes('sobrancelha'))return{id:'sobrancelhas',nome:'Design de Sobrancelhas'};
+  if(t.includes('pé')||t.includes('pe e mao')||t.includes('mão')||t.includes('unha'))return{id:'pe-e-mao',nome:'Pé e Mão'};
+  if(t.includes('mecha')||t.includes('colora')||t.includes('tintura'))return{id:'coloracao-mechas',nome:'Coloração / Mechas'};
+  if(t.includes('hidrata'))return{id:'hidratacao-tratamento',nome:'Hidratação Capilar'};
+  if(t.includes('buço')||t.includes('buco'))return{id:'buco',nome:'Buço'};
+  if(t.includes('labial'))return{id:'hidratacao-labial',nome:'Hidratação Labial'};
+  if(t.includes('infantil')||t.includes('kids'))return{id:'corte',nome:'Corte Infantil'};
+  return{id:'corte',nome:ultimoServicoSelecionado||'Corte'};
 }
 
 async function buscarContextoAgenda(textoUsuario){
-  const servico=detectarServicoTexto(textoUsuario);
+  const servicoInfo=detectarServicoInfo(textoUsuario);
+  ultimoServicoSelecionado=servicoInfo.nome;
   const linhas=[];
+  const diasEstruturados=[];
+  const diasSemana=['Domingo','Segunda-feira','Terça-feira','Quarta-feira','Quinta-feira','Sexta-feira','Sábado'];
   const agora=new Date();
+
   for(let offset=0;offset<4;offset++){
     const d=new Date(agora.getTime()+offset*86400000);
-    if(d.getDay()===0)continue; // pula domingo
+    if(d.getDay()===0)continue;
     const iso=`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
     const br=`${String(d.getDate()).padStart(2,'0')}/${String(d.getMonth()+1).padStart(2,'0')}`;
+    const diaSemana=diasSemana[d.getDay()];
     try{
-      const r=await fetch(`${DIVAS_API_URL}/api/availability?date=${iso}&service=${servico}`);
+      const r=await fetch(`${DIVAS_API_URL}/api/availability?date=${iso}&service=${servicoInfo.id}`);
       const data=await r.json();
       const livres=(data.slots||[]).map(s=>s.start);
-      linhas.push(`${br} (${iso}): ${livres.length?livres.join(', '):'LOTADO'}`);
+      linhas.push(`${diaSemana}, ${br} (${iso}): ${livres.length?livres.join(', '):'LOTADO'}`);
+      if(livres.length){
+        diasEstruturados.push({diaSemana,dataBR:br,iso,horarios:livres});
+      }
     }catch{}
   }
-  return `[AGENDA_REAL para ${servico} — horários já marcados não aparecem]:\n${linhas.join('\n')}`;
+
+  return{
+    servicoInfo,
+    diasEstruturados,
+    textoContexto:`[AGENDA_REAL para ${servicoInfo.id} — horários já marcados não aparecem]:\n${linhas.join('\n')}`
+  };
 }
 
 async function gravarAgendamentoReal(serviceId,date,startTime,name,phone){
@@ -437,6 +508,14 @@ async function gravarAgendamentoReal(serviceId,date,startTime,name,phone){
   }
 }
 
+function iniciarAgendamentoRapido(mensagem){
+  const sec=document.getElementById('agendar');
+  if(sec)sec.scrollIntoView({behavior:'smooth'});
+  setTimeout(()=>{
+    enviarAtalhoIA(mensagem);
+  },350);
+}
+
 function enviarAtalhoIA(text){
   aiInput.value=text;
   enviarChatIA();
@@ -449,16 +528,17 @@ async function enviarChatIA(e){
   aiBusy=true;
   aiInput.value='';
   addAIMsg(text,'user');
+  aiStatusText.textContent='● Verificando horários livres...';
 
   const typing=document.createElement('div');
   typing.className='ai-msg bot';
-  typing.textContent='Consultando agenda... ✨';
+  typing.textContent='Consultando agenda em tempo real... ✨';
   aiMessages.appendChild(typing);
   aiMessages.scrollTop=aiMessages.scrollHeight;
 
   try{
-    const contextoAgenda=await buscarContextoAgenda(text);
-    geminiContents.push({role:'user',parts:[{text:`${text}\n\n${contextoAgenda}`}]});
+    const agenda=await buscarContextoAgenda(text);
+    geminiContents.push({role:'user',parts:[{text:`${text}\n\n${agenda.textoContexto}`}]});
 
     const res=await fetch(IA_WORKER_URL,{
       method:'POST',
@@ -471,7 +551,6 @@ async function enviarChatIA(e){
     let reply=data.reply||'Desculpe, tive uma instabilidade. Pode repetir por favor?';
     let booking=null;
 
-    // Verifica se a IA emitiu o comando [AGENDAR|servico|data|hora|nome|fone]
     const match=reply.match(/\[AGENDAR\|([^|\]]+)\|([^|\]]+)\|([^|\]]+)\|([^|\]]+)\|([^\]]+)\]/i);
     if(match){
       reply=reply.replace(match[0],'').trim();
@@ -486,17 +565,25 @@ async function enviarChatIA(e){
         booking=resAg;
         reply+=`\n\n✅ Reserva confirmada na agenda! Pedido #${resAg.bookingId}.`;
       }else{
-        reply=`Ops! Esse horário acabou de ser ocupado (${resAg.erro}). Escolha outro horário livre por favor!`;
+        reply=`Ops! Esse horário acabou de ser ocupado (${resAg.erro}). Escolha outro horário livre abaixo!`;
       }
     }
 
     addAIMsg(reply,'bot',booking);
+
+    // Exibe cartao interativo com horarios clicaveis se ainda nao fechou reserva
+    const escolheuHora=/às\s+\d{2}:\d{2}/i.test(text);
+    if(!booking && !escolheuHora && agenda.diasEstruturados.length){
+      renderizarGradeHorarios(agenda.diasEstruturados,agenda.servicoInfo.nome);
+    }
+
     geminiContents.push({role:'model',parts:[{text:reply}]});
   }catch(err){
     typing.remove();
     addAIMsg('Tive uma falha rápida de conexão. Tente novamente em instantes ou chame no WhatsApp (51) 99174-9541.','bot');
   }finally{
     aiBusy=false;
+    aiStatusText.textContent='● Online • Consulta e reserva automática';
   }
 }
 </script>
