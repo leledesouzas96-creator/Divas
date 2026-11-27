@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>DIVAS Salão de Beleza — Recepcionista DIVAS IA</title>
+  <title>DIVAS Salão de Beleza — Cachoeirinha/RS</title>
   <style>
     :root {
       --roxo-escuro: #4b1d7a;
@@ -11,6 +11,7 @@
       --roxo-claro: #f4eefb;
       --borda-dourada: #d4af37;
       --texto: #1f1b24;
+      --texto-suave: #5a5266;
       --cinza-suave: #f7f5fa;
       --borda-suave: #e5daf2;
     }
@@ -19,6 +20,10 @@
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     html,
@@ -41,6 +46,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 10px;
       box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
       position: sticky;
       top: 0;
@@ -58,8 +64,22 @@
       display: block;
       font-size: 0.68rem;
       letter-spacing: 0.14em;
-      color: #6d6478;
+      color: var(--texto-suave);
       text-transform: uppercase;
+    }
+
+    .nav-topo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .link-topo {
+      text-decoration: none;
+      color: var(--roxo-escuro);
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 6px 8px;
     }
 
     .btn-abrir-topo {
@@ -68,29 +88,139 @@
       border: none;
       border-radius: 10px;
       padding: 8px 12px;
-      font-size: 0.85rem;
-      font-weight: 600;
+      font-size: 0.84rem;
+      font-weight: 700;
       cursor: pointer;
     }
 
-    .aviso-local {
-      max-width: 540px;
-      margin: 14px auto 0;
-      padding: 10px 14px;
-      background: rgba(255, 255, 255, 0.94);
-      border-radius: 12px;
-      font-size: 0.82rem;
-      color: var(--roxo-escuro);
-      text-align: center;
-      font-weight: 600;
+    .container-site {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 16px 12px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
     }
 
-    .chat-wrapper {
-      max-width: 540px;
-      margin: 14px auto 0;
-      padding: 0 12px 24px;
-      position: relative;
-      z-index: 10;
+    .hero-card,
+    .secao-card {
+      background: #ffffff;
+      border-radius: 20px;
+      border: 2px solid var(--borda-dourada);
+      box-shadow: 0 14px 36px rgba(24, 6, 46, 0.28);
+      padding: 18px 16px;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      background: var(--roxo-claro);
+      color: var(--roxo-escuro);
+      font-size: 0.74rem;
+      font-weight: 700;
+      padding: 5px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+    }
+
+    .hero-titulo {
+      font-size: 1.38rem;
+      line-height: 1.25;
+      color: var(--roxo-escuro);
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .hero-texto {
+      font-size: 0.92rem;
+      line-height: 1.5;
+      color: var(--texto-suave);
+      margin-bottom: 14px;
+    }
+
+    .acoes-hero {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .btn-primario {
+      background: var(--roxo-principal);
+      color: #ffffff;
+      border: none;
+      border-radius: 12px;
+      padding: 11px 16px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .btn-secundario {
+      background: #16a34a;
+      color: #ffffff;
+      border: none;
+      border-radius: 12px;
+      padding: 11px 16px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .secao-titulo {
+      font-size: 1.1rem;
+      color: var(--roxo-escuro);
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .grid-servicos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 10px;
+    }
+
+    .servico-item {
+      background: var(--cinza-suave);
+      border: 1px solid var(--borda-suave);
+      border-radius: 14px;
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .servico-item h3 {
+      font-size: 0.95rem;
+      color: var(--roxo-escuro);
+    }
+
+    .servico-item p {
+      font-size: 0.82rem;
+      color: var(--texto-suave);
+      line-height: 1.35;
+    }
+
+    .btn-servico-chat {
+      align-self: flex-start;
+      background: #ffffff;
+      color: var(--roxo-principal);
+      border: 1px solid var(--roxo-principal);
+      border-radius: 9px;
+      padding: 6px 10px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .info-lista {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 0.9rem;
+      color: var(--texto);
+      line-height: 1.45;
     }
 
     .chat-card {
@@ -101,6 +231,8 @@
       overflow: hidden;
       display: flex;
       flex-direction: column;
+      position: relative;
+      z-index: 10;
     }
 
     .chat-header {
@@ -240,6 +372,14 @@
       cursor: not-allowed;
     }
 
+    .rodape-salao {
+      text-align: center;
+      color: #f4ecff;
+      font-size: 0.8rem;
+      line-height: 1.5;
+      padding: 6px 12px 16px;
+    }
+
     .btn-flutuante-ia {
       position: fixed;
       right: 12px;
@@ -278,15 +418,79 @@
       <h1>DIVAS</h1>
       <span>Salão de Beleza</span>
     </div>
-    <button type="button" class="btn-abrir-topo" id="btnAlternarChat">Chat IA</button>
+    <nav class="nav-topo">
+      <a href="#servicos" class="link-topo">Serviços</a>
+      <a href="#localizacao" class="link-topo">Local</a>
+      <button type="button" class="btn-abrir-topo" id="btnAlternarChat">Chat IA</button>
+    </nav>
   </header>
 
-  <div class="aviso-local">
-    Domingo: Fechado • Rua Otto Espíndola, 470 - Moradas do Bosque, Cachoeirinha/RS
-  </div>
+  <div class="container-site">
+    <section class="hero-card">
+      <span class="hero-tag">Agendamento Online 24h</span>
+      <h2 class="hero-titulo">Realce sua beleza com atendimento rápido e personalizado</h2>
+      <p class="hero-texto">
+        Consulte horários livres e confirme seu atendimento na DIVAS Salão de Beleza em Cachoeirinha/RS direto pelo chat com a Recepcionista DIVAS IA ou pelo WhatsApp.
+      </p>
+      <div class="acoes-hero">
+        <button type="button" class="btn-primario" id="btnIrChat">Agendar no Chat IA</button>
+        <a
+          href="https://wa.me/5551991749541?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20no%20DIVAS%20Sal%C3%A3o%20de%20Beleza."
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-secundario"
+        >
+          WhatsApp (51) 99174-9541
+        </a>
+      </div>
+    </section>
 
-  <main class="chat-wrapper" id="secaoChat">
-    <section class="chat-card" aria-label="Recepcionista DIVAS IA">
+    <section class="secao-card" id="servicos">
+      <h2 class="secao-titulo">Nossos Serviços</h2>
+      <div class="grid-servicos">
+        <article class="servico-item">
+          <div>
+            <h3>Corte</h3>
+            <p>Cortes modernos e alinhados ao formato do seu rosto e tipo de fio.</p>
+          </div>
+          <button type="button" class="btn-servico-chat" data-msg="Quero agendar Corte">Agendar Corte</button>
+        </article>
+
+        <article class="servico-item">
+          <div>
+            <h3>Sobrancelhas</h3>
+            <p>Design e acabamento cuidadoso para valorizar o olhar.</p>
+          </div>
+          <button type="button" class="btn-servico-chat" data-msg="Quero agendar Sobrancelhas">Agendar Sobrancelhas</button>
+        </article>
+
+        <article class="servico-item">
+          <div>
+            <h3>Progressiva</h3>
+            <p>Alinhamento, redução de volume e brilho para os fios.</p>
+          </div>
+          <button type="button" class="btn-servico-chat" data-msg="Quero agendar Progressiva">Agendar Progressiva</button>
+        </article>
+
+        <article class="servico-item">
+          <div>
+            <h3>Pé e mão</h3>
+            <p>Cuidados completos com unhas, cutículas e esmaltação.</p>
+          </div>
+          <button type="button" class="btn-servico-chat" data-msg="Quero agendar Pé e mão">Agendar Pé e mão</button>
+        </article>
+
+        <article class="servico-item">
+          <div>
+            <h3>Cabelo infantil</h3>
+            <p>Atendimento paciente e acolhedor para as crianças.</p>
+          </div>
+          <button type="button" class="btn-servico-chat" data-msg="Quero agendar Cabelo infantil">Agendar Infantil</button>
+        </article>
+      </div>
+    </section>
+
+    <section id="secaoChat" class="chat-card" aria-label="Recepcionista DIVAS IA">
       <div class="chat-header">
         <div>
           <div class="chat-header-titulo">Recepcionista DIVAS IA</div>
@@ -320,7 +524,20 @@
         <button type="submit" class="btn-enviar" id="btnEnviar">Enviar</button>
       </form>
     </section>
-  </main>
+
+    <section class="secao-card" id="localizacao">
+      <h2 class="secao-titulo">Horário e Localização</h2>
+      <div class="info-lista">
+        <div><strong>Funcionamento:</strong> Segunda a Sábado, das 9h às 19h30 (Domingo: Fechado)</div>
+        <div><strong>Endereço:</strong> Rua Otto Espíndola, 470 - Moradas do Bosque, CEP 94960-842, Cachoeirinha/RS</div>
+        <div><strong>WhatsApp:</strong> (51) 99174-9541</div>
+      </div>
+    </section>
+  </div>
+
+  <footer class="rodape-salao">
+    DIVAS Salão de Beleza • Cachoeirinha/RS
+  </footer>
 
   <button type="button" class="btn-flutuante-ia" id="btnFlutuante">
     <span class="ponto-verde"></span>
@@ -339,27 +556,34 @@
     const btnLimpar = document.getElementById("btnLimpar");
     const btnFlutuante = document.getElementById("btnFlutuante");
     const btnAlternarChat = document.getElementById("btnAlternarChat");
+    const btnIrChat = document.getElementById("btnIrChat");
     const secaoChat = document.getElementById("secaoChat");
 
     let historico = [];
 
-    btnFlutuante.addEventListener("click", () => {
+    function focarChat() {
       document.body.classList.add("chat-aberto");
-      secaoChat.style.display = "block";
+      secaoChat.style.display = "flex";
       secaoChat.scrollIntoView({ behavior: "smooth", block: "start" });
       setTimeout(() => inputMensagem.focus(), 120);
-    });
+    }
+
+    btnFlutuante.addEventListener("click", focarChat);
+    btnIrChat.addEventListener("click", focarChat);
 
     btnAlternarChat.addEventListener("click", () => {
       const aberto = document.body.classList.toggle("chat-aberto");
-      secaoChat.style.display = aberto ? "block" : "none";
+      secaoChat.style.display = aberto ? "flex" : "none";
       if (aberto) inputMensagem.focus();
     });
 
-    document.querySelectorAll(".chip-servico").forEach((chip) => {
-      chip.addEventListener("click", () => {
-        const msg = chip.getAttribute("data-msg");
-        if (msg) enviarMensagem(msg);
+    document.querySelectorAll(".chip-servico, .btn-servico-chat").forEach((botao) => {
+      botao.addEventListener("click", () => {
+        const msg = botao.getAttribute("data-msg");
+        if (msg) {
+          focarChat();
+          enviarMensagem(msg);
+        }
       });
     });
 
