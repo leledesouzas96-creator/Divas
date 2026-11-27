@@ -666,38 +666,6 @@
       border-bottom-left-radius: 4px;
     }
 
-    .confirmacao {
-      display: none;
-      margin: 0 14px 12px;
-      padding: 12px 14px;
-      border-radius: 14px;
-      background: #f0fdf4;
-      border: 1.5px solid #22c55e;
-      color: #14532d;
-      font-size: 0.84rem;
-      line-height: 1.45;
-    }
-
-    .confirmacao.visivel {
-      display: block;
-    }
-
-    .btn-whats-confirmacao {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 7px;
-      margin-top: 10px;
-      padding: 10px 14px;
-      border-radius: 10px;
-      background: #16a34a;
-      color: #ffffff;
-      text-decoration: none;
-      font-size: 0.82rem;
-      font-weight: 800;
-      box-shadow: 0 4px 12px rgba(22, 163, 74, 0.25);
-    }
-
     .atalhos-rapidos {
       display: flex;
       flex-wrap: wrap;
@@ -1217,18 +1185,6 @@
           <div class="msg ia">Olá! Sou a Recepcionista da DIVAS Salão de Beleza. Qual serviço você deseja agendar (Corte, Sobrancelhas, Progressiva, Pé e mão ou Cabelo infantil) e para qual dia e horário?</div>
         </div>
 
-        <div class="confirmacao" id="caixaConfirmacao">
-          <div style="font-weight:800; color:#15803d; margin-bottom:4px;">✅ Agendamento Confirmado</div>
-          <div id="textoConfirmacao"></div>
-          <a
-            id="linkWhatsConfirmacao"
-            class="btn-whats-confirmacao"
-            href="https://wa.me/5551991749541"
-            target="_blank"
-            rel="noopener noreferrer"
-          >📲 Enviar confirmação e endereço pelo WhatsApp</a>
-        </div>
-
         <div class="atalhos-rapidos">
           <button type="button" class="atalho" data-msg="Quero agendar Pé e mão">Pé e mão</button>
           <button type="button" class="atalho" data-msg="Quero agendar Progressiva">Progressiva</button>
@@ -1308,7 +1264,6 @@
   <script>
     const URL_WORKER_DIVAS_IA = "https://divas-ia.vezqoraai.workers.dev/api/chat";
     const ENDERECO_SALAO = "Rua Otto Espíndola, 470 - Moradas do Bosque, CEP 94960-842, Cachoeirinha/RS";
-    const WHATS_SALAO = "5551991749541";
 
     const listaMensagens = document.getElementById("listaMensagens");
     const formChat = document.getElementById("formChat");
@@ -1324,9 +1279,6 @@
     const btnMenu = document.getElementById("btnMenu");
     const gaveta = document.getElementById("gaveta");
     const secaoAgendar = document.getElementById("agendar");
-    const caixaConfirmacao = document.getElementById("caixaConfirmacao");
-    const textoConfirmacao = document.getElementById("textoConfirmacao");
-    const linkWhatsConfirmacao = document.getElementById("linkWhatsConfirmacao");
     const lightbox = document.getElementById("lightbox");
     const imgLightbox = document.getElementById("imgLightbox");
     const fecharLightbox = document.getElementById("fecharLightbox");
@@ -1418,7 +1370,6 @@
       telefoneCliente = "";
       dataSelecionada = "";
       horaSelecionada = "";
-      caixaConfirmacao.classList.remove("visivel");
       listaMensagens.innerHTML = "";
       adicionarBolha(
         "Olá! Sou a Recepcionista da DIVAS Salão de Beleza. Qual serviço você deseja agendar (Corte, Sobrancelhas, Progressiva, Pé e mão ou Cabelo infantil) e para qual dia e horário?",
@@ -1446,18 +1397,6 @@
       else if (/sobrancelha/i.test(limpo)) servicoSelecionado = "Sobrancelhas";
       else if (/infantil/i.test(limpo)) servicoSelecionado = "Cabelo infantil";
       else if (/p[eé]\s*e\s*m[aã]o|unha/i.test(limpo)) servicoSelecionado = "Pé e mão";
-    }
-
-    function montarTextoWhatsApp(respostaIA) {
-      const resumo = respostaIA.includes(ENDERECO_SALAO)
-        ? respostaIA
-        : "✨ *Agendamento Confirmado — DIVAS Salão de Beleza* ✨\n\n" +
-          "• *Serviço:* " + servicoSelecionado + "\n" +
-          (dataSelecionada ? "• *Dia:* " + dataSelecionada + "\n" : "") +
-          (horaSelecionada ? "• *Horário:* " + horaSelecionada + "\n" : "") +
-          "• *Endereço:* " + ENDERECO_SALAO + "\n\n" +
-          respostaIA;
-      return resumo;
     }
 
     function adicionarBolha(texto, remetente) {
@@ -1524,15 +1463,6 @@
         }
 
         adicionarBolha(respostaFinal, "ia");
-
-        if (confirmou) {
-          const msgWhats = montarTextoWhatsApp(respostaFinal);
-          const numeroDestino = telefoneCliente || WHATS_SALAO;
-          textoConfirmacao.textContent = respostaFinal;
-          linkWhatsConfirmacao.href =
-            "https://wa.me/" + numeroDestino + "?text=" + encodeURIComponent(msgWhats);
-          caixaConfirmacao.classList.add("visivel");
-        }
 
         historico.push(
           { role: "user", content: limpo },
