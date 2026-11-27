@@ -682,6 +682,22 @@
       display: block;
     }
 
+    .btn-whats-confirmacao {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      margin-top: 10px;
+      padding: 10px 14px;
+      border-radius: 10px;
+      background: #16a34a;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 800;
+      box-shadow: 0 4px 12px rgba(22, 163, 74, 0.25);
+    }
+
     .atalhos-rapidos {
       display: flex;
       flex-wrap: wrap;
@@ -896,7 +912,7 @@
     <div class="topo-interno">
       <a href="#topo" class="marca">
         <img
-          data-foto="logo-divas.jpg"
+          src="https://raw.githubusercontent.com/leledesouzas96-creator/Divas/main/fotos/logo-divas.jpg"
           alt="Logo DIVAS Salão de Beleza"
           class="marca-logo"
         />
@@ -945,8 +961,8 @@
       <div class="carrossel-frame" aria-label="Carrossel de fotos do salão">
         <div class="slide ativo">
           <img
-            data-foto="21925_2.jpg"
-            alt="Cabelo liso alinhado DIVAS"
+            src="https://raw.githubusercontent.com/leledesouzas96-creator/Divas/main/fotos/IMG-20261123-WA0046.jpg"
+            alt="Resultado DIVAS Salão de Beleza"
           />
           <div class="slide-legenda">
             <span>Cabelos &amp; Progressiva</span>
@@ -956,34 +972,34 @@
 
         <div class="slide">
           <img
-            data-foto="21921_2.jpg"
-            alt="Mão vermelha decorada DIVAS"
+            src="https://raw.githubusercontent.com/leledesouzas96-creator/Divas/main/fotos/IMG-20261123-WA0047.jpg"
+            alt="Unhas e acabamento DIVAS"
           />
           <div class="slide-legenda">
             <span>Unhas &amp; Decoração</span>
-            <p>Mão vermelha com detalhe em pedrinhas</p>
+            <p>Esmaltação e acabamento delicado</p>
           </div>
         </div>
 
         <div class="slide">
           <img
-            data-foto="21920_2.jpg"
-            alt="Pé com francesinha DIVAS"
+            src="https://raw.githubusercontent.com/leledesouzas96-creator/Divas/main/fotos/IMG-20261123-WA0048.jpg"
+            alt="Pé e mão DIVAS"
           />
           <div class="slide-legenda">
             <span>Pé &amp; Francesinha</span>
-            <p>Unhas do pé com francesinha delicada</p>
+            <p>Unhas do pé com francesinha</p>
           </div>
         </div>
 
         <div class="slide">
           <img
-            data-foto="21922_2.jpg"
-            alt="Mão nude com detalhe DIVAS"
+            src="https://raw.githubusercontent.com/leledesouzas96-creator/Divas/main/fotos/IMG-20261123-WA0049.jpg"
+            alt="Cuidados DIVAS Salão de Beleza"
           />
           <div class="slide-legenda">
-            <span>Mão &amp; Acabamento</span>
-            <p>Esmaltação nude com detalhe delicado</p>
+            <span>Cuidado &amp; Beleza</span>
+            <p>Atendimento especial no salão</p>
           </div>
         </div>
 
@@ -1075,9 +1091,9 @@
       <div class="galeria-grid">
         <article class="foto-box">
           <img
-            data-foto="21925_2.jpg"
-            alt="Cabelo liso alinhado"
-            data-ampliar="21925_2.jpg"
+            src="https://raw.githubusercontent.com/leledesouzas96-creator/Divas/main/fotos/IMG-20261123-WA0046.jpg"
+            alt="Progressiva e brilho"
+            data-ampliar="https://raw.githubusercontent.com/leledesouzas96-creator/Divas/main/fotos/IMG-20261123-WA0046.jpg"
           />
           <div class="foto-corpo">
             <div class="foto-cab">
@@ -1090,9 +1106,39 @@
 
         <article class="foto-box">
           <img
-            data-foto="21932.jpg"
-            alt="Cabelo liso com acabamento"
-            data-ampliar="21932.jpg"
+            src="https://raw.githubusercontent.com/leledesouzas96-creator/Divas/main/fotos/IMG-20261123-WA0047.jpg"
+            alt="Unhas e acabamento"
+            data-ampliar="https://raw.githubusercontent.com/leledesouzas96-creator/Divas/main/fotos/IMG-20261123-WA0047.jpg"
+          />
+          <div class="foto-corpo">
+            <div class="foto-cab">
+              <strong>Unhas &amp; Decoração</strong>
+              <button type="button" data-srv="Pé e mão">Agendar</button>
+            </div>
+            <p class="foto-desc">Esmaltação cuidada com acabamento delicado.</p>
+          </div>
+        </article>
+
+        <article class="foto-box">
+          <img
+            src="https://raw.githubusercontent.com/leledesouzas96-creator/Divas/main/fotos/IMG-20261123-WA0048.jpg"
+            alt="Pé com francesinha"
+            data-ampliar="https://raw.githubusercontent.com/leledesouzas96-creator/Divas/main/fotos/IMG-20261123-WA0048.jpg"
+          />
+          <div class="foto-corpo">
+            <div class="foto-cab">
+              <strong>Pé com Francesinha</strong>
+              <button type="button" data-srv="Pé e mão">Agendar</button>
+            </div>
+            <p class="foto-desc">Pé com francesinha e detalhe delicado.</p>
+          </div>
+        </article>
+
+        <article class="foto-box">
+          <img
+            src="https://raw.githubusercontent.com/leledesouzas96-creator/Divas/main/fotos/IMG-20261123-WA0049.jpg"
+            alt="Cabelo alinhado"
+            data-ampliar="https://raw.githubusercontent.com/leledesouzas96-creator/Divas/main/fotos/IMG-20261123-WA0049.jpg"
           />
           <div class="foto-corpo">
             <div class="foto-cab">
@@ -1105,46 +1151,16 @@
 
         <article class="foto-box">
           <img
-            data-foto="21920_2.jpg"
-            alt="Pé com francesinha"
-            data-ampliar="21920_2.jpg"
+            src="https://raw.githubusercontent.com/leledesouzas96-creator/Divas/main/fotos/IMG-20261123-WA0050.jpg"
+            alt="Acabamento DIVAS"
+            data-ampliar="https://raw.githubusercontent.com/leledesouzas96-creator/Divas/main/fotos/IMG-20261123-WA0050.jpg"
           />
           <div class="foto-corpo">
             <div class="foto-cab">
-              <strong>Pé com Francesinha</strong>
+              <strong>Acabamento DIVAS</strong>
               <button type="button" data-srv="Pé e mão">Agendar</button>
             </div>
-            <p class="foto-desc">Pé com unha francesinha e detalhe delicado.</p>
-          </div>
-        </article>
-
-        <article class="foto-box">
-          <img
-            data-foto="21921_2.jpg"
-            alt="Unha vermelha decorada"
-            data-ampliar="21921_2.jpg"
-          />
-          <div class="foto-corpo">
-            <div class="foto-cab">
-              <strong>Unha Vermelha</strong>
-              <button type="button" data-srv="Pé e mão">Agendar</button>
-            </div>
-            <p class="foto-desc">Unha vermelha com detalhe e pedrinhas.</p>
-          </div>
-        </article>
-
-        <article class="foto-box">
-          <img
-            data-foto="21922_2.jpg"
-            alt="Unha nude decorada"
-            data-ampliar="21922_2.jpg"
-          />
-          <div class="foto-corpo">
-            <div class="foto-cab">
-              <strong>Unha Nude</strong>
-              <button type="button" data-srv="Pé e mão">Agendar</button>
-            </div>
-            <p class="foto-desc">Esmaltação nude com detalhe delicado.</p>
+            <p class="foto-desc">Resultado feito com todo o carinho no salão.</p>
           </div>
         </article>
       </div>
@@ -1155,14 +1171,14 @@
       <div class="secao-topo">
         <span class="kicker" style="margin-bottom:2px;">Reserva Direta</span>
         <h2 class="fonte-editorial">Agende com a Recepcionista DIVAS IA</h2>
-        <p>Tudo resolvido aqui no chat: consulte horários, escolha o serviço e confirme sua reserva.</p>
+        <p>Tudo resolvido aqui no chat: consulte horários, escolha o serviço e confirme sua reserva com envio no WhatsApp.</p>
       </div>
 
       <div class="chat-card">
         <div class="chat-cab">
           <div class="chat-perfil">
             <img
-              data-foto="logo-divas.jpg"
+              src="https://raw.githubusercontent.com/leledesouzas96-creator/Divas/main/fotos/logo-divas.jpg"
               alt="Recepcionista DIVAS IA"
             />
             <div>
@@ -1204,6 +1220,13 @@
         <div class="confirmacao" id="caixaConfirmacao">
           <div style="font-weight:800; color:#15803d; margin-bottom:4px;">✅ Agendamento Confirmado</div>
           <div id="textoConfirmacao"></div>
+          <a
+            id="linkWhatsConfirmacao"
+            class="btn-whats-confirmacao"
+            href="https://wa.me/5551991749541"
+            target="_blank"
+            rel="noopener noreferrer"
+          >📲 Enviar confirmação e endereço pelo WhatsApp</a>
         </div>
 
         <div class="atalhos-rapidos">
@@ -1220,7 +1243,7 @@
             type="text"
             id="campoMensagem"
             class="chat-input"
-            placeholder="Ex: Corte dia 28/11 às 09:00 ou Nome,51999999999"
+            placeholder="Ex: Corte dia 28/11 às 09:00 ou Nome, 51999999999"
             autocomplete="off"
             required
           />
@@ -1284,31 +1307,8 @@
 
   <script>
     const URL_WORKER_DIVAS_IA = "https://divas-ia.vezqoraai.workers.dev/api/chat";
-
-    // Caminhos possíveis no GitHub para a pasta fotos/
-    const BASES_GITHUB = [
-      "https://raw.githubusercontent.com/leledesouzas96-creator/Divas/main/fotos/",
-      "https://raw.githubusercontent.com/leledesouzas96-creator/sal-odebelezadivas/main/fotos/",
-      "https://raw.githubusercontent.com/leledesouzas96-creator/meusalaodivas/main/fotos/",
-      "fotos/"
-    ];
-
-    function aplicarFotoComFallback(imgEl, arquivo) {
-      let tentativa = 0;
-      imgEl.onerror = function () {
-        tentativa += 1;
-        if (tentativa < BASES_GITHUB.length) {
-          imgEl.src = BASES_GITHUB[tentativa] + arquivo;
-        } else {
-          imgEl.onerror = null;
-        }
-      };
-      imgEl.src = BASES_GITHUB[0] + arquivo;
-    }
-
-    document.querySelectorAll("img[data-foto]").forEach((img) => {
-      aplicarFotoComFallback(img, img.getAttribute("data-foto"));
-    });
+    const ENDERECO_SALAO = "Rua Otto Espíndola, 470 - Moradas do Bosque, CEP 94960-842, Cachoeirinha/RS";
+    const WHATS_SALAO = "5551991749541";
 
     const listaMensagens = document.getElementById("listaMensagens");
     const formChat = document.getElementById("formChat");
@@ -1326,11 +1326,15 @@
     const secaoAgendar = document.getElementById("agendar");
     const caixaConfirmacao = document.getElementById("caixaConfirmacao");
     const textoConfirmacao = document.getElementById("textoConfirmacao");
+    const linkWhatsConfirmacao = document.getElementById("linkWhatsConfirmacao");
     const lightbox = document.getElementById("lightbox");
     const imgLightbox = document.getElementById("imgLightbox");
     const fecharLightbox = document.getElementById("fecharLightbox");
 
     let servicoSelecionado = "Pé e mão";
+    let dataSelecionada = "";
+    let horaSelecionada = "";
+    let telefoneCliente = "";
     let historico = [];
     let slideIdx = 0;
 
@@ -1370,7 +1374,7 @@
 
     document.querySelectorAll("[data-ampliar]").forEach((img) => {
       img.addEventListener("click", () => {
-        imgLightbox.src = img.currentSrc || img.src;
+        imgLightbox.src = img.getAttribute("data-ampliar");
         lightbox.classList.add("aberta");
       });
     });
@@ -1392,10 +1396,10 @@
       slot.addEventListener("click", () => {
         document.querySelectorAll(".slot-btn").forEach((s) => s.classList.remove("ativo"));
         slot.classList.add("ativo");
-        const dataTxt = slot.getAttribute("data-data");
-        const horaTxt = slot.getAttribute("data-hora");
+        dataSelecionada = slot.getAttribute("data-data") || "";
+        horaSelecionada = slot.getAttribute("data-hora") || "";
         abrirAgendamento();
-        enviarMensagem("Quero reservar " + servicoSelecionado + " no dia " + dataTxt + " às " + horaTxt);
+        enviarMensagem("Quero reservar " + servicoSelecionado + " no dia " + dataSelecionada + " às " + horaSelecionada);
       });
     });
 
@@ -1411,6 +1415,9 @@
 
     btnLimpar.addEventListener("click", () => {
       historico = [];
+      telefoneCliente = "";
+      dataSelecionada = "";
+      horaSelecionada = "";
       caixaConfirmacao.classList.remove("visivel");
       listaMensagens.innerHTML = "";
       adicionarBolha(
@@ -1419,6 +1426,39 @@
       );
       statusChat.textContent = "• Online • Consulta e reserva automática";
     });
+
+    function extrairDadosDaMensagem(texto) {
+      const limpo = String(texto || "");
+      const telMatch = limpo.replace(/\D/g, "").match(/(?:55)?(\d{10,11})/);
+      if (telMatch) {
+        telefoneCliente = "55" + telMatch[1];
+      }
+      const dataMatch = limpo.match(/\b(\d{1,2}\/\d{1,2}(?:\/\d{2,4})?)\b/);
+      if (dataMatch) {
+        dataSelecionada = dataMatch[1];
+      }
+      const horaMatch = limpo.match(/\b(\d{1,2}:\d{2}|\d{1,2}h(?:\d{2})?)\b/i);
+      if (horaMatch) {
+        horaSelecionada = horaMatch[1];
+      }
+      if (/progressiva/i.test(limpo)) servicoSelecionado = "Progressiva";
+      else if (/corte/i.test(limpo)) servicoSelecionado = "Corte";
+      else if (/sobrancelha/i.test(limpo)) servicoSelecionado = "Sobrancelhas";
+      else if (/infantil/i.test(limpo)) servicoSelecionado = "Cabelo infantil";
+      else if (/p[eé]\s*e\s*m[aã]o|unha/i.test(limpo)) servicoSelecionado = "Pé e mão";
+    }
+
+    function montarTextoWhatsApp(respostaIA) {
+      const resumo = respostaIA.includes(ENDERECO_SALAO)
+        ? respostaIA
+        : "✨ *Agendamento Confirmado — DIVAS Salão de Beleza* ✨\n\n" +
+          "• *Serviço:* " + servicoSelecionado + "\n" +
+          (dataSelecionada ? "• *Dia:* " + dataSelecionada + "\n" : "") +
+          (horaSelecionada ? "• *Horário:* " + horaSelecionada + "\n" : "") +
+          "• *Endereço:* " + ENDERECO_SALAO + "\n\n" +
+          respostaIA;
+      return resumo;
+    }
 
     function adicionarBolha(texto, remetente) {
       const div = document.createElement("div");
@@ -1433,6 +1473,7 @@
       const limpo = String(textoUsuario || "").trim();
       if (!limpo || btnEnviar.disabled) return;
 
+      extrairDadosDaMensagem(limpo);
       adicionarBolha(limpo, "user");
       campoMensagem.value = "";
       btnEnviar.disabled = true;
@@ -1448,7 +1489,9 @@
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             message: limpo,
-            history: historico.slice(-10)
+            history: historico.slice(-10),
+            salonAddress: ENDERECO_SALAO,
+            sendWhatsAppConfirmation: true
           }),
           signal: controller.signal
         });
@@ -1466,16 +1509,28 @@
           return;
         }
 
-        const respostaFinal =
+        let respostaFinal =
           dados.reply ||
           dados.message ||
           dados.response ||
           "Recebi a sua mensagem, mas não veio texto de resposta do Worker.";
 
+        const confirmou =
+          Boolean(dados.booking) ||
+          /agendamento confirmado|hor[aá]rio confirmado|reserva confirmada/i.test(respostaFinal);
+
+        if (confirmou && !/otto esp[ií]ndola/i.test(respostaFinal)) {
+          respostaFinal += "\n\n📍 Endereço do DIVAS Salão de Beleza:\n" + ENDERECO_SALAO;
+        }
+
         adicionarBolha(respostaFinal, "ia");
 
-        if (dados.booking || respostaFinal.includes("Agendamento confirmado")) {
+        if (confirmou) {
+          const msgWhats = montarTextoWhatsApp(respostaFinal);
+          const numeroDestino = telefoneCliente || WHATS_SALAO;
           textoConfirmacao.textContent = respostaFinal;
+          linkWhatsConfirmacao.href =
+            "https://wa.me/" + numeroDestino + "?text=" + encodeURIComponent(msgWhats);
           caixaConfirmacao.classList.add("visivel");
         }
 
