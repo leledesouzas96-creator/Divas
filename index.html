@@ -9,21 +9,25 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg-base: #0d0517;
-      --bg-elevado: #170929;
-      --bg-cartao: rgba(255, 255, 255, 0.045);
-      --borda-suave: rgba(255, 255, 255, 0.11);
-      --ouro: #e3be56;
-      --ouro-claro: #f5df98;
-      --borda-ouro: rgba(227, 190, 86, 0.36);
-      --roxo: #6d28d9;
-      --roxo-brilho: #8b5cf6;
-      --texto: #f8f5fc;
-      --texto-secundario: #c7b8dc;
+      --bg-base: #120621;
+      --bg-elevado: #1e0b36;
+      --bg-cartao: rgba(255, 255, 255, 0.05);
+      --borda-suave: rgba(244, 114, 182, 0.2);
+      --lilas: #c084fc;
+      --lilas-claro: #e9d5ff;
+      --rosa: #ec4899;
+      --rosa-suave: #f472b6;
+      --ouro: #e5c158;
+      --ouro-claro: #f6e099;
+      --borda-ouro: rgba(229, 193, 88, 0.42);
+      --roxo: #7e22ce;
+      --roxo-brilho: #a855f7;
+      --texto: #fdf8ff;
+      --texto-secundario: #d8c3ef;
       --chat-bg: #ffffff;
-      --chat-texto: #191224;
-      --chat-bolha-ia: #f4eefc;
-      --chat-borda: #e3d4f7;
+      --chat-texto: #1b1226;
+      --chat-bolha-ia: #f7efff;
+      --chat-borda: #ead4fa;
     }
 
     * {
@@ -42,7 +46,8 @@
       overflow-x: hidden;
       font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
       background:
-        radial-gradient(ellipse 80% 45% at 50% -5%, rgba(126, 34, 206, 0.28), transparent 70%),
+        radial-gradient(ellipse 80% 45% at 20% 0%, rgba(236, 72, 153, 0.2), transparent 65%),
+        radial-gradient(ellipse 85% 50% at 80% 5%, rgba(168, 85, 247, 0.26), transparent 70%),
         var(--bg-base);
       color: var(--texto);
     }
@@ -63,8 +68,8 @@
       z-index: 40;
       backdrop-filter: blur(18px);
       -webkit-backdrop-filter: blur(18px);
-      background: rgba(13, 5, 23, 0.84);
-      border-bottom: 1px solid var(--borda-suave);
+      background: rgba(18, 6, 33, 0.86);
+      border-bottom: 1px solid var(--borda-ouro);
     }
 
     .topo-interno {
@@ -74,7 +79,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 16px;
+      gap: 14px;
     }
 
     .marca {
@@ -89,17 +94,19 @@
       height: 46px;
       border-radius: 50%;
       object-fit: cover;
-      border: 1.5px solid var(--ouro);
+      border: 2px solid var(--ouro);
       background: var(--bg-elevado);
-      box-shadow: 0 0 16px rgba(227, 190, 86, 0.25);
+      box-shadow: 0 0 18px rgba(236, 72, 153, 0.28);
       flex-shrink: 0;
     }
 
     .marca-titulo {
-      font-size: 1.06rem;
+      font-size: 1.08rem;
       font-weight: 800;
-      letter-spacing: 0.22em;
-      color: var(--ouro-claro);
+      letter-spacing: 0.2em;
+      background: linear-gradient(90deg, var(--ouro-claro), var(--rosa-suave), var(--lilas-claro));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
       line-height: 1.1;
     }
 
@@ -107,13 +114,13 @@
       font-size: 0.65rem;
       letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: var(--texto-secundario);
+      color: var(--lilas-claro);
       margin-top: 3px;
     }
 
     .nav-links {
       display: none;
-      gap: 24px;
+      gap: 22px;
     }
 
     @media (min-width: 780px) {
@@ -129,7 +136,7 @@
       color: var(--texto-secundario);
       text-decoration: none;
       font-size: 0.84rem;
-      font-weight: 500;
+      font-weight: 600;
       transition: color 0.2s;
     }
 
@@ -145,22 +152,23 @@
 
     .btn-ouro {
       background: linear-gradient(135deg, var(--ouro), var(--ouro-claro));
-      color: #160726;
+      color: #1c0830;
       border: none;
       border-radius: 999px;
       padding: 9px 18px;
       font-size: 0.8rem;
       font-weight: 800;
       cursor: pointer;
+      box-shadow: 0 4px 16px rgba(229, 193, 88, 0.32);
     }
 
     .btn-menu {
       width: 38px;
       height: 38px;
       border-radius: 10px;
-      border: 1px solid var(--borda-suave);
+      border: 1px solid var(--borda-ouro);
       background: var(--bg-cartao);
-      color: var(--texto);
+      color: var(--ouro-claro);
       font-size: 1.05rem;
       cursor: pointer;
     }
@@ -170,7 +178,7 @@
       flex-wrap: wrap;
       gap: 8px;
       padding: 12px 20px;
-      background: rgba(20, 8, 36, 0.96);
+      background: rgba(26, 9, 46, 0.96);
       border-bottom: 1px solid var(--borda-ouro);
     }
 
@@ -195,7 +203,7 @@
       padding: 24px 20px 36px;
       display: flex;
       flex-direction: column;
-      gap: 52px;
+      gap: 48px;
     }
 
     /* Hero + Carrossel */
@@ -218,18 +226,18 @@
       align-items: center;
       gap: 8px;
       font-size: 0.72rem;
-      font-weight: 700;
+      font-weight: 800;
       letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: var(--ouro);
+      color: var(--ouro-claro);
       margin-bottom: 14px;
     }
 
     .kicker::before {
       content: "";
       width: 22px;
-      height: 1px;
-      background: var(--ouro);
+      height: 2px;
+      background: linear-gradient(90deg, var(--rosa-suave), var(--ouro));
     }
 
     .hero-h1 {
@@ -242,7 +250,9 @@
 
     .hero-h1 em {
       font-style: italic;
-      color: var(--ouro-claro);
+      background: linear-gradient(90deg, var(--rosa-suave), var(--ouro-claro));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     .hero-desc {
@@ -257,36 +267,37 @@
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-      margin-bottom: 28px;
+      margin-bottom: 24px;
     }
 
     .btn-primario {
-      background: linear-gradient(135deg, var(--roxo), var(--roxo-brilho));
+      background: linear-gradient(135deg, var(--roxo), var(--rosa));
       color: #ffffff;
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.24);
       border-radius: 12px;
       padding: 12px 22px;
       font-size: 0.88rem;
       font-weight: 700;
       cursor: pointer;
+      box-shadow: 0 10px 24px rgba(236, 72, 153, 0.28);
     }
 
     .btn-secundario {
-      text-decoration: none;
-      color: var(--texto);
+      background: rgba(229, 193, 88, 0.08);
+      color: var(--ouro-claro);
       border: 1px solid var(--borda-ouro);
-      background: rgba(227, 190, 86, 0.07);
       border-radius: 12px;
       padding: 12px 18px;
       font-size: 0.88rem;
       font-weight: 600;
+      cursor: pointer;
     }
 
     .meta-faixa {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 14px;
-      padding-top: 20px;
+      padding-top: 18px;
       border-top: 1px solid var(--borda-suave);
     }
 
@@ -295,7 +306,8 @@
       font-size: 0.69rem;
       text-transform: uppercase;
       letter-spacing: 0.12em;
-      color: var(--ouro);
+      color: var(--rosa-suave);
+      font-weight: 700;
       margin-bottom: 4px;
     }
 
@@ -309,7 +321,7 @@
       position: relative;
       border-radius: 24px;
       overflow: hidden;
-      border: 1px solid var(--borda-ouro);
+      border: 1.5px solid var(--borda-ouro);
       background: var(--bg-elevado);
       aspect-ratio: 4 / 4.3;
       box-shadow: 0 28px 64px rgba(0, 0, 0, 0.55);
@@ -337,7 +349,7 @@
       position: absolute;
       inset: auto 0 0 0;
       padding: 28px 20px 44px;
-      background: linear-gradient(180deg, transparent 0%, rgba(12, 4, 22, 0.9) 100%);
+      background: linear-gradient(180deg, transparent 0%, rgba(18, 6, 33, 0.92) 100%);
     }
 
     .slide-legenda span {
@@ -363,8 +375,8 @@
       width: 34px;
       height: 34px;
       border-radius: 50%;
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      background: rgba(13, 5, 23, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      background: rgba(18, 6, 33, 0.65);
       color: #ffffff;
       font-size: 1rem;
       cursor: pointer;
@@ -393,7 +405,7 @@
       height: 8px;
       border-radius: 999px;
       border: none;
-      background: rgba(255, 255, 255, 0.4);
+      background: rgba(255, 255, 255, 0.42);
       cursor: pointer;
     }
 
@@ -407,7 +419,7 @@
       display: flex;
       flex-direction: column;
       gap: 6px;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
     }
 
     .secao-topo h2 {
@@ -425,7 +437,7 @@
     /* Serviços */
     .lista-servicos {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 14px;
     }
 
@@ -438,11 +450,12 @@
       flex-direction: column;
       justify-content: space-between;
       gap: 14px;
-      transition: border-color 0.2s;
+      transition: border-color 0.2s, transform 0.2s;
     }
 
     .servico-item:hover {
       border-color: var(--borda-ouro);
+      transform: translateY(-2px);
     }
 
     .servico-topo {
@@ -462,7 +475,7 @@
       font-size: 0.7rem;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--ouro);
+      color: var(--rosa-suave);
       font-weight: 700;
     }
 
@@ -483,17 +496,17 @@
       padding: 0;
     }
 
-    /* Galeria de Fotos Reais da Pasta fotos/ */
+    /* Galeria apenas com fotos reais carregadas */
     .galeria-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(205px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
       gap: 16px;
     }
 
     .foto-box {
       border-radius: 18px;
       overflow: hidden;
-      border: 1px solid var(--borda-suave);
+      border: 1px solid var(--borda-ouro);
       background: var(--bg-elevado);
       display: flex;
       flex-direction: column;
@@ -501,7 +514,7 @@
 
     .foto-box img {
       width: 100%;
-      height: 220px;
+      height: 230px;
       object-fit: cover;
       display: block;
       cursor: pointer;
@@ -516,87 +529,35 @@
     }
 
     .foto-info strong {
-      font-size: 0.84rem;
+      font-size: 0.86rem;
       color: var(--texto);
     }
 
     .foto-info button {
-      background: rgba(227, 190, 86, 0.12);
+      background: rgba(236, 72, 153, 0.16);
       border: 1px solid var(--borda-ouro);
       color: var(--ouro-claro);
       border-radius: 8px;
       padding: 5px 10px;
-      font-size: 0.74rem;
+      font-size: 0.75rem;
       font-weight: 700;
       cursor: pointer;
-      flex-shrink: 0;
     }
 
     /* Agendamento com IA */
-    .agendamento-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 24px;
-      align-items: start;
-    }
-
-    @media (min-width: 860px) {
-      .agendamento-grid {
-        grid-template-columns: 0.85fr 1.15fr;
-      }
-    }
-
-    .info-lateral {
-      background: var(--bg-cartao);
-      border: 1px solid var(--borda-ouro);
-      border-radius: 22px;
-      padding: 22px 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-
-    .info-lateral h3 {
-      font-size: 1.4rem;
-      font-weight: 600;
-      color: var(--ouro-claro);
-    }
-
-    .info-lateral p {
-      font-size: 0.86rem;
-      line-height: 1.55;
-      color: var(--texto-secundario);
-    }
-
-    .linha-dado {
-      font-size: 0.84rem;
-      color: var(--texto);
-      padding-top: 10px;
-      border-top: 1px solid var(--borda-suave);
-    }
-
-    .linha-dado strong {
-      color: var(--ouro);
-      display: block;
-      font-size: 0.72rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      margin-bottom: 2px;
-    }
-
     .chat-card {
       background: var(--chat-bg);
       color: var(--chat-texto);
       border-radius: 22px;
-      border: 1.5px solid var(--ouro);
-      box-shadow: 0 24px 56px rgba(0, 0, 0, 0.48);
+      border: 2px solid var(--ouro);
+      box-shadow: 0 24px 56px rgba(0, 0, 0, 0.5);
       overflow: hidden;
       position: relative;
       z-index: 10;
     }
 
     .chat-cab {
-      background: linear-gradient(120deg, #2b0d4a, #551d96);
+      background: linear-gradient(120deg, #4a148c, #9d174d);
       color: #ffffff;
       padding: 14px 16px;
       display: flex;
@@ -612,30 +573,30 @@
     }
 
     .chat-perfil img {
-      width: 40px;
-      height: 40px;
+      width: 42px;
+      height: 42px;
       border-radius: 50%;
       object-fit: cover;
-      border: 1.5px solid var(--ouro);
+      border: 2px solid var(--ouro);
       background: #ffffff;
       flex-shrink: 0;
     }
 
     .chat-nome {
       font-size: 0.96rem;
-      font-weight: 700;
+      font-weight: 800;
     }
 
     .chat-estado {
       font-size: 0.75rem;
-      color: #e9d8fd;
+      color: #fce7f3;
       margin-top: 2px;
     }
 
     .btn-limpar {
-      background: rgba(255, 255, 255, 0.14);
+      background: rgba(255, 255, 255, 0.16);
       color: #ffffff;
-      border: 1px solid rgba(255, 255, 255, 0.28);
+      border: 1px solid rgba(255, 255, 255, 0.3);
       border-radius: 8px;
       padding: 5px 10px;
       font-size: 0.75rem;
@@ -644,7 +605,7 @@
     }
 
     .slots-barra {
-      background: #faf6ff;
+      background: #fdf6ff;
       border-bottom: 1px solid var(--chat-borda);
       padding: 12px 14px;
       display: flex;
@@ -655,7 +616,7 @@
     .dia-titulo {
       font-size: 0.78rem;
       font-weight: 700;
-      color: #3d1266;
+      color: #581c87;
       margin-bottom: 6px;
     }
 
@@ -667,8 +628,8 @@
 
     .slot-btn {
       background: #ffffff;
-      border: 1px solid #d5c1ee;
-      color: #3d1266;
+      border: 1px solid #e2c6f7;
+      color: #581c87;
       border-radius: 9px;
       padding: 7px 4px;
       font-size: 0.78rem;
@@ -677,9 +638,9 @@
     }
 
     .slot-btn.ativo {
-      background: var(--roxo);
+      background: linear-gradient(135deg, var(--roxo), var(--rosa));
       color: #ffffff;
-      border-color: var(--roxo);
+      border-color: var(--rosa);
     }
 
     .chat-historico {
@@ -704,7 +665,7 @@
 
     .msg.user {
       align-self: flex-end;
-      background: var(--roxo);
+      background: linear-gradient(135deg, var(--roxo), var(--rosa));
       color: #ffffff;
       border-bottom-right-radius: 4px;
     }
@@ -738,14 +699,14 @@
       flex-wrap: wrap;
       gap: 7px;
       padding: 10px 14px;
-      background: #fcfaff;
-      border-top: 1px solid #efe7f8;
+      background: #fefaff;
+      border-top: 1px solid #f2e4fc;
     }
 
     .atalho {
       background: #ffffff;
-      color: #3d1266;
-      border: 1px solid #d8c6ee;
+      color: #581c87;
+      border: 1px solid #e2c6f7;
       border-radius: 999px;
       padding: 6px 12px;
       font-size: 0.77rem;
@@ -768,7 +729,7 @@
       flex: 1;
       min-width: 0;
       height: 44px;
-      border: 1px solid #d1bfe8;
+      border: 1px solid #d9c0ef;
       border-radius: 12px;
       padding: 0 12px;
       font-size: 0.9rem;
@@ -777,7 +738,7 @@
     }
 
     .chat-input:focus {
-      border-color: var(--roxo);
+      border-color: var(--rosa);
     }
 
     .chat-enviar {
@@ -785,7 +746,7 @@
       padding: 0 16px;
       border: none;
       border-radius: 12px;
-      background: var(--roxo);
+      background: linear-gradient(135deg, var(--roxo), var(--rosa));
       color: #ffffff;
       font-size: 0.88rem;
       font-weight: 700;
@@ -796,6 +757,67 @@
     .chat-enviar:disabled {
       opacity: 0.6;
       cursor: not-allowed;
+    }
+
+    /* Endereço com Mapa lá embaixo */
+    .mapa-secao {
+      background: linear-gradient(145deg, rgba(168, 85, 247, 0.14), rgba(236, 72, 153, 0.08));
+      border: 1.5px solid var(--borda-ouro);
+      border-radius: 24px;
+      padding: 22px 18px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    @media (min-width: 820px) {
+      .mapa-secao {
+        grid-template-columns: 0.9fr 1.1fr;
+        align-items: center;
+        padding: 26px;
+      }
+    }
+
+    .mapa-dados {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .mapa-dados h2 {
+      font-size: 1.65rem;
+      font-weight: 600;
+      color: var(--ouro-claro);
+    }
+
+    .mapa-linha {
+      font-size: 0.88rem;
+      line-height: 1.5;
+      color: var(--texto);
+    }
+
+    .mapa-linha strong {
+      display: block;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--rosa-suave);
+      margin-bottom: 2px;
+    }
+
+    .mapa-frame {
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid var(--borda-ouro);
+      min-height: 260px;
+      background: var(--bg-elevado);
+    }
+
+    .mapa-frame iframe {
+      width: 100%;
+      height: 270px;
+      border: 0;
+      display: block;
     }
 
     .rodape {
@@ -818,7 +840,7 @@
       position: fixed;
       inset: 0;
       z-index: 60;
-      background: rgba(9, 3, 16, 0.92);
+      background: rgba(12, 4, 22, 0.92);
       align-items: center;
       justify-content: center;
       padding: 18px;
@@ -832,16 +854,16 @@
       max-width: 100%;
       max-height: 82dvh;
       border-radius: 16px;
-      border: 1.5px solid var(--ouro);
+      border: 2px solid var(--ouro);
     }
 
     .lightbox-fechar {
       position: fixed;
       top: 16px;
       right: 16px;
-      background: rgba(255, 255, 255, 0.14);
+      background: rgba(255, 255, 255, 0.16);
       color: #ffffff;
-      border: 1px solid var(--borda-suave);
+      border: 1px solid var(--borda-ouro);
       border-radius: 999px;
       padding: 8px 14px;
       font-size: 0.82rem;
@@ -860,7 +882,7 @@
       padding: 10px 14px;
       border-radius: 999px;
       border: 1.5px solid var(--ouro);
-      background: linear-gradient(135deg, #4c1d95, #7c3aed);
+      background: linear-gradient(135deg, var(--roxo), var(--rosa));
       color: #ffffff;
       font-weight: 800;
       font-size: 0.83rem;
@@ -901,6 +923,7 @@
         <a href="#servicos">Serviços</a>
         <a href="#galeria">Resultados</a>
         <a href="#agendar">Agendar IA</a>
+        <a href="#endereco-mapa">Localização</a>
       </nav>
 
       <div class="topo-acoes">
@@ -913,7 +936,7 @@
       <a href="#servicos">Serviços</a>
       <a href="#galeria">Resultados</a>
       <a href="#agendar">Agendar com IA</a>
-      <a href="https://wa.me/5551991749541" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+      <a href="#endereco-mapa">Endereço &amp; Mapa</a>
     </nav>
   </header>
 
@@ -921,21 +944,14 @@
     <!-- Hero + Carrossel -->
     <section class="hero-grid">
       <div>
-        <div class="kicker">Cachoeirinha/RS • Moradas do Bosque</div>
-        <h1 class="hero-h1 fonte-editorial">Beleza com calma, precisão e <em>hora marcada</em>.</h1>
+        <div class="kicker">Lilás • Rosa • Dourado • Cachoeirinha/RS</div>
+        <h1 class="hero-h1 fonte-editorial">Seu momento de brilho, com <em>hora marcada</em>.</h1>
         <p class="hero-desc">
-          Atendimento dedicado em unhas, progressiva, corte, sobrancelhas e cabelo infantil, com consulta de horários em tempo real diretamente pela nossa recepcionista inteligente.
+          Atendimento especial em pé e mão, progressiva, corte, sobrancelhas e cabelo infantil, com consulta de horários em tempo real diretamente pela Recepcionista DIVAS IA.
         </p>
         <div class="hero-ctas">
-          <button type="button" class="btn-primario" id="btnHeroAgendar">Agendar horário</button>
-          <a
-            href="https://wa.me/5551991749541?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20no%20DIVAS%20Sal%C3%A3o%20de%20Beleza."
-            target="_blank"
-            rel="noopener noreferrer"
-            class="btn-secundario"
-          >
-            WhatsApp (51) 99174-9541
-          </a>
+          <button type="button" class="btn-primario" id="btnHeroAgendar">Agendar com IA</button>
+          <button type="button" class="btn-secundario" id="btnHeroHorarios">Ver horários livres</button>
         </div>
 
         <div class="meta-faixa">
@@ -950,9 +966,13 @@
         </div>
       </div>
 
-      <div class="carrossel-frame" aria-label="Carrossel de resultados do salão">
+      <div class="carrossel-frame" aria-label="Carrossel de fotos do salão">
         <div class="slide ativo">
-          <img src="fotos/cabelo-01.jpg" alt="Cabelos e tratamentos DIVAS" onerror="this.style.display='none'" />
+          <img
+            src="fotos/cabelo-01.jpg"
+            alt="Cabelos e tratamentos DIVAS"
+            onerror="this.closest('.slide').style.display='none'"
+          />
           <div class="slide-legenda">
             <span>Cabelos &amp; Tratamentos</span>
             <p>Acabamento alinhado e brilho nos fios</p>
@@ -960,7 +980,11 @@
         </div>
 
         <div class="slide">
-          <img src="fotos/unhas-01.jpg" alt="Unhas decoradas DIVAS" onerror="this.style.display='none'" />
+          <img
+            src="fotos/unhas-01.jpg"
+            alt="Unhas decoradas DIVAS"
+            onerror="this.closest('.slide').style.display='none'"
+          />
           <div class="slide-legenda">
             <span>Unhas &amp; Esmaltação</span>
             <p>Cuidado detalhado e acabamento impecável</p>
@@ -968,7 +992,11 @@
         </div>
 
         <div class="slide">
-          <img src="fotos/cabelo-02.jpg" alt="Corte e finalização DIVAS" onerror="this.style.display='none'" />
+          <img
+            src="fotos/cabelo-02.jpg"
+            alt="Corte e finalização DIVAS"
+            onerror="this.closest('.slide').style.display='none'"
+          />
           <div class="slide-legenda">
             <span>Corte &amp; Finalização</span>
             <p>Movimento e leveza sob medida</p>
@@ -976,7 +1004,11 @@
         </div>
 
         <div class="slide">
-          <img src="fotos/cabelo-03.jpg" alt="Progressiva e cuidado capilar DIVAS" onerror="this.style.display='none'" />
+          <img
+            src="fotos/cabelo-03.jpg"
+            alt="Progressiva e cuidado capilar DIVAS"
+            onerror="this.closest('.slide').style.display='none'"
+          />
           <div class="slide-legenda">
             <span>Progressiva &amp; Brilho</span>
             <p>Fios disciplinados com toque suave</p>
@@ -999,8 +1031,8 @@
     <section id="servicos">
       <div class="secao-topo">
         <span class="kicker" style="margin-bottom:2px;">Especialidades</span>
-        <h2 class="fonte-editorial">Serviços pensados para o seu dia a dia</h2>
-        <p>Selecione o procedimento desejado para iniciar a reserva com disponibilidade atualizada.</p>
+        <h2 class="fonte-editorial">Serviços do salão</h2>
+        <p>Escolha o serviço desejado para iniciar a reserva no chat com disponibilidade atualizada.</p>
       </div>
 
       <div class="lista-servicos">
@@ -1061,17 +1093,22 @@
       </div>
     </section>
 
-    <!-- Galeria Real da Pasta fotos/ -->
+    <!-- Galeria apenas com as fotos reais nomeadas -->
     <section id="galeria">
       <div class="secao-topo">
         <span class="kicker" style="margin-bottom:2px;">Portfólio</span>
-        <h2 class="fonte-editorial">Resultados realizados no salão</h2>
-        <p>Fotos reais da pasta do projeto. Toque para ampliar ou clique para agendar o serviço.</p>
+        <h2 class="fonte-editorial">Resultados realizados</h2>
+        <p>Toque na foto para ampliar ou clique para agendar o serviço pelo chat IA.</p>
       </div>
 
       <div class="galeria-grid">
         <article class="foto-box">
-          <img src="fotos/cabelo-01.jpg" alt="Cabelo 01 DIVAS" data-ampliar="fotos/cabelo-01.jpg" onerror="this.style.display='none'" />
+          <img
+            src="fotos/cabelo-01.jpg"
+            alt="Cabelo 01 DIVAS"
+            data-ampliar="fotos/cabelo-01.jpg"
+            onerror="this.closest('article').remove()"
+          />
           <div class="foto-info">
             <strong>Cabelo 01</strong>
             <button type="button" data-srv="Corte">Agendar</button>
@@ -1079,7 +1116,12 @@
         </article>
 
         <article class="foto-box">
-          <img src="fotos/cabelo-02.jpg" alt="Cabelo 02 DIVAS" data-ampliar="fotos/cabelo-02.jpg" onerror="this.style.display='none'" />
+          <img
+            src="fotos/cabelo-02.jpg"
+            alt="Cabelo 02 DIVAS"
+            data-ampliar="fotos/cabelo-02.jpg"
+            onerror="this.closest('article').remove()"
+          />
           <div class="foto-info">
             <strong>Cabelo 02</strong>
             <button type="button" data-srv="Corte">Agendar</button>
@@ -1087,7 +1129,12 @@
         </article>
 
         <article class="foto-box">
-          <img src="fotos/cabelo-03.jpg" alt="Cabelo 03 DIVAS" data-ampliar="fotos/cabelo-03.jpg" onerror="this.style.display='none'" />
+          <img
+            src="fotos/cabelo-03.jpg"
+            alt="Cabelo 03 DIVAS"
+            data-ampliar="fotos/cabelo-03.jpg"
+            onerror="this.closest('article').remove()"
+          />
           <div class="foto-info">
             <strong>Cabelo 03</strong>
             <button type="button" data-srv="Progressiva">Agendar</button>
@@ -1095,49 +1142,14 @@
         </article>
 
         <article class="foto-box">
-          <img src="fotos/unhas-01.jpg" alt="Unhas 01 DIVAS" data-ampliar="fotos/unhas-01.jpg" onerror="this.style.display='none'" />
+          <img
+            src="fotos/unhas-01.jpg"
+            alt="Unhas 01 DIVAS"
+            data-ampliar="fotos/unhas-01.jpg"
+            onerror="this.closest('article').remove()"
+          />
           <div class="foto-info">
             <strong>Unhas 01</strong>
-            <button type="button" data-srv="Pé e mão">Agendar</button>
-          </div>
-        </article>
-
-        <article class="foto-box">
-          <img src="fotos/IMG-20261123-WA0046.jpg" alt="Resultado DIVAS WA0046" data-ampliar="fotos/IMG-20261123-WA0046.jpg" onerror="this.style.display='none'" />
-          <div class="foto-info">
-            <strong>Resultado 05</strong>
-            <button type="button" data-srv="Pé e mão">Agendar</button>
-          </div>
-        </article>
-
-        <article class="foto-box">
-          <img src="fotos/IMG-20261123-WA0047.jpg" alt="Resultado DIVAS WA0047" data-ampliar="fotos/IMG-20261123-WA0047.jpg" onerror="this.style.display='none'" />
-          <div class="foto-info">
-            <strong>Resultado 06</strong>
-            <button type="button" data-srv="Pé e mão">Agendar</button>
-          </div>
-        </article>
-
-        <article class="foto-box">
-          <img src="fotos/IMG-20261123-WA0048.jpg" alt="Resultado DIVAS WA0048" data-ampliar="fotos/IMG-20261123-WA0048.jpg" onerror="this.style.display='none'" />
-          <div class="foto-info">
-            <strong>Resultado 07</strong>
-            <button type="button" data-srv="Progressiva">Agendar</button>
-          </div>
-        </article>
-
-        <article class="foto-box">
-          <img src="fotos/IMG-20261123-WA0049.jpg" alt="Resultado DIVAS WA0049" data-ampliar="fotos/IMG-20261123-WA0049.jpg" onerror="this.style.display='none'" />
-          <div class="foto-info">
-            <strong>Resultado 08</strong>
-            <button type="button" data-srv="Pé e mão">Agendar</button>
-          </div>
-        </article>
-
-        <article class="foto-box">
-          <img src="fotos/IMG-20261123-WA0050.jpg" alt="Resultado DIVAS WA0050" data-ampliar="fotos/IMG-20261123-WA0050.jpg" onerror="this.style.display='none'" />
-          <div class="foto-info">
-            <strong>Resultado 09</strong>
             <button type="button" data-srv="Pé e mão">Agendar</button>
           </div>
         </article>
@@ -1148,100 +1160,115 @@
     <section id="agendar">
       <div class="secao-topo">
         <span class="kicker" style="margin-bottom:2px;">Reserva Direta</span>
-        <h2 class="fonte-editorial">Agende seu horário com a Recepcionista IA</h2>
-        <p>Escolha um horário rápido ou escreva o serviço, dia e horário desejado.</p>
+        <h2 class="fonte-editorial">Agende com a Recepcionista DIVAS IA</h2>
+        <p>Tudo resolvido aqui no chat: consulte horários, escolha o serviço e confirme sua reserva.</p>
       </div>
 
-      <div class="agendamento-grid">
-        <aside class="info-lateral">
-          <h3 class="fonte-editorial">DIVAS Salão de Beleza</h3>
-          <p>
-            Reserva rápida e confirmação direta, com envio automático de detalhes e localização do salão.
-          </p>
-          <div class="linha-dado">
-            <strong>Endereço</strong>
-            Rua Otto Espíndola, 470 - Moradas do Bosque, Cachoeirinha/RS
-          </div>
-          <div class="linha-dado">
-            <strong>Funcionamento</strong>
-            Segunda a Sábado, das 9h às 19h30 (Domingo: Fechado)
-          </div>
-          <div class="linha-dado">
-            <strong>WhatsApp</strong>
-            (51) 99174-9541
-          </div>
-        </aside>
-
-        <div class="chat-card">
-          <div class="chat-cab">
-            <div class="chat-perfil">
-              <img
-                src="fotos/logo-divas.jpg"
-                alt="Recepcionista DIVAS IA"
-                onerror="this.style.display='none'"
-              />
-              <div>
-                <div class="chat-nome">Recepcionista DIVAS IA</div>
-                <div class="chat-estado" id="statusChat">• Online • Consulta e reserva automática</div>
-              </div>
-            </div>
-            <button type="button" class="btn-limpar" id="btnLimpar">Limpar</button>
-          </div>
-
-          <div class="slots-barra">
-            <div>
-              <div class="dia-titulo">Sexta-feira, 27/11</div>
-              <div class="slots-grid">
-                <button type="button" class="slot-btn" data-data="27/11 (2026-11-27)" data-hora="09:00">09:00</button>
-                <button type="button" class="slot-btn" data-data="27/11 (2026-11-27)" data-hora="10:30">10:30</button>
-                <button type="button" class="slot-btn" data-data="27/11 (2026-11-27)" data-hora="13:30">13:30</button>
-                <button type="button" class="slot-btn" data-data="27/11 (2026-11-27)" data-hora="15:00">15:00</button>
-                <button type="button" class="slot-btn" data-data="27/11 (2026-11-27)" data-hora="16:30">16:30</button>
-              </div>
-            </div>
-
-            <div>
-              <div class="dia-titulo">Sábado, 28/11</div>
-              <div class="slots-grid">
-                <button type="button" class="slot-btn" data-data="28/11 (2026-11-28)" data-hora="09:00">09:00</button>
-                <button type="button" class="slot-btn" data-data="28/11 (2026-11-28)" data-hora="10:30">10:30</button>
-                <button type="button" class="slot-btn" data-data="28/11 (2026-11-28)" data-hora="13:30">13:30</button>
-                <button type="button" class="slot-btn" data-data="28/11 (2026-11-28)" data-hora="15:00">15:00</button>
-                <button type="button" class="slot-btn" data-data="28/11 (2026-11-28)" data-hora="16:30">16:30</button>
-              </div>
-            </div>
-          </div>
-
-          <div class="chat-historico" id="listaMensagens">
-            <div class="msg ia">Olá! Sou a Recepcionista da DIVAS Salão de Beleza. Qual serviço você deseja agendar (Corte, Sobrancelhas, Progressiva, Pé e mão ou Cabelo infantil) e para qual dia e horário?</div>
-          </div>
-
-          <div class="confirmacao" id="caixaConfirmacao">
-            <div style="font-weight:800; color:#15803d; margin-bottom:4px;">✅ Agendamento Confirmado</div>
-            <div id="textoConfirmacao"></div>
-          </div>
-
-          <div class="atalhos-rapidos">
-            <button type="button" class="atalho" data-msg="Quero agendar Pé e mão">Pé e mão</button>
-            <button type="button" class="atalho" data-msg="Quero agendar Progressiva">Progressiva</button>
-            <button type="button" class="atalho" data-msg="Quero agendar Corte">Corte</button>
-            <button type="button" class="atalho" data-msg="Quero agendar Sobrancelhas">Sobrancelhas</button>
-            <button type="button" class="atalho" data-msg="Quero agendar Cabelo infantil">Cabelo infantil</button>
-            <button type="button" class="atalho" data-msg="Quero ver os horários livres">Horários livres</button>
-          </div>
-
-          <form class="chat-form" id="formChat">
-            <input
-              type="text"
-              id="campoMensagem"
-              class="chat-input"
-              placeholder="Ex: Corte dia 28/11 às 09:00 ou Nome,51999999999"
-              autocomplete="off"
-              required
+      <div class="chat-card">
+        <div class="chat-cab">
+          <div class="chat-perfil">
+            <img
+              src="fotos/logo-divas.jpg"
+              alt="Recepcionista DIVAS IA"
+              onerror="this.style.display='none'"
             />
-            <button type="submit" class="chat-enviar" id="btnEnviar">Enviar</button>
-          </form>
+            <div>
+              <div class="chat-nome">Recepcionista DIVAS IA</div>
+              <div class="chat-estado" id="statusChat">• Online • Consulta e reserva automática</div>
+            </div>
+          </div>
+          <button type="button" class="btn-limpar" id="btnLimpar">Limpar</button>
         </div>
+
+        <div class="slots-barra">
+          <div>
+            <div class="dia-titulo">Sexta-feira, 27/11</div>
+            <div class="slots-grid">
+              <button type="button" class="slot-btn" data-data="27/11 (2026-11-27)" data-hora="09:00">09:00</button>
+              <button type="button" class="slot-btn" data-data="27/11 (2026-11-27)" data-hora="10:30">10:30</button>
+              <button type="button" class="slot-btn" data-data="27/11 (2026-11-27)" data-hora="13:30">13:30</button>
+              <button type="button" class="slot-btn" data-data="27/11 (2026-11-27)" data-hora="15:00">15:00</button>
+              <button type="button" class="slot-btn" data-data="27/11 (2026-11-27)" data-hora="16:30">16:30</button>
+            </div>
+          </div>
+
+          <div>
+            <div class="dia-titulo">Sábado, 28/11</div>
+            <div class="slots-grid">
+              <button type="button" class="slot-btn" data-data="28/11 (2026-11-28)" data-hora="09:00">09:00</button>
+              <button type="button" class="slot-btn" data-data="28/11 (2026-11-28)" data-hora="10:30">10:30</button>
+              <button type="button" class="slot-btn" data-data="28/11 (2026-11-28)" data-hora="13:30">13:30</button>
+              <button type="button" class="slot-btn" data-data="28/11 (2026-11-28)" data-hora="15:00">15:00</button>
+              <button type="button" class="slot-btn" data-data="28/11 (2026-11-28)" data-hora="16:30">16:30</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="chat-historico" id="listaMensagens">
+          <div class="msg ia">Olá! Sou a Recepcionista da DIVAS Salão de Beleza. Qual serviço você deseja agendar (Corte, Sobrancelhas, Progressiva, Pé e mão ou Cabelo infantil) e para qual dia e horário?</div>
+        </div>
+
+        <div class="confirmacao" id="caixaConfirmacao">
+          <div style="font-weight:800; color:#15803d; margin-bottom:4px;">✅ Agendamento Confirmado</div>
+          <div id="textoConfirmacao"></div>
+        </div>
+
+        <div class="atalhos-rapidos">
+          <button type="button" class="atalho" data-msg="Quero agendar Pé e mão">Pé e mão</button>
+          <button type="button" class="atalho" data-msg="Quero agendar Progressiva">Progressiva</button>
+          <button type="button" class="atalho" data-msg="Quero agendar Corte">Corte</button>
+          <button type="button" class="atalho" data-msg="Quero agendar Sobrancelhas">Sobrancelhas</button>
+          <button type="button" class="atalho" data-msg="Quero agendar Cabelo infantil">Cabelo infantil</button>
+          <button type="button" class="atalho" data-msg="Quero ver os horários livres">Horários livres</button>
+        </div>
+
+        <form class="chat-form" id="formChat">
+          <input
+            type="text"
+            id="campoMensagem"
+            class="chat-input"
+            placeholder="Ex: Corte dia 28/11 às 09:00 ou Nome,51999999999"
+            autocomplete="off"
+            required
+          />
+          <button type="submit" class="chat-enviar" id="btnEnviar">Enviar</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Endereço com Mapa lá embaixo -->
+    <section class="mapa-secao" id="endereco-mapa">
+      <div class="mapa-dados">
+        <div class="kicker" style="margin-bottom:2px;">Como Chegar</div>
+        <h2 class="fonte-editorial">Endereço &amp; Mapa</h2>
+
+        <div class="mapa-linha">
+          <strong>Endereço Completo</strong>
+          Rua Otto Espíndola, 470 - Moradas do Bosque, CEP 94960-842, Cachoeirinha/RS
+        </div>
+
+        <div class="mapa-linha">
+          <strong>Horário de Atendimento</strong>
+          Segunda a Sábado, das 9h às 19h30 (Domingo: Fechado)
+        </div>
+
+        <div class="mapa-linha">
+          <strong>Agendamento</strong>
+          Diretamente pela Recepcionista DIVAS IA aqui no site
+        </div>
+
+        <div style="margin-top:4px;">
+          <button type="button" class="btn-primario" id="btnMapaAgendar">Agendar horário no chat IA →</button>
+        </div>
+      </div>
+
+      <div class="mapa-frame">
+        <iframe
+          title="Mapa DIVAS Salão de Beleza — Rua Otto Espíndola, 470, Moradas do Bosque, Cachoeirinha/RS"
+          src="https://maps.google.com/maps?q=Rua%20Otto%20Espindola%2C%20470%2C%20Moradas%20do%20Bosque%2C%20Cachoeirinha%2C%20RS&t=&z=16&ie=UTF8&iwloc=&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
       </div>
     </section>
   </main>
@@ -1274,6 +1301,8 @@
     const btnFlutuante = document.getElementById("btnFlutuante");
     const btnTopoAgendar = document.getElementById("btnTopoAgendar");
     const btnHeroAgendar = document.getElementById("btnHeroAgendar");
+    const btnHeroHorarios = document.getElementById("btnHeroHorarios");
+    const btnMapaAgendar = document.getElementById("btnMapaAgendar");
     const btnMenu = document.getElementById("btnMenu");
     const gaveta = document.getElementById("gaveta");
     const secaoAgendar = document.getElementById("agendar");
@@ -1315,6 +1344,11 @@
     btnFlutuante.addEventListener("click", abrirAgendamento);
     btnTopoAgendar.addEventListener("click", abrirAgendamento);
     btnHeroAgendar.addEventListener("click", abrirAgendamento);
+    btnMapaAgendar.addEventListener("click", abrirAgendamento);
+    btnHeroHorarios.addEventListener("click", () => {
+      abrirAgendamento();
+      enviarMensagem("Quero ver os horários livres");
+    });
 
     document.querySelectorAll("[data-ampliar]").forEach((img) => {
       img.addEventListener("click", () => {
