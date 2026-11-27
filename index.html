@@ -3,17 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>DIVAS Salão de Beleza — Cachoeirinha/RS</title>
+  <title>DIVAS Salão de Beleza — Experiência &amp; Agendamento IA</title>
   <style>
     :root {
-      --roxo-escuro: #4b1d7a;
-      --roxo-principal: #6e27b5;
-      --roxo-claro: #f4eefb;
-      --borda-dourada: #d4af37;
-      --texto: #1f1b24;
-      --texto-suave: #5a5266;
-      --cinza-suave: #f7f5fa;
-      --borda-suave: #e5daf2;
+      --bg-deep: #130720;
+      --bg-plum: #240e3d;
+      --roxo-vivo: #7c3aed;
+      --roxo-brilho: #a855f7;
+      --gold: #e5c158;
+      --gold-soft: rgba(229, 193, 88, 0.25);
+      --glass-bg: rgba(255, 255, 255, 0.06);
+      --glass-border: rgba(255, 255, 255, 0.14);
+      --card-light: #ffffff;
+      --texto-dark: #191321;
+      --verde: #16a34a;
     }
 
     * {
@@ -31,335 +34,580 @@
       max-width: 100%;
       overflow-x: hidden;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      color: var(--texto);
+      background: radial-gradient(circle at 15% 10%, #36155c 0%, var(--bg-deep) 55%, #0d0416 100%);
+      color: #ffffff;
     }
 
     body {
-      background: linear-gradient(160deg, #58228e 0%, #7d35c7 55%, #4b1d7a 100%);
       min-height: 100dvh;
-      padding-bottom: calc(108px + env(safe-area-inset-bottom, 0px));
+      padding-bottom: calc(114px + env(safe-area-inset-bottom, 0px));
     }
 
-    .topo-salao {
-      background: #ffffff;
-      padding: 12px 16px;
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 40;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 12px;
+      padding: 12px 18px;
+      background: rgba(19, 7, 32, 0.78);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--glass-border);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
       gap: 10px;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
-      position: sticky;
-      top: 0;
-      z-index: 30;
     }
 
-    .marca-salao h1 {
-      font-size: 1.05rem;
-      letter-spacing: 0.08em;
-      color: var(--roxo-escuro);
-      font-weight: 800;
+    .brand-avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--gold);
+      background: var(--bg-plum);
     }
 
-    .marca-salao span {
-      display: block;
-      font-size: 0.68rem;
+    .brand-title {
+      font-size: 1.08rem;
+      font-weight: 900;
       letter-spacing: 0.14em;
-      color: var(--texto-suave);
-      text-transform: uppercase;
+      background: linear-gradient(90deg, #ffffff, var(--gold));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      line-height: 1.1;
     }
 
-    .nav-topo {
+    .brand-sub {
+      font-size: 0.66rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #cbb8e6;
+      font-weight: 600;
+    }
+
+    .nav-actions {
       display: flex;
       align-items: center;
       gap: 8px;
     }
 
-    .link-topo {
-      text-decoration: none;
-      color: var(--roxo-escuro);
-      font-size: 0.82rem;
-      font-weight: 600;
-      padding: 6px 8px;
+    .nav-links {
+      display: none;
+      gap: 14px;
     }
 
-    .btn-abrir-topo {
-      background: var(--roxo-principal);
-      color: #ffffff;
+    @media (min-width: 720px) {
+      .nav-links {
+        display: flex;
+      }
+      .btn-hamburger {
+        display: none;
+      }
+    }
+
+    .nav-links a {
+      color: #eadcff;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    .btn-cta-nav {
+      background: linear-gradient(135deg, var(--gold), #f3d77c);
+      color: #1c0930;
       border: none;
+      border-radius: 999px;
+      padding: 8px 15px;
+      font-size: 0.82rem;
+      font-weight: 800;
+      cursor: pointer;
+      box-shadow: 0 4px 18px rgba(229, 193, 88, 0.35);
+    }
+
+    .btn-hamburger {
+      width: 38px;
+      height: 38px;
       border-radius: 10px;
-      padding: 8px 12px;
-      font-size: 0.84rem;
-      font-weight: 700;
+      border: 1px solid var(--glass-border);
+      background: var(--glass-bg);
+      color: #ffffff;
+      font-size: 1.1rem;
       cursor: pointer;
     }
 
-    .container-site {
-      max-width: 680px;
+    .mobile-drawer {
+      display: none;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 10px 16px;
+      background: rgba(25, 10, 43, 0.96);
+      border-bottom: 1px solid var(--gold-soft);
+      position: sticky;
+      top: 67px;
+      z-index: 39;
+    }
+
+    .mobile-drawer.open {
+      display: flex;
+    }
+
+    .mobile-drawer a {
+      text-decoration: none;
+      color: #f3e8ff;
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 600;
+    }
+
+    .wrapper {
+      max-width: 820px;
       margin: 0 auto;
-      padding: 16px 12px 24px;
+      padding: 18px 14px 28px;
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      gap: 22px;
     }
 
-    .hero-card,
-    .secao-card {
-      background: #ffffff;
-      border-radius: 20px;
-      border: 2px solid var(--borda-dourada);
-      box-shadow: 0 14px 36px rgba(24, 6, 46, 0.28);
-      padding: 18px 16px;
+    .hero-panel {
+      position: relative;
+      border-radius: 26px;
+      padding: 26px 20px;
+      background: linear-gradient(145deg, rgba(124, 58, 237, 0.22), rgba(255, 255, 255, 0.04));
+      border: 1px solid var(--gold-soft);
+      box-shadow: 0 24px 54px rgba(0, 0, 0, 0.45);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
     }
 
-    .hero-tag {
-      display: inline-block;
-      background: var(--roxo-claro);
-      color: var(--roxo-escuro);
-      font-size: 0.74rem;
-      font-weight: 700;
-      padding: 5px 10px;
+    @media (min-width: 680px) {
+      .hero-panel {
+        grid-template-columns: 1.35fr 0.65fr;
+        align-items: center;
+        padding: 32px 28px;
+      }
+    }
+
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
       border-radius: 999px;
+      background: rgba(229, 193, 88, 0.14);
+      border: 1px solid var(--gold-soft);
+      color: var(--gold);
+      font-size: 0.74rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .hero-title {
+      font-size: 1.72rem;
+      font-weight: 900;
+      line-height: 1.16;
+      letter-spacing: -0.02em;
       margin-bottom: 10px;
     }
 
-    .hero-titulo {
-      font-size: 1.38rem;
-      line-height: 1.25;
-      color: var(--roxo-escuro);
-      font-weight: 800;
-      margin-bottom: 8px;
+    .hero-title span {
+      background: linear-gradient(90deg, #e9d5ff, var(--gold));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
-    .hero-texto {
-      font-size: 0.92rem;
-      line-height: 1.5;
-      color: var(--texto-suave);
-      margin-bottom: 14px;
+    .hero-sub {
+      font-size: 0.94rem;
+      line-height: 1.55;
+      color: #d8c7ee;
+      margin-bottom: 18px;
     }
 
-    .acoes-hero {
+    .hero-buttons {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
     }
 
-    .btn-primario {
-      background: var(--roxo-principal);
+    .btn-primary-glow {
+      background: linear-gradient(135deg, var(--roxo-vivo), var(--roxo-brilho));
       color: #ffffff;
-      border: none;
-      border-radius: 12px;
-      padding: 11px 16px;
-      font-size: 0.9rem;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 14px;
+      padding: 12px 18px;
+      font-size: 0.92rem;
       font-weight: 700;
       cursor: pointer;
-      text-decoration: none;
+      box-shadow: 0 10px 26px rgba(124, 58, 237, 0.45);
     }
 
-    .btn-secundario {
-      background: #16a34a;
-      color: #ffffff;
-      border: none;
-      border-radius: 12px;
-      padding: 11px 16px;
+    .btn-wa-glass {
+      background: rgba(22, 163, 74, 0.18);
+      color: #86efac;
+      border: 1px solid rgba(34, 197, 94, 0.4);
+      border-radius: 14px;
+      padding: 12px 16px;
       font-size: 0.9rem;
       font-weight: 700;
-      cursor: pointer;
       text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
     }
 
-    .secao-titulo {
-      font-size: 1.1rem;
-      color: var(--roxo-escuro);
-      font-weight: 800;
-      margin-bottom: 12px;
-    }
-
-    .grid-servicos {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    .orb-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       gap: 10px;
     }
 
-    .servico-item {
-      background: var(--cinza-suave);
-      border: 1px solid var(--borda-suave);
-      border-radius: 14px;
-      padding: 12px;
+    .ai-orb {
+      width: 112px;
+      height: 112px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, #f5d0fe, #9333ea 52%, #3b0764 100%);
+      box-shadow:
+        0 0 28px rgba(168, 85, 247, 0.75),
+        0 0 64px rgba(229, 193, 88, 0.35),
+        inset 0 0 18px rgba(255, 255, 255, 0.5);
+      border: 2px solid var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: pulseOrb 3.2s infinite ease-in-out;
+      cursor: pointer;
+    }
+
+    .ai-orb span {
+      font-size: 0.78rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      color: #ffffff;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    }
+
+    .orb-caption {
+      font-size: 0.75rem;
+      color: var(--gold);
+      font-weight: 700;
+      letter-spacing: 0.06em;
+    }
+
+    @keyframes pulseOrb {
+      0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 26px rgba(168, 85, 247, 0.7), 0 0 54px rgba(229, 193, 88, 0.3);
+      }
+      50% {
+        transform: scale(1.06);
+        box-shadow: 0 0 40px rgba(168, 85, 247, 0.95), 0 0 76px rgba(229, 193, 88, 0.55);
+      }
+    }
+
+    .section-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #ffffff;
+    }
+
+    .section-hint {
+      font-size: 0.78rem;
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    .bento-services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+      gap: 12px;
+    }
+
+    .service-tile {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 18px;
+      padding: 15px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      gap: 8px;
+      gap: 10px;
+      transition: transform 0.2s, border-color 0.2s;
     }
 
-    .servico-item h3 {
-      font-size: 0.95rem;
-      color: var(--roxo-escuro);
+    .service-tile:hover {
+      transform: translateY(-2px);
+      border-color: var(--gold);
     }
 
-    .servico-item p {
-      font-size: 0.82rem;
-      color: var(--texto-suave);
-      line-height: 1.35;
+    .service-icon {
+      font-size: 1.35rem;
+      margin-bottom: 4px;
     }
 
-    .btn-servico-chat {
+    .service-tile h3 {
+      font-size: 0.98rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 4px;
+    }
+
+    .service-tile p {
+      font-size: 0.81rem;
+      color: #cbb8e6;
+      line-height: 1.4;
+    }
+
+    .btn-tile {
       align-self: flex-start;
-      background: #ffffff;
-      color: var(--roxo-principal);
-      border: 1px solid var(--roxo-principal);
-      border-radius: 9px;
-      padding: 6px 10px;
+      background: rgba(229, 193, 88, 0.16);
+      color: var(--gold);
+      border: 1px solid var(--gold-soft);
+      border-radius: 10px;
+      padding: 6px 11px;
       font-size: 0.78rem;
       font-weight: 700;
       cursor: pointer;
     }
 
-    .info-lista {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      font-size: 0.9rem;
-      color: var(--texto);
-      line-height: 1.45;
-    }
-
-    .chat-card {
-      background: #ffffff;
-      border-radius: 20px;
-      border: 2px solid var(--borda-dourada);
-      box-shadow: 0 14px 36px rgba(24, 6, 46, 0.35);
+    .ia-hub-card {
+      background: var(--card-light);
+      color: var(--texto-dark);
+      border-radius: 24px;
+      border: 2px solid var(--gold);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
       overflow: hidden;
-      display: flex;
-      flex-direction: column;
       position: relative;
       z-index: 10;
     }
 
-    .chat-header {
-      background: linear-gradient(90deg, #5d2398, #7b32c4);
+    .hub-header {
+      background: linear-gradient(120deg, #2e0f4d, #5b1fa0);
       color: #ffffff;
-      padding: 14px 16px;
+      padding: 15px 16px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 10px;
     }
 
-    .chat-header-titulo {
-      font-weight: 700;
-      font-size: 0.98rem;
-      line-height: 1.2;
+    .hub-agent {
+      display: flex;
+      align-items: center;
+      gap: 11px;
     }
 
-    .chat-header-status {
-      font-size: 0.78rem;
-      color: #efe4ff;
+    .mini-orb {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, #f3e8ff, #9333ea 65%, #3b0764);
+      border: 1.5px solid var(--gold);
+      box-shadow: 0 0 14px rgba(229, 193, 88, 0.65);
+      flex-shrink: 0;
+    }
+
+    .hub-agent-name {
+      font-weight: 800;
+      font-size: 1rem;
+    }
+
+    .hub-agent-status {
+      font-size: 0.77rem;
+      color: #e9d5ff;
       margin-top: 2px;
     }
 
-    .btn-limpar {
-      background: rgba(255, 255, 255, 0.16);
+    .btn-reset {
+      background: rgba(255, 255, 255, 0.14);
       color: #ffffff;
-      border: 1px solid rgba(255, 255, 255, 0.35);
-      border-radius: 8px;
-      padding: 5px 9px;
-      font-size: 0.75rem;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 9px;
+      padding: 6px 10px;
+      font-size: 0.76rem;
+      font-weight: 700;
       cursor: pointer;
     }
 
-    .chat-mensagens {
-      padding: 14px 14px 22px;
+    .quick-slots-panel {
+      background: #faf6ff;
+      border-bottom: 1px solid #eadcf8;
+      padding: 12px 14px;
       display: flex;
       flex-direction: column;
       gap: 10px;
-      max-height: 420px;
+    }
+
+    .day-label {
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: #461773;
+      margin-bottom: 6px;
+    }
+
+    .slots-row {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 6px;
+    }
+
+    .slot-chip {
+      background: #ffffff;
+      border: 1px solid #d7c3ee;
+      color: #461773;
+      border-radius: 10px;
+      padding: 7px 4px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.15s;
+    }
+
+    .slot-chip.active {
+      background: #6b21a8;
+      color: #ffffff;
+      border-color: #6b21a8;
+    }
+
+    .chat-stream {
+      padding: 14px 14px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-height: 390px;
       overflow-y: auto;
-      background: #fcfaff;
+      background: #ffffff;
       scroll-behavior: smooth;
     }
 
-    .msg {
+    .bubble {
       max-width: 86%;
       padding: 11px 14px;
-      border-radius: 15px;
-      font-size: 0.92rem;
+      border-radius: 16px;
+      font-size: 0.91rem;
       line-height: 1.45;
       white-space: pre-line;
       word-break: break-word;
     }
 
-    .msg-user {
+    .bubble-user {
       align-self: flex-end;
-      background: var(--roxo-principal);
+      background: linear-gradient(135deg, #6b21a8, #7e22ce);
       color: #ffffff;
       border-bottom-right-radius: 4px;
     }
 
-    .msg-ia {
+    .bubble-ia {
       align-self: flex-start;
-      background: var(--cinza-suave);
-      color: var(--texto);
-      border: 1px solid var(--borda-suave);
+      background: #f5effd;
+      color: var(--texto-dark);
+      border: 1px solid #e4d4f7;
       border-bottom-left-radius: 4px;
     }
 
-    .atalhos-servicos {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      padding: 10px 14px;
-      background: #ffffff;
-      border-top: 1px solid #efe9f7;
+    .booking-receipt {
+      display: none;
+      margin: 0 14px 12px;
+      background: #f0fdf4;
+      border: 1.5px solid #22c55e;
+      border-radius: 14px;
+      padding: 12px 14px;
+      color: #14532d;
+      font-size: 0.85rem;
+      line-height: 1.45;
     }
 
-    .chip-servico {
+    .booking-receipt.show {
+      display: block;
+    }
+
+    .booking-receipt-title {
+      font-weight: 800;
+      font-size: 0.94rem;
+      color: #15803d;
+      margin-bottom: 4px;
+    }
+
+    .quick-prompts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      padding: 10px 14px;
+      background: #fcfaff;
+      border-top: 1px solid #efe7f8;
+    }
+
+    .prompt-pill {
       background: #ffffff;
-      color: var(--roxo-escuro);
-      border: 1px solid #dfd2f0;
+      color: #461773;
+      border: 1px solid #d9c8ee;
       border-radius: 999px;
       padding: 6px 12px;
-      font-size: 0.8rem;
-      font-weight: 600;
+      font-size: 0.79rem;
+      font-weight: 700;
       cursor: pointer;
     }
 
-    .chip-servico:hover {
-      background: var(--roxo-claro);
-    }
-
-    .chat-form {
+    .chat-composer {
       display: flex;
       align-items: center;
       gap: 8px;
       padding: 12px 14px calc(14px + env(safe-area-inset-bottom, 0px));
       background: #ffffff;
-      border-top: 1px solid var(--borda-suave);
+      border-top: 1px solid #eadff7;
       position: relative;
       z-index: 25;
     }
 
-    .chat-input {
+    .composer-input {
       flex: 1;
       min-width: 0;
       height: 44px;
-      border: 1px solid #d6c8e8;
+      border: 1px solid #d1bfe8;
       border-radius: 12px;
       padding: 0 12px;
       font-size: 0.92rem;
-      color: var(--texto);
+      color: var(--texto-dark);
+      background: #ffffff;
       outline: none;
     }
 
-    .chat-input:focus {
-      border-color: var(--roxo-principal);
+    .composer-input:focus {
+      border-color: #6b21a8;
     }
 
-    .btn-enviar {
+    .composer-btn {
       height: 44px;
       padding: 0 16px;
       border: none;
       border-radius: 12px;
-      background: var(--roxo-principal);
+      background: linear-gradient(135deg, #6b21a8, #7e22ce);
       color: #ffffff;
       font-weight: 700;
       font-size: 0.9rem;
@@ -367,17 +615,100 @@
       flex-shrink: 0;
     }
 
-    .btn-enviar:disabled {
+    .composer-btn:disabled {
       opacity: 0.6;
       cursor: not-allowed;
     }
 
-    .rodape-salao {
-      text-align: center;
-      color: #f4ecff;
-      font-size: 0.8rem;
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(185px, 1fr));
+      gap: 12px;
+    }
+
+    .gallery-card {
+      position: relative;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid var(--gold-soft);
+      background: linear-gradient(160deg, rgba(124, 58, 237, 0.25), rgba(255, 255, 255, 0.05));
+      min-height: 230px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    .gallery-card img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.82;
+    }
+
+    .gallery-overlay {
+      position: relative;
+      z-index: 2;
+      padding: 14px;
+      background: linear-gradient(180deg, transparent 0%, rgba(15, 5, 26, 0.95) 100%);
+    }
+
+    .gallery-overlay h3 {
+      font-size: 0.94rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 4px;
+    }
+
+    .gallery-overlay p {
+      font-size: 0.78rem;
+      color: #e2d4f5;
+      margin-bottom: 8px;
+    }
+
+    .location-card {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 22px;
+      padding: 20px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .location-details {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 0.9rem;
+      color: #eadcff;
       line-height: 1.5;
-      padding: 6px 12px 16px;
+    }
+
+    .location-details strong {
+      color: var(--gold);
+    }
+
+    .site-footer {
+      text-align: center;
+      padding: 22px 14px 10px;
+      color: #bca6da;
+      font-size: 0.8rem;
+      line-height: 1.6;
+    }
+
+    .vezqora-badge {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: rgba(229, 193, 88, 0.12);
+      border: 1px solid var(--gold-soft);
+      color: var(--gold);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-decoration: none;
     }
 
     .btn-flutuante-ia {
@@ -388,18 +719,18 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 10px 14px;
+      padding: 11px 15px;
       border-radius: 999px;
-      border: 1.5px solid var(--borda-dourada);
-      background: linear-gradient(90deg, #58228e, #7c33c6);
+      border: 1.5px solid var(--gold);
+      background: linear-gradient(135deg, #4c1d95, #7c3aed);
       color: #ffffff;
-      font-weight: 700;
+      font-weight: 800;
       font-size: 0.85rem;
-      box-shadow: 0 8px 24px rgba(24, 6, 46, 0.35);
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
       cursor: pointer;
     }
 
-    .ponto-verde {
+    .dot-live {
       width: 9px;
       height: 9px;
       border-radius: 50%;
@@ -413,134 +744,276 @@
   </style>
 </head>
 <body class="chat-aberto">
-  <header class="topo-salao">
-    <div class="marca-salao">
-      <h1>DIVAS</h1>
-      <span>Salão de Beleza</span>
+  <header class="navbar">
+    <div class="brand">
+      <img
+        src="logo.png"
+        alt="DIVAS Salão de Beleza"
+        class="brand-avatar"
+        onerror="this.style.display='none'"
+      />
+      <div>
+        <div class="brand-title">DIVAS</div>
+        <div class="brand-sub">Salão de Beleza</div>
+      </div>
     </div>
-    <nav class="nav-topo">
-      <a href="#servicos" class="link-topo">Serviços</a>
-      <a href="#localizacao" class="link-topo">Local</a>
-      <button type="button" class="btn-abrir-topo" id="btnAlternarChat">Chat IA</button>
+
+    <nav class="nav-links">
+      <a href="#servicos">Serviços</a>
+      <a href="#recepcionista">Agendar IA</a>
+      <a href="#resultados">Resultados</a>
+      <a href="#localizacao">Localização</a>
     </nav>
+
+    <div class="nav-actions">
+      <button type="button" class="btn-cta-nav" id="btnNavAgendar">Agendar 24h</button>
+      <button type="button" class="btn-hamburger" id="btnMenu" aria-label="Menu">☰</button>
+    </div>
   </header>
 
-  <div class="container-site">
-    <section class="hero-card">
-      <span class="hero-tag">Agendamento Online 24h</span>
-      <h2 class="hero-titulo">Realce sua beleza com atendimento rápido e personalizado</h2>
-      <p class="hero-texto">
-        Consulte horários livres e confirme seu atendimento na DIVAS Salão de Beleza em Cachoeirinha/RS direto pelo chat com a Recepcionista DIVAS IA ou pelo WhatsApp.
-      </p>
-      <div class="acoes-hero">
-        <button type="button" class="btn-primario" id="btnIrChat">Agendar no Chat IA</button>
+  <nav class="mobile-drawer" id="mobileDrawer">
+    <a href="#servicos">Serviços</a>
+    <a href="#recepcionista">Recepcionista IA</a>
+    <a href="#resultados">Resultados Reais</a>
+    <a href="#localizacao">Localização</a>
+  </nav>
+
+  <main class="wrapper">
+    <section class="hero-panel">
+      <div>
+        <div class="hero-pill">✦ Atendimento Inteligente 24h • Cachoeirinha/RS</div>
+        <h1 class="hero-title">Sua beleza elevada com <span>agendamento instantâneo</span></h1>
+        <p class="hero-sub">
+          Consulte horários livres em tempo real, escolha seu serviço e confirme sua reserva em segundos com a Recepcionista DIVAS IA ou pelo WhatsApp.
+        </p>
+        <div class="hero-buttons">
+          <button type="button" class="btn-primary-glow" id="btnHeroChat">Quero agendar agora ↗</button>
+          <a
+            href="https://wa.me/5551991749541?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20hor%C3%A1rio%20no%20DIVAS%20Sal%C3%A3o%20de%20Beleza."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-wa-glass"
+          >
+            WhatsApp (51) 99174-9541
+          </a>
+        </div>
+      </div>
+
+      <div class="orb-container">
+        <div class="ai-orb" id="orbTrigger" title="Falar com a Recepcionista DIVAS IA">
+          <span>DIVAS IA</span>
+        </div>
+        <div class="orb-caption">Toque na esfera para agendar</div>
+      </div>
+    </section>
+
+    <section id="servicos">
+      <div class="section-head">
+        <h2 class="section-title">Serviços Exclusivos</h2>
+        <span class="section-hint">Toque para iniciar a reserva</span>
+      </div>
+
+      <div class="bento-services">
+        <article class="service-tile">
+          <div>
+            <div class="service-icon">💅</div>
+            <h3>Pé e Mão &amp; Unhas</h3>
+            <p>Esmaltação, decoração artística, pedrarias e acabamento duradouro.</p>
+          </div>
+          <button type="button" class="btn-tile" data-srv="Pé e mão">Agendar Pé e mão →</button>
+        </article>
+
+        <article class="service-tile">
+          <div>
+            <div class="service-icon">✨</div>
+            <h3>Progressiva</h3>
+            <p>Fios alinhados, brilho espelhado e redução de frizz com tratamento.</p>
+          </div>
+          <button type="button" class="btn-tile" data-srv="Progressiva">Agendar Progressiva →</button>
+        </article>
+
+        <article class="service-tile">
+          <div>
+            <div class="service-icon">✂️</div>
+            <h3>Corte</h3>
+            <p>Cortes modernos e alinhados ao formato do rosto e tipo de fio.</p>
+          </div>
+          <button type="button" class="btn-tile" data-srv="Corte">Agendar Corte →</button>
+        </article>
+
+        <article class="service-tile">
+          <div>
+            <div class="service-icon">✿</div>
+            <h3>Sobrancelhas</h3>
+            <p>Design de sobrancelhas com simetria e leveza para destacar o olhar.</p>
+          </div>
+          <button type="button" class="btn-tile" data-srv="Sobrancelhas">Agendar Sobrancelhas →</button>
+        </article>
+
+        <article class="service-tile">
+          <div>
+            <div class="service-icon">👶</div>
+            <h3>Cabelo Infantil</h3>
+            <p>Atendimento paciente, carinhoso e especial para as crianças.</p>
+          </div>
+          <button type="button" class="btn-tile" data-srv="Cabelo infantil">Agendar Infantil →</button>
+        </article>
+      </div>
+    </section>
+
+    <section id="recepcionista">
+      <div class="section-head">
+        <h2 class="section-title">Recepcionista DIVAS IA</h2>
+        <span class="section-hint">Agenda conectada em tempo real</span>
+      </div>
+
+      <div class="ia-hub-card">
+        <div class="hub-header">
+          <div class="hub-agent">
+            <div class="mini-orb"></div>
+            <div>
+              <div class="hub-agent-name">Recepcionista DIVAS IA</div>
+              <div class="hub-agent-status" id="statusChat">• Online • Consulta e reserva automática</div>
+            </div>
+          </div>
+          <button type="button" class="btn-reset" id="btnLimpar">Limpar</button>
+        </div>
+
+        <div class="quick-slots-panel">
+          <div>
+            <div class="day-label">Sexta-feira, 27/11 — Toque no horário:</div>
+            <div class="slots-row">
+              <button type="button" class="slot-chip" data-data="27/11 (2026-11-27)" data-hora="09:00">09:00</button>
+              <button type="button" class="slot-chip" data-data="27/11 (2026-11-27)" data-hora="10:30">10:30</button>
+              <button type="button" class="slot-chip" data-data="27/11 (2026-11-27)" data-hora="13:30">13:30</button>
+              <button type="button" class="slot-chip" data-data="27/11 (2026-11-27)" data-hora="15:00">15:00</button>
+              <button type="button" class="slot-chip" data-data="27/11 (2026-11-27)" data-hora="16:30">16:30</button>
+            </div>
+          </div>
+
+          <div>
+            <div class="day-label">Sábado, 28/11 — Toque no horário:</div>
+            <div class="slots-row">
+              <button type="button" class="slot-chip" data-data="28/11 (2026-11-28)" data-hora="09:00">09:00</button>
+              <button type="button" class="slot-chip" data-data="28/11 (2026-11-28)" data-hora="10:30">10:30</button>
+              <button type="button" class="slot-chip" data-data="28/11 (2026-11-28)" data-hora="13:30">13:30</button>
+              <button type="button" class="slot-chip" data-data="28/11 (2026-11-28)" data-hora="15:00">15:00</button>
+              <button type="button" class="slot-chip" data-data="28/11 (2026-11-28)" data-hora="16:30">16:30</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="chat-stream" id="listaMensagens">
+          <div class="bubble bubble-ia">Olá! Sou a Recepcionista da DIVAS Salão de Beleza. Qual serviço você deseja agendar (Corte, Sobrancelhas, Progressiva, Pé e mão ou Cabelo infantil) e para qual dia e horário?</div>
+        </div>
+
+        <div class="booking-receipt" id="cardConfirmado">
+          <div class="booking-receipt-title">✅ Reserva Confirmada na Agenda DIVAS</div>
+          <div id="textoConfirmado"></div>
+          <div style="margin-top:6px;"><strong>Endereço:</strong> Rua Otto Espíndola, 470 - Moradas do Bosque, Cachoeirinha/RS</div>
+        </div>
+
+        <div class="quick-prompts">
+          <button type="button" class="prompt-pill" data-msg="Quero agendar Pé e mão">💅 Pé e mão</button>
+          <button type="button" class="prompt-pill" data-msg="Quero agendar Progressiva">✨ Progressiva</button>
+          <button type="button" class="prompt-pill" data-msg="Quero agendar Corte">✂️ Corte</button>
+          <button type="button" class="prompt-pill" data-msg="Quero agendar Sobrancelhas">✿ Sobrancelhas</button>
+          <button type="button" class="prompt-pill" data-msg="Quero agendar Cabelo infantil">👶 Cabelo infantil</button>
+          <button type="button" class="prompt-pill" data-msg="Quero ver os horários livres">🕒 Horários livres</button>
+        </div>
+
+        <form class="chat-composer" id="formChat">
+          <input
+            type="text"
+            id="inputMensagem"
+            class="composer-input"
+            placeholder="Ex: Corte dia 28/11 às 09:00 ou Nome,51999999999"
+            autocomplete="off"
+            required
+          />
+          <button type="submit" class="composer-btn" id="btnEnviar">Enviar</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Galeria de Resultados Reais -->
+    <section id="resultados">
+      <div class="section-head">
+        <h2 class="section-title">Galeria de Resultados Reais</h2>
+        <span class="section-hint">Toque para agendar o serviço</span>
+      </div>
+
+      <div class="gallery-grid">
+        <article class="gallery-card">
+          <img src="21921.jpg" alt="Unhas vermelhas decoradas DIVAS" onerror="this.style.display='none'" />
+          <div class="gallery-overlay">
+            <h3>Unhas Decoradas Divas</h3>
+            <p>Vermelho vibrante com detalhe delicado e brilho.</p>
+            <button type="button" class="btn-tile" data-srv="Pé e mão">Agendar Pé e mão →</button>
+          </div>
+        </article>
+
+        <article class="gallery-card">
+          <img src="21922.jpg" alt="Unhas nude e aplicação DIVAS" onerror="this.style.display='none'" />
+          <div class="gallery-overlay">
+            <h3>Acabamento Nude &amp; Aplicação</h3>
+            <p>Elegância clássica com aplicação em relevo.</p>
+            <button type="button" class="btn-tile" data-srv="Pé e mão">Agendar Pé e mão →</button>
+          </div>
+        </article>
+
+        <article class="gallery-card">
+          <img src="21925.jpg" alt="Cabelo liso e alinhado DIVAS" onerror="this.style.display='none'" />
+          <div class="gallery-overlay">
+            <h3>Liso &amp; Brilho Intenso</h3>
+            <p>Fios alinhados, macios e com caimento uniforme.</p>
+            <button type="button" class="btn-tile" data-srv="Progressiva">Agendar Progressiva →</button>
+          </div>
+        </article>
+
+        <article class="gallery-card">
+          <img src="21920.jpg" alt="Pedicure com detalhe dourado DIVAS" onerror="this.style.display='none'" />
+          <div class="gallery-overlay">
+            <h3>Pedicure com Detalhe Dourado</h3>
+            <p>Cuidado completo para os pés com acabamento refinado.</p>
+            <button type="button" class="btn-tile" data-srv="Pé e mão">Agendar Pé e mão →</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="location-card" id="localizacao">
+      <div class="section-head" style="margin-bottom:0;">
+        <h2 class="section-title">Onde Estamos</h2>
+        <span class="section-hint">Cachoeirinha/RS</span>
+      </div>
+      <div class="location-details">
+        <div><strong>Horário de Funcionamento:</strong> Segunda a Sábado, das 9h às 19h30 (Domingo: Fechado)</div>
+        <div><strong>Endereço:</strong> Rua Otto Espíndola, 470 - Moradas do Bosque, CEP 94960-842, Cachoeirinha/RS</div>
+        <div><strong>WhatsApp Oficial:</strong> (51) 99174-9541</div>
+      </div>
+      <div>
         <a
-          href="https://wa.me/5551991749541?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20no%20DIVAS%20Sal%C3%A3o%20de%20Beleza."
+          href="https://wa.me/5551991749541?text=Ol%C3%A1%2C%20vim%20pelo%20site%20do%20DIVAS%20Sal%C3%A3o%20de%20Beleza."
           target="_blank"
           rel="noopener noreferrer"
-          class="btn-secundario"
+          class="btn-wa-glass"
         >
-          WhatsApp (51) 99174-9541
+          Falar direto no WhatsApp
         </a>
       </div>
     </section>
+  </main>
 
-    <section class="secao-card" id="servicos">
-      <h2 class="secao-titulo">Nossos Serviços</h2>
-      <div class="grid-servicos">
-        <article class="servico-item">
-          <div>
-            <h3>Corte</h3>
-            <p>Cortes modernos e alinhados ao formato do seu rosto e tipo de fio.</p>
-          </div>
-          <button type="button" class="btn-servico-chat" data-msg="Quero agendar Corte">Agendar Corte</button>
-        </article>
-
-        <article class="servico-item">
-          <div>
-            <h3>Sobrancelhas</h3>
-            <p>Design e acabamento cuidadoso para valorizar o olhar.</p>
-          </div>
-          <button type="button" class="btn-servico-chat" data-msg="Quero agendar Sobrancelhas">Agendar Sobrancelhas</button>
-        </article>
-
-        <article class="servico-item">
-          <div>
-            <h3>Progressiva</h3>
-            <p>Alinhamento, redução de volume e brilho para os fios.</p>
-          </div>
-          <button type="button" class="btn-servico-chat" data-msg="Quero agendar Progressiva">Agendar Progressiva</button>
-        </article>
-
-        <article class="servico-item">
-          <div>
-            <h3>Pé e mão</h3>
-            <p>Cuidados completos com unhas, cutículas e esmaltação.</p>
-          </div>
-          <button type="button" class="btn-servico-chat" data-msg="Quero agendar Pé e mão">Agendar Pé e mão</button>
-        </article>
-
-        <article class="servico-item">
-          <div>
-            <h3>Cabelo infantil</h3>
-            <p>Atendimento paciente e acolhedor para as crianças.</p>
-          </div>
-          <button type="button" class="btn-servico-chat" data-msg="Quero agendar Cabelo infantil">Agendar Infantil</button>
-        </article>
-      </div>
-    </section>
-
-    <section id="secaoChat" class="chat-card" aria-label="Recepcionista DIVAS IA">
-      <div class="chat-header">
-        <div>
-          <div class="chat-header-titulo">Recepcionista DIVAS IA</div>
-          <div class="chat-header-status" id="statusChat">• Online • Consulta e reserva automática</div>
-        </div>
-        <button type="button" class="btn-limpar" id="btnLimpar">Limpar</button>
-      </div>
-
-      <div class="chat-mensagens" id="listaMensagens">
-        <div class="msg msg-ia">Olá! Sou a Recepcionista da DIVAS Salão de Beleza. Qual serviço você deseja agendar (Corte, Sobrancelhas, Progressiva, Pé e mão ou Cabelo infantil) e para qual dia e horário?</div>
-      </div>
-
-      <div class="atalhos-servicos" id="atalhosServicos">
-        <button type="button" class="chip-servico" data-msg="Quero ver os horários livres">🕒 Horários livres</button>
-        <button type="button" class="chip-servico" data-msg="Quero agendar Corte">✂️ Corte</button>
-        <button type="button" class="chip-servico" data-msg="Quero agendar Sobrancelhas">✿ Sobrancelhas</button>
-        <button type="button" class="chip-servico" data-msg="Quero agendar Progressiva">✨ Progressiva</button>
-        <button type="button" class="chip-servico" data-msg="Quero agendar Pé e mão">💅 Pé e mão</button>
-        <button type="button" class="chip-servico" data-msg="Quero agendar Cabelo infantil">👶 Cabelo infantil</button>
-      </div>
-
-      <form class="chat-form" id="formChat">
-        <input
-          type="text"
-          id="inputMensagem"
-          class="chat-input"
-          placeholder="Ex: Corte dia 28/11 às 09:00 ou Nome,51999999999"
-          autocomplete="off"
-          required
-        />
-        <button type="submit" class="btn-enviar" id="btnEnviar">Enviar</button>
-      </form>
-    </section>
-
-    <section class="secao-card" id="localizacao">
-      <h2 class="secao-titulo">Horário e Localização</h2>
-      <div class="info-lista">
-        <div><strong>Funcionamento:</strong> Segunda a Sábado, das 9h às 19h30 (Domingo: Fechado)</div>
-        <div><strong>Endereço:</strong> Rua Otto Espíndola, 470 - Moradas do Bosque, CEP 94960-842, Cachoeirinha/RS</div>
-        <div><strong>WhatsApp:</strong> (51) 99174-9541</div>
-      </div>
-    </section>
-  </div>
-
-  <footer class="rodape-salao">
-    DIVAS Salão de Beleza • Cachoeirinha/RS
+  <footer class="site-footer">
+    <div><strong>DIVAS Salão de Beleza</strong> • Rua Otto Espíndola, 470 - Moradas do Bosque, Cachoeirinha/RS</div>
+    <a href="https://leledesouzas96-creator.github.io/vezqora-site/" target="_blank" rel="noopener noreferrer" class="vezqora-badge">
+      Solução Web &amp; Agente IA por VEZQORA
+    </a>
   </footer>
 
   <button type="button" class="btn-flutuante-ia" id="btnFlutuante">
-    <span class="ponto-verde"></span>
+    <span class="dot-live"></span>
     <span>Agendar com IA</span>
     <span>✦</span>
   </button>
@@ -555,33 +1028,58 @@
     const statusChat = document.getElementById("statusChat");
     const btnLimpar = document.getElementById("btnLimpar");
     const btnFlutuante = document.getElementById("btnFlutuante");
-    const btnAlternarChat = document.getElementById("btnAlternarChat");
-    const btnIrChat = document.getElementById("btnIrChat");
-    const secaoChat = document.getElementById("secaoChat");
+    const btnNavAgendar = document.getElementById("btnNavAgendar");
+    const btnHeroChat = document.getElementById("btnHeroChat");
+    const orbTrigger = document.getElementById("orbTrigger");
+    const btnMenu = document.getElementById("btnMenu");
+    const mobileDrawer = document.getElementById("mobileDrawer");
+    const secaoRecepcionista = document.getElementById("recepcionista");
+    const cardConfirmado = document.getElementById("cardConfirmado");
+    const textoConfirmado = document.getElementById("textoConfirmado");
 
+    let servicoSelecionado = "Pé e mão";
     let historico = [];
 
-    function focarChat() {
-      document.body.classList.add("chat-aberto");
-      secaoChat.style.display = "flex";
-      secaoChat.scrollIntoView({ behavior: "smooth", block: "start" });
-      setTimeout(() => inputMensagem.focus(), 120);
-    }
-
-    btnFlutuante.addEventListener("click", focarChat);
-    btnIrChat.addEventListener("click", focarChat);
-
-    btnAlternarChat.addEventListener("click", () => {
-      const aberto = document.body.classList.toggle("chat-aberto");
-      secaoChat.style.display = aberto ? "flex" : "none";
-      if (aberto) inputMensagem.focus();
+    btnMenu.addEventListener("click", () => mobileDrawer.classList.toggle("open"));
+    mobileDrawer.querySelectorAll("a").forEach((a) => {
+      a.addEventListener("click", () => mobileDrawer.classList.remove("open"));
     });
 
-    document.querySelectorAll(".chip-servico, .btn-servico-chat").forEach((botao) => {
-      botao.addEventListener("click", () => {
-        const msg = botao.getAttribute("data-msg");
+    function abrirHubIA() {
+      document.body.classList.add("chat-aberto");
+      secaoRecepcionista.scrollIntoView({ behavior: "smooth", block: "start" });
+      setTimeout(() => inputMensagem.focus(), 150);
+    }
+
+    btnFlutuante.addEventListener("click", abrirHubIA);
+    btnNavAgendar.addEventListener("click", abrirHubIA);
+    btnHeroChat.addEventListener("click", abrirHubIA);
+    orbTrigger.addEventListener("click", abrirHubIA);
+
+    document.querySelectorAll(".btn-tile").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        servicoSelecionado = btn.getAttribute("data-srv") || "Corte";
+        abrirHubIA();
+        enviarMensagem("Quero agendar " + servicoSelecionado);
+      });
+    });
+
+    document.querySelectorAll(".slot-chip").forEach((slot) => {
+      slot.addEventListener("click", () => {
+        document.querySelectorAll(".slot-chip").forEach((s) => s.classList.remove("active"));
+        slot.classList.add("active");
+        const dataTxt = slot.getAttribute("data-data");
+        const horaTxt = slot.getAttribute("data-hora");
+        abrirHubIA();
+        enviarMensagem("Quero reservar " + servicoSelecionado + " no dia " + dataTxt + " às " + horaTxt);
+      });
+    });
+
+    document.querySelectorAll(".prompt-pill").forEach((pill) => {
+      pill.addEventListener("click", () => {
+        const msg = pill.getAttribute("data-msg");
         if (msg) {
-          focarChat();
+          abrirHubIA();
           enviarMensagem(msg);
         }
       });
@@ -589,9 +1087,10 @@
 
     btnLimpar.addEventListener("click", () => {
       historico = [];
+      cardConfirmado.classList.remove("show");
       listaMensagens.innerHTML = "";
       adicionarBolha(
-        "Olá! Sou a Recepcionista da DIVAS Salão de Beleza. Qual serviço você deseja agendar e para qual dia e horário?",
+        "Olá! Sou a Recepcionista da DIVAS Salão de Beleza. Qual serviço você deseja agendar (Corte, Sobrancelhas, Progressiva, Pé e mão ou Cabelo infantil) e para qual dia e horário?",
         "ia"
       );
       statusChat.textContent = "• Online • Consulta e reserva automática";
@@ -599,7 +1098,7 @@
 
     function adicionarBolha(texto, remetente) {
       const div = document.createElement("div");
-      div.className = "msg " + (remetente === "user" ? "msg-user" : "msg-ia");
+      div.className = "bubble " + (remetente === "user" ? "bubble-user" : "bubble-ia");
       div.textContent = texto;
       listaMensagens.appendChild(div);
       listaMensagens.scrollTop = listaMensagens.scrollHeight;
@@ -650,6 +1149,12 @@
           "Recebi a sua mensagem, mas não veio texto de resposta do Worker.";
 
         adicionarBolha(respostaFinal, "ia");
+
+        if (dados.booking || respostaFinal.includes("Agendamento confirmado")) {
+          textoConfirmado.textContent = respostaFinal;
+          cardConfirmado.classList.add("show");
+        }
+
         historico.push(
           { role: "user", content: limpo },
           { role: "assistant", content: respostaFinal }
