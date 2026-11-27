@@ -896,7 +896,7 @@
     <div class="topo-interno">
       <a href="#topo" class="marca">
         <img
-          src="fotos/logo-divas.jpg"
+          data-foto="logo-divas.jpg"
           alt="Logo DIVAS Salão de Beleza"
           class="marca-logo"
         />
@@ -945,7 +945,7 @@
       <div class="carrossel-frame" aria-label="Carrossel de fotos do salão">
         <div class="slide ativo">
           <img
-            src="fotos/21925_2.jpg"
+            data-foto="21925_2.jpg"
             alt="Cabelo liso alinhado DIVAS"
           />
           <div class="slide-legenda">
@@ -956,7 +956,7 @@
 
         <div class="slide">
           <img
-            src="fotos/21921_2.jpg"
+            data-foto="21921_2.jpg"
             alt="Mão vermelha decorada DIVAS"
           />
           <div class="slide-legenda">
@@ -967,7 +967,7 @@
 
         <div class="slide">
           <img
-            src="fotos/21920_2.jpg"
+            data-foto="21920_2.jpg"
             alt="Pé com francesinha DIVAS"
           />
           <div class="slide-legenda">
@@ -978,7 +978,7 @@
 
         <div class="slide">
           <img
-            src="fotos/21922_2.jpg"
+            data-foto="21922_2.jpg"
             alt="Mão nude com detalhe DIVAS"
           />
           <div class="slide-legenda">
@@ -1075,9 +1075,9 @@
       <div class="galeria-grid">
         <article class="foto-box">
           <img
-            src="fotos/21925_2.jpg"
+            data-foto="21925_2.jpg"
             alt="Cabelo liso alinhado"
-            data-ampliar="fotos/21925_2.jpg"
+            data-ampliar="21925_2.jpg"
           />
           <div class="foto-corpo">
             <div class="foto-cab">
@@ -1090,9 +1090,9 @@
 
         <article class="foto-box">
           <img
-            src="fotos/21932.jpg"
+            data-foto="21932.jpg"
             alt="Cabelo liso com acabamento"
-            data-ampliar="fotos/21932.jpg"
+            data-ampliar="21932.jpg"
           />
           <div class="foto-corpo">
             <div class="foto-cab">
@@ -1105,9 +1105,9 @@
 
         <article class="foto-box">
           <img
-            src="fotos/21920_2.jpg"
+            data-foto="21920_2.jpg"
             alt="Pé com francesinha"
-            data-ampliar="fotos/21920_2.jpg"
+            data-ampliar="21920_2.jpg"
           />
           <div class="foto-corpo">
             <div class="foto-cab">
@@ -1120,9 +1120,9 @@
 
         <article class="foto-box">
           <img
-            src="fotos/21921_2.jpg"
+            data-foto="21921_2.jpg"
             alt="Unha vermelha decorada"
-            data-ampliar="fotos/21921_2.jpg"
+            data-ampliar="21921_2.jpg"
           />
           <div class="foto-corpo">
             <div class="foto-cab">
@@ -1135,9 +1135,9 @@
 
         <article class="foto-box">
           <img
-            src="fotos/21922_2.jpg"
+            data-foto="21922_2.jpg"
             alt="Unha nude decorada"
-            data-ampliar="fotos/21922_2.jpg"
+            data-ampliar="21922_2.jpg"
           />
           <div class="foto-corpo">
             <div class="foto-cab">
@@ -1162,7 +1162,7 @@
         <div class="chat-cab">
           <div class="chat-perfil">
             <img
-              src="fotos/logo-divas.jpg"
+              data-foto="logo-divas.jpg"
               alt="Recepcionista DIVAS IA"
             />
             <div>
@@ -1285,6 +1285,31 @@
   <script>
     const URL_WORKER_DIVAS_IA = "https://divas-ia.vezqoraai.workers.dev/api/chat";
 
+    // Caminhos possíveis no GitHub para a pasta fotos/
+    const BASES_GITHUB = [
+      "https://raw.githubusercontent.com/leledesouzas96-creator/Divas/main/fotos/",
+      "https://raw.githubusercontent.com/leledesouzas96-creator/sal-odebelezadivas/main/fotos/",
+      "https://raw.githubusercontent.com/leledesouzas96-creator/meusalaodivas/main/fotos/",
+      "fotos/"
+    ];
+
+    function aplicarFotoComFallback(imgEl, arquivo) {
+      let tentativa = 0;
+      imgEl.onerror = function () {
+        tentativa += 1;
+        if (tentativa < BASES_GITHUB.length) {
+          imgEl.src = BASES_GITHUB[tentativa] + arquivo;
+        } else {
+          imgEl.onerror = null;
+        }
+      };
+      imgEl.src = BASES_GITHUB[0] + arquivo;
+    }
+
+    document.querySelectorAll("img[data-foto]").forEach((img) => {
+      aplicarFotoComFallback(img, img.getAttribute("data-foto"));
+    });
+
     const listaMensagens = document.getElementById("listaMensagens");
     const formChat = document.getElementById("formChat");
     const campoMensagem = document.getElementById("campoMensagem");
@@ -1345,7 +1370,7 @@
 
     document.querySelectorAll("[data-ampliar]").forEach((img) => {
       img.addEventListener("click", () => {
-        imgLightbox.src = img.getAttribute("data-ampliar");
+        imgLightbox.src = img.currentSrc || img.src;
         lightbox.classList.add("aberta");
       });
     });
