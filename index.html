@@ -267,7 +267,6 @@
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-      margin-bottom: 24px;
     }
 
     .btn-primario {
@@ -291,30 +290,6 @@
       font-size: 0.88rem;
       font-weight: 600;
       cursor: pointer;
-    }
-
-    .meta-faixa {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
-      padding-top: 18px;
-      border-top: 1px solid var(--borda-suave);
-    }
-
-    .meta-item span {
-      display: block;
-      font-size: 0.69rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--rosa-suave);
-      font-weight: 700;
-      margin-bottom: 4px;
-    }
-
-    .meta-item strong {
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--texto);
     }
 
     .carrossel-frame {
@@ -496,7 +471,7 @@
       padding: 0;
     }
 
-    /* Galeria apenas com fotos reais carregadas */
+    /* Galeria */
     .galeria-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
@@ -520,20 +495,32 @@
       cursor: pointer;
     }
 
-    .foto-info {
-      padding: 12px 14px;
+    .foto-corpo {
+      padding: 12px 14px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .foto-cab {
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 8px;
     }
 
-    .foto-info strong {
-      font-size: 0.86rem;
+    .foto-cab strong {
+      font-size: 0.9rem;
       color: var(--texto);
     }
 
-    .foto-info button {
+    .foto-desc {
+      font-size: 0.82rem;
+      color: var(--texto-secundario);
+      line-height: 1.4;
+    }
+
+    .foto-cab button {
       background: rgba(236, 72, 153, 0.16);
       border: 1px solid var(--borda-ouro);
       color: var(--ouro-claro);
@@ -542,6 +529,7 @@
       font-size: 0.75rem;
       font-weight: 700;
       cursor: pointer;
+      flex-shrink: 0;
     }
 
     /* Agendamento com IA */
@@ -911,7 +899,7 @@
           src="fotos/logo-divas.jpg"
           alt="Logo DIVAS Salão de Beleza"
           class="marca-logo"
-          onerror="this.style.display='none'"
+          onerror="this.style.opacity='0'"
         />
         <div>
           <div class="marca-titulo">DIVAS</div>
@@ -944,8 +932,8 @@
     <!-- Hero + Carrossel -->
     <section class="hero-grid">
       <div>
-        <div class="kicker">Lilás • Rosa • Dourado • Cachoeirinha/RS</div>
-        <h1 class="hero-h1 fonte-editorial">Seu momento de brilho, com <em>hora marcada</em>.</h1>
+        <div class="kicker">Cachoeirinha/RS</div>
+        <h1 class="hero-h1 fonte-editorial">Marque o seu momento <em>Diva</em>.</h1>
         <p class="hero-desc">
           Atendimento especial em pé e mão, progressiva, corte, sobrancelhas e cabelo infantil, com consulta de horários em tempo real diretamente pela Recepcionista DIVAS IA.
         </p>
@@ -953,65 +941,54 @@
           <button type="button" class="btn-primario" id="btnHeroAgendar">Agendar com IA</button>
           <button type="button" class="btn-secundario" id="btnHeroHorarios">Ver horários livres</button>
         </div>
-
-        <div class="meta-faixa">
-          <div class="meta-item">
-            <span>Horário</span>
-            <strong>Seg–Sáb • 9h às 19h30</strong>
-          </div>
-          <div class="meta-item">
-            <span>Endereço</span>
-            <strong>Rua Otto Espíndola, 470</strong>
-          </div>
-        </div>
       </div>
 
       <div class="carrossel-frame" aria-label="Carrossel de fotos do salão">
         <div class="slide ativo">
           <img
-            src="fotos/cabelo-01.jpg"
-            alt="Cabelos e tratamentos DIVAS"
-            onerror="this.closest('.slide').style.display='none'"
+            src="fotos/21925_2.jpg"
+            alt="Cabelo liso alinhado DIVAS"
+            onerror="this.style.opacity='0'"
           />
           <div class="slide-legenda">
-            <span>Cabelos &amp; Tratamentos</span>
-            <p>Acabamento alinhado e brilho nos fios</p>
+            <span>Cabelos &amp; Progressiva</span>
+            <p>Cabelo liso alinhado com brilho</p>
           </div>
         </div>
 
         <div class="slide">
           <img
-            src="fotos/unhas-01.jpg"
-            alt="Unhas decoradas DIVAS"
-            onerror="this.closest('.slide').style.display='none'"
+            src="fotos/21921_2.jpg"
+            alt="Mão vermelha decorada DIVAS"
+            onerror="this.style.opacity='0'"
           />
           <div class="slide-legenda">
-            <span>Unhas &amp; Esmaltação</span>
-            <p>Cuidado detalhado e acabamento impecável</p>
+            <span>Unhas &amp; Decoração</span>
+            <p>Mão vermelha com detalhe em pedrinhas</p>
           </div>
         </div>
 
         <div class="slide">
           <img
-            src="fotos/cabelo-02.jpg"
-            alt="Corte e finalização DIVAS"
-            onerror="this.closest('.slide').style.display='none'"
+            src="fotos/21920_2.jpg"
+            alt="Pé com francesinha DIVAS"
+            onerror="this.style.opacity='0'"
           />
           <div class="slide-legenda">
-            <span>Corte &amp; Finalização</span>
-            <p>Movimento e leveza sob medida</p>
+            <span>Pé &amp; Francesinha</span>
+            <p>Unhas do pé com francesinha delicada</p>
           </div>
         </div>
 
         <div class="slide">
           <img
-            src="fotos/cabelo-03.jpg"
-            alt="Progressiva e cuidado capilar DIVAS"
-            onerror="this.closest('.slide').style.display='none'"
+            src="fotos/21922_2.jpg"
+            alt="Mão nude com detalhe DIVAS"
+            onerror="this.style.opacity='0'"
           />
           <div class="slide-legenda">
-            <span>Progressiva &amp; Brilho</span>
-            <p>Fios disciplinados com toque suave</p>
+            <span>Mão &amp; Acabamento</span>
+            <p>Esmaltação nude com detalhe delicado</p>
           </div>
         </div>
 
@@ -1093,10 +1070,9 @@
       </div>
     </section>
 
-    <!-- Galeria apenas com as fotos reais nomeadas -->
+    <!-- Galeria -->
     <section id="galeria">
       <div class="secao-topo">
-        <span class="kicker" style="margin-bottom:2px;">Portfólio</span>
         <h2 class="fonte-editorial">Resultados realizados</h2>
         <p>Toque na foto para ampliar ou clique para agendar o serviço pelo chat IA.</p>
       </div>
@@ -1104,53 +1080,81 @@
       <div class="galeria-grid">
         <article class="foto-box">
           <img
-            src="fotos/cabelo-01.jpg"
-            alt="Cabelo 01 DIVAS"
-            data-ampliar="fotos/cabelo-01.jpg"
-            onerror="this.closest('article').remove()"
+            src="fotos/21925_2.jpg"
+            alt="Cabelo liso alinhado"
+            data-ampliar="fotos/21925_2.jpg"
+            onerror="this.style.opacity='0'"
           />
-          <div class="foto-info">
-            <strong>Cabelo 01</strong>
-            <button type="button" data-srv="Corte">Agendar</button>
+          <div class="foto-corpo">
+            <div class="foto-cab">
+              <strong>Progressiva &amp; Brilho</strong>
+              <button type="button" data-srv="Progressiva">Agendar</button>
+            </div>
+            <p class="foto-desc">Cabelo liso, alinhado e com brilho intenso.</p>
           </div>
         </article>
 
         <article class="foto-box">
           <img
-            src="fotos/cabelo-02.jpg"
-            alt="Cabelo 02 DIVAS"
-            data-ampliar="fotos/cabelo-02.jpg"
-            onerror="this.closest('article').remove()"
+            src="fotos/21932.jpg"
+            alt="Cabelo liso com acabamento"
+            data-ampliar="fotos/21932.jpg"
+            onerror="this.style.opacity='0'"
           />
-          <div class="foto-info">
-            <strong>Cabelo 02</strong>
-            <button type="button" data-srv="Corte">Agendar</button>
+          <div class="foto-corpo">
+            <div class="foto-cab">
+              <strong>Cabelo Alinhado</strong>
+              <button type="button" data-srv="Corte">Agendar</button>
+            </div>
+            <p class="foto-desc">Fios soltos, macios e com caimento natural.</p>
           </div>
         </article>
 
         <article class="foto-box">
           <img
-            src="fotos/cabelo-03.jpg"
-            alt="Cabelo 03 DIVAS"
-            data-ampliar="fotos/cabelo-03.jpg"
-            onerror="this.closest('article').remove()"
+            src="fotos/21920_2.jpg"
+            alt="Pé com francesinha"
+            data-ampliar="fotos/21920_2.jpg"
+            onerror="this.style.opacity='0'"
           />
-          <div class="foto-info">
-            <strong>Cabelo 03</strong>
-            <button type="button" data-srv="Progressiva">Agendar</button>
+          <div class="foto-corpo">
+            <div class="foto-cab">
+              <strong>Pé com Francesinha</strong>
+              <button type="button" data-srv="Pé e mão">Agendar</button>
+            </div>
+            <p class="foto-desc">Unhas do pé com francesinha e detalhe delicado.</p>
           </div>
         </article>
 
         <article class="foto-box">
           <img
-            src="fotos/unhas-01.jpg"
-            alt="Unhas 01 DIVAS"
-            data-ampliar="fotos/unhas-01.jpg"
-            onerror="this.closest('article').remove()"
+            src="fotos/21921_2.jpg"
+            alt="Mão vermelha decorada"
+            data-ampliar="fotos/21921_2.jpg"
+            onerror="this.style.opacity='0'"
           />
-          <div class="foto-info">
-            <strong>Unhas 01</strong>
-            <button type="button" data-srv="Pé e mão">Agendar</button>
+          <div class="foto-corpo">
+            <div class="foto-cab">
+              <strong>Mão Vermelha</strong>
+              <button type="button" data-srv="Pé e mão">Agendar</button>
+            </div>
+            <p class="foto-desc">Unha vermelha com detalhe e pedrinhas.</p>
+          </div>
+        </article>
+
+        <article class="foto-box">
+          <img
+            src="fotos/21922_2.jpg"
+            alt="Mão nude decorada"
+            data-ampliar="fotos/21922_2.jpg"
+            onerror="this.style.opacity='0'"
+          />
+          <div class="foto-corpo">
+            <div class="foto-cab">
+              <strong>Mão Nude</strong>
+              <button type="button" data-srv="Pé e mão">Agendar</button>
+            </div>
+            <p class="foto-desc">Esmaltação nude elegante com detalhe especial.</p>
           </div>
         </article>
       </div>
@@ -1170,7 +1174,7 @@
             <img
               src="fotos/logo-divas.jpg"
               alt="Recepcionista DIVAS IA"
-              onerror="this.style.display='none'"
+              onerror="this.style.opacity='0'"
             />
             <div>
               <div class="chat-nome">Recepcionista DIVAS IA</div>
@@ -1413,7 +1417,7 @@
 
     async function enviarMensagem(textoUsuario) {
       const limpo = String(textoUsuario || "").trim();
-      if (!limpo) return;
+      if (!limpo || btnEnviar.disabled) return;
 
       adicionarBolha(limpo, "user");
       campoMensagem.value = "";
